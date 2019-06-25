@@ -1,0 +1,19 @@
+.main-image{
+  height: 600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center
+}
+
+.main-image-text{
+  height: 300px;
+  width: 30%;
+  
+  
+}
+
+.main-image-image{
+  width: 50%;
+
+}
