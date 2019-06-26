@@ -4,6 +4,8 @@ import HomeImage from './components/HomeImage'
 import './css/Home.css'
 import AboutUs from './components/AboutUs';
 import Examples from './components/Examples';
+import Comments from './components/Comments';
+import Team from './components/Team';
 
 
 
@@ -18,7 +20,9 @@ const Home = () => {
       </div>
       <AboutUs></AboutUs>
       <Examples></Examples>
-      
+      <Comments></Comments>
+      <Team></Team>
+      <
     </div>
   )
 }

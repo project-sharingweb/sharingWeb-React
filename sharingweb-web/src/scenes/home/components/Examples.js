@@ -5,7 +5,7 @@ const Examples = () => {
 
   return (
     <div className="examples-section">
-      hola
+      Examples
     </div>
   )
 }

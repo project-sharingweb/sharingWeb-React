@@ -1,0 +1,12 @@
+.comments-section{
+    background-color:white;
+    height: 600px
+}
+
+.comments-content{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
