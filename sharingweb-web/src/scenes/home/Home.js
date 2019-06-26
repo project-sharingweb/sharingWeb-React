@@ -1,8 +1,10 @@
 import React from 'react'
-import HomeSharingHeader from '../components/HomeSharingHeader'
-import HomeImage from '../components/HomeImage'
-import '../css/Home.css'
-import AboutUs from '../components/aboutUs';
+import HomeSharingHeader from './components/HomeSharingHeader'
+import HomeImage from './components/HomeImage'
+import './css/Home.css'
+import AboutUs from './components/AboutUs';
+
+
 
 const Home = () => {
 
