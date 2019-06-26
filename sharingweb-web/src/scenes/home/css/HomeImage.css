@@ -7,13 +7,23 @@
 }
 
 .main-image-text{
-  height: 300px;
-  width: 30%;
-  
-  
+  height: 200px;
+  width: 60%;
+}
+
+.main-text{
+  font-weight: bold;
+}
+
+.main-text-p{
+  margin-top: 5%;
+  text-decoration-line: none;
+  width: 70%;
+  font-size: 1.4rem
 }
 
 .main-image-image{
   width: 50%;
+  object-fit: cover
 
 }

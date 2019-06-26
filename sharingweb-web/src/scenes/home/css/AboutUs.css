@@ -1,4 +1,24 @@
 .aboutUs-section{
-  background-color: #7d8da815;
-  height: 600px; 
+  background-color: white;
+  /*#7d8da815*/
+  height: 650px;
+}
+
+.aboutUs-section h2 {
+  font-weight: bold;
+  padding: 50px 0 30px;
+  text-align: center
+}
+
+.aboutUs-section p {
+  font-size: 1.4rem;
+  text-align: center
+}
+
+.aboutus-content {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
