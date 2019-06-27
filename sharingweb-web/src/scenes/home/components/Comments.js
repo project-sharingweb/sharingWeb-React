@@ -1,7 +1,8 @@
 import React from 'react'
 import '../css/comments.css'
 import BoxComments from './BoxComments';
-import commentsLogo from '../../../images/landing.png'
+import commentsLogo from '../../../images/Comments.png'
+
 
 const Comments = () => {
 
@@ -10,6 +11,8 @@ const Comments = () => {
         <div className="container">
           <p>This is a comment</p>
           <div className="comments-content">
+            <BoxComments image={commentsLogo} title="" text=""></BoxComments>
+            <BoxComments image={commentsLogo} title="" text=""></BoxComments>
             <BoxComments image={commentsLogo} title="" text=""></BoxComments>
             <BoxComments image={commentsLogo} title="" text=""></BoxComments>
           </div>

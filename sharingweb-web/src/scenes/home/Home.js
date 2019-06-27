@@ -22,7 +22,6 @@ const Home = () => {
       <Examples></Examples>
       <Comments></Comments>
       <Team></Team>
-      <
     </div>
   )
 }
