@@ -6,6 +6,7 @@ import AboutUs from './components/AboutUs';
 import Examples from './components/Examples';
 import Comments from './components/Comments';
 import Team from './components/Team';
+import FooterPagePro from './components/FooterPagePro';
 
 
 
@@ -22,6 +23,7 @@ const Home = () => {
       <Examples></Examples>
       <Comments></Comments>
       <Team></Team>
+      <FooterPagePro color="cyan"></FooterPagePro>
     </div>
   )
 }

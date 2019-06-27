@@ -1,0 +1,25 @@
+.team-section{
+    background-color: white;
+    /*#7d8da815*/
+  }
+  
+.team-section h2 {
+    font-weight: bold;
+    padding: 50px 0 30px;
+    text-align: center
+}
+  
+.team-section p {
+    font-size: 1.4rem;
+    text-align: center
+}
+  
+.team-content {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    flex-wrap: wrap;
+}
+  

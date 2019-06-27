@@ -9,7 +9,7 @@ const BoxComments = (props) => {
     
 
     <div className="box-comments-content">
-      <img src={image} alt=""></img>
+      <img src={image} alt="" className= "rounded-circle"></img>
       <h3>{title}</h3>
       <p>{text}</p>
     </div>

@@ -1,0 +1,24 @@
+.example-section{
+    background-color: white;
+    /*#7d8da815*/
+  }
+  
+  .example-section h2 {
+    font-weight: bold;
+    padding: 50px 0 30px;
+    text-align: center
+  }
+  
+  .example-section p {
+    font-size: 1.4rem;
+    text-align: center
+  }
+  
+  .example-content {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+  }
