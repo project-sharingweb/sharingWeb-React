@@ -1,7 +1,6 @@
 .aboutUs-section{
   background-color: white;
   /*#7d8da815*/
-  height: 650px;
 }
 
 .aboutUs-section h2 {
@@ -21,4 +20,5 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  flex-wrap: wrap;
 }
