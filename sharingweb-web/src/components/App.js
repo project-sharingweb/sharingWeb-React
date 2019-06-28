@@ -3,11 +3,16 @@ import '../css/App.css';
 import {Route} from 'react-router-dom'
 import Home from '../scenes/home/Home'
 import ShopService from './services/ShopService'
+import ShopLanding from '../scenes/shoplanding/ShopLanding';
+import AboutUs from '../scenes/shoplanding/components/AboutUs'
+
+
 
 
 class App extends React.Component {
   state = {
-    shops: false
+    shops: false,
+    products: false
   }
   
   componentDidMount() {
@@ -26,7 +31,10 @@ class App extends React.Component {
     if (shops){
     list = shops.map( (item, i) => {
       return (
-        <Route key={i} exact path={`/shops/${item.name}`} render={() => <div>hola</div>}></Route>
+        <div key={i}>
+          <Route exact path={`/shops/${item.name}`} render={() => <ShopLanding data={item}></ShopLanding>}></Route>
+          <Route exact path={`/shops/${item.name}/about-us`} render={() => <AboutUs data={item}></AboutUs>}></Route>
+        </div>
       )})
     }
     

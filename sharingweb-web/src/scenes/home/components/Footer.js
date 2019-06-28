@@ -1,9 +1,8 @@
-
 import React from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import  "../css/Footer.css"
 
-const FooterPagePro = () => {
+const Footer = () => {
   return (
     <MDBFooter color="cyan" className="font-small lighten-3 pt-4 mt-4 bgmarta">
       <MDBContainer className="text-center text-md-left">
@@ -63,16 +62,16 @@ const FooterPagePro = () => {
             </h5>
             <div className="mt-2 ">
               <a type="button" className="btn-floating btn-small btn-fb">
-                <i className="fab fa-facebook-f" />
+                <i className="fa fa-facebook" />
               </a>
               <a type="button" className="btn-floating btn-small btn-tw">
-                <i className="fab fa-twitter" />
+                <i className="fa fa-twitter" />
               </a>
               <a type="button" className="btn-floating btn-small btn-gplus">
-                <i className="fab fa-google-plus" />
+                <i className="fa fa-google-plus" />
               </a>
               <a type="button" className="btn-floating btn-small btn-dribbble">
-                <i className="fab fa-dribbble" />
+                <i className="fa fa-dribbble" />
               </a>
             </div>
           </MDBCol>
@@ -89,4 +88,4 @@ const FooterPagePro = () => {
   );
 }
 
-export default FooterPagePro;
+export default Footer;
