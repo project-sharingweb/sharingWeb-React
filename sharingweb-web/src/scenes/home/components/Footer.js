@@ -1,4 +1,3 @@
-
 import React from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import  "../css/Footer.css"
@@ -57,7 +56,7 @@ const Footer = () => {
             </h5>
             <div className="mt-2 ">
               <a type="button" className="btn-floating btn-small btn-fb">
-                <i className="fa fa-facebook-f" />
+                <i className="fa fa-facebook" />
               </a>
               <a type="button" className="btn-floating btn-small btn-tw">
                 <i className="fa fa-twitter" />
