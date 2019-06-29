@@ -24,11 +24,15 @@ class ShopLanding extends React.Component {
     const {data} = this.props 
     const {products} = this.state
     console.log(products)
+
+
     const navbarColor = {"backgroundColor": data.navbarColor}
+  
+
     return (
       <div className="">
         <div style={navbarColor}><LandingHeader data={data}></LandingHeader></div>
-        <div>fghfdhfidsjgolis</div>
+        <div className="" >nhnghnghngh</div>
       </div>
     )
   }

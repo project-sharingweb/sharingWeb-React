@@ -11,8 +11,7 @@ import AboutUs from '../scenes/shoplanding/components/AboutUs'
 
 class App extends React.Component {
   state = {
-    shops: false,
-    products: false
+    shops: false
   }
   
   componentDidMount() {

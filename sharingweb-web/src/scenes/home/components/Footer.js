@@ -4,7 +4,7 @@ import  "../css/Footer.css"
 
 const Footer = () => {
   return (
-    <MDBFooter color="cyan" className="font-small lighten-3 pt-4 mt-4 bgmarta">
+    <MDBFooter color="cyan" className="font-small pt-4 mt-4 bgmarta">
       <MDBContainer className="text-center text-md-left">
         <MDBRow className="my-4">
           <MDBCol md="4" lg="4">
