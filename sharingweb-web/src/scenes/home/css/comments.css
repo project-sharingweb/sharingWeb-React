@@ -1,6 +1,8 @@
 .comments-section{
     background-color:white;
-    height: 600px
+    height: 600px;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
 .comments-content{
@@ -9,7 +11,8 @@
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    flex-wrap: wrap;
+    
+    
 }
 
 .comments-section h2 {

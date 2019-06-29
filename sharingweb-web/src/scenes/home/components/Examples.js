@@ -2,7 +2,8 @@ import React from 'react'
 import "../css/example.css"
 import BoxExample from './BoxExample';
 import ExampleLogo from '../../../images/example.png'
-
+import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
+"mdbreact";
 
 
 const Example = () => {
