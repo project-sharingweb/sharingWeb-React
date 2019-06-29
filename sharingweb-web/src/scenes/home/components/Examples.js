@@ -8,7 +8,7 @@ import ExampleLogo from '../../../images/example.png'
 const Example = () => {
 
   return(
-    <div className="example-section">
+    <div id="examples" className="example-section">
       <div className="container">
         <h2>This is a example de landing page create to SharingWeb</h2>
         <p></p>

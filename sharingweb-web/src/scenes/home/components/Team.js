@@ -10,11 +10,11 @@ import Marta from '../../../images/Marta.png';
 const Team = () => {
 
   return (
-    <div className="team-section">
+    <div id="team" className="team-section">
         <div className="container">
           <h2>Our team</h2>
           <div className="team-content">
-            <BoxTeam image={Marta} title="Full stack developer" text="Passionate about nature and social relationships."></BoxTeam>
+            <BoxTeam image={Marta} title="Full stack developer" text="Passionate about nature, diversity and social relationships."></BoxTeam>
             <BoxTeam image={Guille} title="Full stack developer" text="Great professional with web programming and basketball"></BoxTeam>
           </div>
         </div>
@@ -24,3 +24,5 @@ const Team = () => {
 }
 
 export default Team
+
+

@@ -4,7 +4,7 @@ import  "../css/Footer.css"
 
 const Footer = () => {
   return (
-    <MDBFooter color="cyan" className="footer-content font-small lighten-3 pt-4 mt-4 bgmarta">
+    <MDBFooter color="" className="footer-content font-small lighten-3 pt-4 bgmarta">
       <MDBContainer className="text-center text-md-left">
         <MDBRow className="my-4">
           <MDBCol md="4" lg="4">
@@ -23,16 +23,16 @@ const Footer = () => {
             <h5 className="text-uppercase mb-4 font-weight-bold">About</h5>
             <ul className="list-unstyled">
               <p>
-                <a href="#!">ABOUT US</a>
+                <a href="#about-us">ABOUT US</a>
               </p>
               <p>
-                <a href="#!">EXAMPLES</a>
+                <a href="#examples">EXAMPLES</a>
               </p>
               <p>
-                <a href="#!">COMMENTS</a>
+                <a href="#comments">COMMENTS</a>
               </p>
               <p>
-                <a href="#!">TEAM</a>
+                <a href="#team">TEAM</a>
               </p>
             </ul>
           </MDBCol>
@@ -54,19 +54,17 @@ const Footer = () => {
             <h5 className="text-uppercase mb-4 font-weight-bold">
               Follow us
             </h5>
+            <p>
+              <i className="fa fa-facebook" /> facebook
+            </p>
+            <p>
+              <i className="fa fa-twitter" /> Twiter
+            </p>
+            <p>
+              <i className="fa fa-google-plus" /> Google
+            </p>
             <div className="mt-2 ">
-              <a type="button" className="btn-floating btn-small btn-fb">
-                <i className="fa fa-facebook" />
-              </a>
-              <a type="button" className="btn-floating btn-small btn-tw">
-                <i className="fa fa-twitter" />
-              </a>
-              <a type="button" className="btn-floating btn-small btn-gplus">
-                <i className="fa fa-google-plus" />
-              </a>
-              <a type="button" className="btn-floating btn-small btn-dribbble">
-                <i className="fa fa-dribbble" />
-              </a>
+              
             </div>
           </MDBCol>
           <hr className="clearfix w-100 d-md-none" />
@@ -75,7 +73,7 @@ const Footer = () => {
       <div className="footer-copyright text-center py-3">
         <MDBContainer fluid>
           &copy; {new Date().getFullYear()} Copyright:{" "}
-          <a href="https://www.MDBootstrap.com"> Sharingweb.com </a>
+          <a href="http://localhost:3000/"> Sharingweb.com </a>
         </MDBContainer>
       </div>
     </MDBFooter>

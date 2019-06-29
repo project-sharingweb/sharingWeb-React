@@ -1,18 +1,35 @@
+.image-total{
+  height: 600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  background-image: url("https://img.pixers.pics/pho_wat(s3:700/FO/10/35/82/51/3/700_FO103582513_b63e9ae6801484c2afbb3a97f23ca9e8.jpg,700,467,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,417,jpg)/vinilos-bokeh-ligero-abstracto-con-desenfoque-de-fondo-de-color-efecto-del-filtro-de-tono-de-epoca.jpg.jpg");
+  background-size: cover;
+}
+
 .main-image{
   height: 600px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .main-image-text{
   height: 200px;
-  width: 60%;
+  width: 1000%;
+  flex-wrap: wrap;
 }
 
 .main-text{
   font-weight: bold;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .main-text-p{
@@ -24,6 +41,11 @@
 
 .main-image-image{
   width: 50%;
-  object-fit: cover
+  object-fit: cover;
+}
+
+.main-button{
+  width: 100%;
+  flex-wrap: wrap;
 
 }

@@ -14,7 +14,7 @@ import Footer from './components/Footer';
 const Home = () => {
 
   return (
-    <div>
+    <div data-aos="fade-up">
       <div className="first-section">
         <HomeSharingHeader></HomeSharingHeader>
         <HomeImage></HomeImage>
