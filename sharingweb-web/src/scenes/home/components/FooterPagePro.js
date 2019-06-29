@@ -3,23 +3,20 @@ import React from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import  "../css/Footer.css"
 
-const FooterPagePro = () => {
+const Footer = () => {
   return (
-    <MDBFooter color="cyan" className="font-small lighten-3 pt-4 mt-4 bgmarta">
+    <MDBFooter color="cyan" className="footer-content font-small lighten-3 pt-4 mt-4 bgmarta">
       <MDBContainer className="text-center text-md-left">
         <MDBRow className="my-4">
           <MDBCol md="4" lg="4">
             <h5 className="text-uppercase mb-4 font-weight-bold">
-              MDBFooter Content
+              Sharing Web
             </h5>
             <p>
-              Here you can use rows and columns here to organize your footer
-              content.
+              
             </p>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit,
-              error amet numquam iure provident voluptate esse quasi,
-              veritatis totam voluptas nostrum.{" "}
+            In SharingWeb it doesn't matter if you need a professional website for your business, a nice portfolio or an intuitive online store for visitors, you will have the right tool to create a website as you want.{" "}
             </p>
           </MDBCol>
           <hr className="clearfix w-100 d-md-none" />
@@ -27,16 +24,16 @@ const FooterPagePro = () => {
             <h5 className="text-uppercase mb-4 font-weight-bold">About</h5>
             <ul className="list-unstyled">
               <p>
-                <a href="#!">PROJECTS</a>
-              </p>
-              <p>
                 <a href="#!">ABOUT US</a>
               </p>
               <p>
-                <a href="#!">BLOG</a>
+                <a href="#!">EXAMPLES</a>
               </p>
               <p>
-                <a href="#!">AWARDS</a>
+                <a href="#!">COMMENTS</a>
+              </p>
+              <p>
+                <a href="#!">TEAM</a>
               </p>
             </ul>
           </MDBCol>
@@ -44,16 +41,13 @@ const FooterPagePro = () => {
           <MDBCol md="5" lg="3">
             <h5 className="text-uppercase mb-4 font-weight-bold">Address</h5>
             <p>
-              <i className="fa fa-home mr-3" /> New York, NY 10012, US
+              <i className="fa fa-home mr-3" /> Madrid
             </p>
             <p>
-              <i className="fa fa-envelope mr-3" /> info@example.com
+              <i className="fa fa-envelope mr-3" /> info@sharingweb.com
             </p>
             <p>
-              <i className="fa fa-phone mr-3" /> + 01 234 567 88
-            </p>
-            <p>
-              <i className="fa fa-print mr-3" /> + 01 234 567 89
+              <i className="fa fa-print mr-3" /> + 34 611 111 11
             </p>
           </MDBCol>
           <hr className="clearfix w-100 d-md-none" />
@@ -63,16 +57,16 @@ const FooterPagePro = () => {
             </h5>
             <div className="mt-2 ">
               <a type="button" className="btn-floating btn-small btn-fb">
-                <i className="fab fa-facebook-f" />
+                <i className="fa fa-facebook-f" />
               </a>
               <a type="button" className="btn-floating btn-small btn-tw">
-                <i className="fab fa-twitter" />
+                <i className="fa fa-twitter" />
               </a>
               <a type="button" className="btn-floating btn-small btn-gplus">
-                <i className="fab fa-google-plus" />
+                <i className="fa fa-google-plus" />
               </a>
               <a type="button" className="btn-floating btn-small btn-dribbble">
-                <i className="fab fa-dribbble" />
+                <i className="fa fa-dribbble" />
               </a>
             </div>
           </MDBCol>
@@ -82,11 +76,11 @@ const FooterPagePro = () => {
       <div className="footer-copyright text-center py-3">
         <MDBContainer fluid>
           &copy; {new Date().getFullYear()} Copyright:{" "}
-          <a href="https://www.MDBootstrap.com"> MDBootstrap.com </a>
+          <a href="https://www.MDBootstrap.com"> Sharingweb.com </a>
         </MDBContainer>
       </div>
     </MDBFooter>
   );
 }
 
-export default FooterPagePro;
+export default Footer;

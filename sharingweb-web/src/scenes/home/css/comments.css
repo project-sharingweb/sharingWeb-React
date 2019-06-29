@@ -20,6 +20,8 @@
   
 .comments-section p {
     font-size: 1.4rem;
-    text-align: center
+    text-align: center;
+    width: 100%;
+    flex-wrap: wrap;
 }
   
