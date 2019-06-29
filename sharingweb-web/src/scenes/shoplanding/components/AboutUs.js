@@ -1,16 +1,18 @@
 import React from 'react'
 import LandingHeader from './LandingHeader'
+import { withShopContext } from '../../../contexts/ShopStore'
 
 
 
 const AboutUs = props => {
-  const {data } = props
+
+
   return (
     <div>
-      <LandingHeader data={data}></LandingHeader>
-      <div className="container">{data.aboutUs}</div>
+      <LandingHeader></LandingHeader>
+      <div className="container">{props.aboutUs}</div>
     </div>
   )
 }
 
-export default AboutUs
+export default withShopContext(AboutUs)

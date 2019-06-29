@@ -1,0 +1,16 @@
+.shop-main-image {
+  background-image: url(https://outven.net/wp-content/uploads/2018/09/outven-background-landing-usa.jpg);
+  background-size: cover;
+  text-align: center;
+}
+
+.shop-main-image h1 {
+  font-weight: 700;
+  font-size: 100px;
+  padding: 50px 0;
+}
+
+.shop-main-image p {
+  font-size: 30px;
+  padding: 50px 0;
+}

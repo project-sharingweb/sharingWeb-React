@@ -15,7 +15,7 @@ const Home = () => {
 
   return (
     <div>
-      <div className="first-section">
+      <div id="home" className="first-section">
         <HomeSharingHeader></HomeSharingHeader>
         <HomeImage></HomeImage>
       </div>

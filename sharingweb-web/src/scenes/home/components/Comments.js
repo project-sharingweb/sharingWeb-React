@@ -7,7 +7,7 @@ import commentsLogo from '../../../images/Comments.png'
 const Comments = () => {
 
   return (
-    <div className="comments-section">
+    <div id="comments" className="comments-section">
         <div className="container">
           <h2>Here you can find the comments of our users</h2>
           <p>This is a comment</p>

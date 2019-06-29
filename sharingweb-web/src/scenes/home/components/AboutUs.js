@@ -10,7 +10,7 @@ import responsiveLogo from '../../../images/disponible moviles.png'
 const AboutUs = () => {
 
   return(
-    <div className="aboutUs-section">
+    <div id="about-us" className="aboutUs-section">
       <div className="container">
         <h2>The easiest way to create your website</h2>
         <p>You wont need more than 10 minutes to have a beautiful site</p>

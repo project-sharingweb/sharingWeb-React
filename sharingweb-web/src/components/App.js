@@ -1,50 +1,27 @@
 import React from 'react';
 import '../css/App.css';
-import {Route} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import Home from '../scenes/home/Home'
-import ShopService from './services/ShopService'
 import ShopLanding from '../scenes/shoplanding/ShopLanding';
-import AboutUs from '../scenes/shoplanding/components/AboutUs'
-
-
+import AboutUs from '../scenes/shoplanding/components/AboutUs';
+import { withShopContext } from '../contexts/ShopStore'
+import Register from './Register'
+import Login from './Login'
 
 
 class App extends React.Component {
-  state = {
-    shops: false
-  }
-  
-  componentDidMount() {
-    ShopService.listShops()
-      .then(shops => {this.setState({
-        shops: shops.data
-      })},
-      error => console.error(error))
-  }
-
 
   render() {
-    const {shops} = this.state
-    console.log(shops)
-    let list;
-    if (shops){
-    list = shops.map( (item, i) => {
-      return (
-        <div key={i}>
-          <Route exact path={`/shops/${item.name}`} render={() => <ShopLanding data={item}></ShopLanding>}></Route>
-          <Route exact path={`/shops/${item.name}/about-us`} render={() => <AboutUs data={item}></AboutUs>}></Route>
-        </div>
-      )})
-    }
-    
-
     return (
-      <div>
-        <Route exact path="/" component={Home}></Route>
-        { shops && list}
-      </div>
+      <Switch>
+          <Route exact path="/" component={Home}></Route>
+          <Route exact path="/register" component={Register}></Route>
+          <Route exact path="/login" component={Login}></Route>
+          <Route exact path="/shops/:name"component={ShopLanding}></Route>
+          <Route exact path="/shops/:name/about-us"component={AboutUs}></Route>
+      </Switch>
     );
   }
 }
 
-export default App;
+export default withShopContext(App);
