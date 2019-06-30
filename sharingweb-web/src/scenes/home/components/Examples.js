@@ -26,7 +26,7 @@ const Example = () => {
           <MDBMask overlay="black-light" />
           </MDBView>
           <MDBCarouselCaption>
-            <h3 className="h3-responsive">Landing Page</h3>
+            <h3 className="h3-responsive"></h3>
             <p></p>
           </MDBCarouselCaption>
         </MDBCarouselItem>
