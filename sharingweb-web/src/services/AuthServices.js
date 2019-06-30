@@ -4,9 +4,9 @@ const register = shop => http.post('/auth/register', shop)
 
 const editShop = shop => http.post('/auth/editshop')
 
-const authenticate = credentials => http.post('/authenticate', credentials)
+const authenticate = credentials => http.post('/auth/login', credentials)
 
-const logout = () => http.get('/logout')
+const logout = () => http.get('/auth/logout')
 
 
 export default {register,
