@@ -111,6 +111,9 @@ class Login extends React.Component {
       (
         <div className="register-background">
           <div className="register-component">
+            <button className="btn btn-danger close-button" onClick={() => 
+              this.props.login()}
+              ><i className="fa fa-times-circle close-icon"></i></button>
             <h1>Log in</h1>
             <form onSubmit={this.handleSubmit} className="register-form">
             <div className="form-group">

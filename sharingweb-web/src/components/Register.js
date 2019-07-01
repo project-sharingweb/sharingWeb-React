@@ -2,7 +2,7 @@ import React from 'react'
 import '../css/Register.css'
 import AuthServices from '../services/AuthServices'
 import { Redirect } from 'react-router-dom'
-import { MDBCloseIcon } from "mdbreact"
+
 
 const EMAIL_PATTERN = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 const PASS_PATTERN  = /^(((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])))/;
@@ -103,8 +103,10 @@ class Register extends React.Component {
       <Redirect to="/login"/>:
       (
         <div className="register-background">
-        
           <div className="register-component">
+            <button className="btn btn-danger close-button" onClick={() => 
+              this.props.register()}
+              ><i className="fa fa-times-circle close-icon"></i></button>
             <h1>Register</h1>
             <form onSubmit={this.handleSubmit} className="register-form">
               <div className="form-group">
@@ -206,4 +208,4 @@ class Register extends React.Component {
   }
 }
 
-export default Register
+export default Register 
