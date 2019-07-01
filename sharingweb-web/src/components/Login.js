@@ -107,7 +107,7 @@ class Login extends React.Component {
     return (
 
       (goShop === true) ?
-      <Redirect to={`/shops/${this.state.name}`}/>:
+      <Redirect to={`/shops/${modifyName(this.state.name)}`}/>:
       (
         <div className="register-background">
           <div className="register-component">

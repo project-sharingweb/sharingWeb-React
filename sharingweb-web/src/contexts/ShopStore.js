@@ -12,7 +12,7 @@ function getShopName(str) {
 
 class ShopStoreImpl extends Component {
   state = {
-    shop: {name: "h"}
+    shop: null
   }
 
   componentDidMount() {
@@ -34,7 +34,7 @@ class ShopStoreImpl extends Component {
   render() {
     return (
       <ShopContext.Provider value={{
-        shop: this.state.shop
+        shop: this.state.shop,
       }}>
         {this.props.children}
       </ShopContext.Provider>
