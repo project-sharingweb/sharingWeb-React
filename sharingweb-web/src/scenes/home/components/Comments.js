@@ -10,8 +10,6 @@ const Comments = () => {
 
   return (
     <div id="comments" className="comments-section">
-        
-        
         <div className="container">
           <h2>Here you can find the comments of our users</h2>
           <div className="comments-content">

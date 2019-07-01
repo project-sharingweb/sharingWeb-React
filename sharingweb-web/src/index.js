@@ -7,12 +7,15 @@ import 'font-awesome/css/font-awesome.min.css';
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import { BrowserRouter } from 'react-router-dom'
+import { ShopStore } from './contexts/ShopStore';
 
 
 
 ReactDOM.render(
 <BrowserRouter>
-  <App />
+  <ShopStore>
+    <App />
+  </ShopStore>
 </BrowserRouter>,
 document.getElementById('root'));
 

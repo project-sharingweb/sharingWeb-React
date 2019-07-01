@@ -18,7 +18,7 @@ const Example = () => {
     //     </div>
     //   </div>
     // </div>
-    <MDBContainer>
+    <MDBContainer id="examples">
       <MDBCarousel activeItem={1} length={3} showControls={true} showIndicators={true} className="z-depth-1">
       <MDBCarouselInner>
         <MDBCarouselItem itemId="1">

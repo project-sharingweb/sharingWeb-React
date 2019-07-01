@@ -2,36 +2,79 @@ import React from 'react'
 import './css/ShopLanding.css'
 import ShopService from '../../components/services/ShopService'
 import LandingHeader from './components/LandingHeader';
+import ProductCard from './components/ProductSection';
+import { withShopContext } from '../../contexts/ShopStore'
+
+const modifyName = (name) => {
+  name = name.split("")
+  name = name.map(item => {
+      if(item === "-") return " "
+      else return item
+  })
+  name[0] = name[0].toUpperCase()
+  name = name.join("")
+  return name;
+}
+
 
 class ShopLanding extends React.Component {
   state = {
-    products: false
+    products: []
   }
 
-  componentDidMount(){
-    const {data} = this.props
-    ShopService.listProducts(data.name)
+  componentDidMount() {
+    const { shop } = this.props
+    ShopService.listProducts(shop.name)
+      .then(products =>this.setState({products: products}),
+      error => console.error(error))
+  }
+
+  componentDidUpdate() {
+    const { shop } = this.props
+    ShopService.listProducts(shop.name)
       .then(products => {
-        const productlist = products.data.filter(item => item.shopName === data.name)
-        this.setState({
-        products: productlist
-      })},
+        if (products.length !== this.state.products.length){
+        this.setState({products: products})}
+      },
       error => console.error(error))
   }
 
 
   render() {
-    const {data} = this.props 
+    const { shop } = this.props 
     const {products} = this.state
     console.log(products)
-    const navbarColor = {"backgroundColor": data.navbarColor}
+    let list; 
+    if(products){
+      list = products.map((item, i) => {
+        return <ProductCard key={i} data={item}></ProductCard>
+      })
+    }
+
+    ///Personalized properties
+    let shopName;
+    let navbarColor
+    if(shop){
+      shopName = modifyName(shop.name)
+      navbarColor = {"backgroundColor": "white"}
+    }
+    /////
+
     return (
       <div className="">
-        <div style={navbarColor}><LandingHeader data={data}></LandingHeader></div>
-        <div>fghfdhfidsjgolis</div>
+        <div style={navbarColor}><LandingHeader></LandingHeader></div>
+        <div className="container shop-main-image">
+          <h1>{shopName}</h1>
+          <p>{shop.moto}</p>
+        </div>
+        <div className="container shop-product-section">
+          <h2>Products</h2>
+          {products && list}
+        </div>
       </div>
     )
   }
 }
 
-export default ShopLanding
+
+export default withShopContext(ShopLanding)

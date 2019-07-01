@@ -1,10 +1,11 @@
 import React from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import  "../css/Footer.css"
+import {Link} from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <MDBFooter color="" className="footer-content font-small lighten-3 pt-4 bgmarta">
+    <MDBFooter color="cyan" className="font-small pt-4 bgmarta">
       <MDBContainer className="text-center text-md-left">
         <MDBRow className="my-4">
           <MDBCol md="4" lg="4">
@@ -73,7 +74,7 @@ const Footer = () => {
       <div className="footer-copyright text-center py-3">
         <MDBContainer fluid>
           &copy; {new Date().getFullYear()} Copyright:{" "}
-          <a href="http://localhost:3000/"> Sharingweb.com </a>
+          <a href="#home"> Sharingweb.com </a>
         </MDBContainer>
       </div>
     </MDBFooter>

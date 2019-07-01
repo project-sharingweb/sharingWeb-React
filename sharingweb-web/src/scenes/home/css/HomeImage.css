@@ -22,14 +22,14 @@
 
 .main-image-text{
   height: 200px;
-  width: 1000%;
-  flex-wrap: wrap;
+  width: 100%;
+  
 }
 
 .main-text{
   font-weight: bold;
   width: 100%;
-  flex-wrap: wrap;
+  
 }
 
 .main-text-p{
@@ -45,7 +45,8 @@
 }
 
 .main-button{
-  width: 100%;
-  flex-wrap: wrap;
-
+  width: 50%;
+  align-self: flex-end;
+  position: relative;
+  right: 0%;
 }
