@@ -26,24 +26,29 @@ class ShopLanding extends React.Component {
 
   componentDidMount() {
     const { shop } = this.props
-    ShopService.listProducts(shop.name)
-      .then(products =>this.setState({products: products}),
-      error => console.error(error))
+    if (shop) {
+      ShopService.listProducts(shop.name)
+        .then(products =>this.setState({products: products}),
+        error => console.error(error))
+    }
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     const { shop } = this.props
-    ShopService.listProducts(shop.name)
+    if (shop !== prevProps.shop) {
+      ShopService.listProducts(shop.name)
       .then(products => {
         if (products.length !== this.state.products.length){
         this.setState({products: products})}
       },
       error => console.error(error))
+    }
   }
 
 
   render() {
-    const { shop } = this.props 
+    const { shop} = this.props 
+    console.log(shop)
     const {products} = this.state
     console.log(products)
     let list; 
@@ -63,17 +68,19 @@ class ShopLanding extends React.Component {
     /////
 
     return (
-      <div className="">
-        <div style={navbarColor}><LandingHeader></LandingHeader></div>
-        <div className="container shop-main-image">
-          <h1>{shopName}</h1>
-          <p>{shop.moto}</p>
-        </div>
-        <div className="container shop-product-section">
-          <h2>Products</h2>
-          <ProductMd />
-          {products && list}
-        </div>
+      <div>
+        {shop && <div className=""> 
+            <div style={navbarColor}><LandingHeader></LandingHeader></div>
+            <div className="container shop-main-image">
+              <h1>{shopName}</h1>
+              <p>{shop && shop.moto}</p>
+            </div>
+            <div className="container shop-product-section">
+              <h2>Products</h2>
+              <ProductMd />
+              {products && list}
+            </div>
+        </div>}
       </div>
     )
   }

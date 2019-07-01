@@ -11,14 +11,17 @@ import "popper.js/dist/esm/popper.min.js"
 import "mdbreact/dist/mdbreact.esm.js"
 import { BrowserRouter } from 'react-router-dom'
 import { ShopStore } from './contexts/ShopStore';
+import { AuthStore } from './contexts/AuthStore'
 
 
 
 ReactDOM.render(
 <BrowserRouter>
-  <ShopStore>
-    <App />
-  </ShopStore>
+  <AuthStore>
+    <ShopStore>
+      <App />
+    </ShopStore>
+  </AuthStore>
 </BrowserRouter>,
 document.getElementById('root'));
 
