@@ -1,6 +1,6 @@
 import React from 'react'
 import './css/ShopLanding.css'
-import ShopService from '../../components/services/ShopService'
+import ShopService from '../../services/ShopService'
 import LandingHeader from './components/LandingHeader';
 import ProductCard from './components/ProductSection';
 import { withShopContext } from '../../contexts/ShopStore'
