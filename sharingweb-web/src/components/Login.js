@@ -37,7 +37,8 @@ class Login extends React.Component {
       name: false,
       password: false
     },
-    goShop: false
+    goShop: false,
+    wrongCredentials: false
   }
 
   handleChange = e => {
@@ -80,7 +81,15 @@ class Login extends React.Component {
             name: shop.name
           })
         },
-        error => console.error(error)
+        error => {
+          this.setState({ 
+            wrongCredentials: true,
+            errors: {
+              name: true,
+              password: true
+            }
+          })
+        }
       )
   }
 
@@ -98,7 +107,7 @@ class Login extends React.Component {
     return (
 
       (goShop === true) ?
-      <Redirect to={`/shops/${shop.name}`}/>:
+      <Redirect to={`/shops/${this.state.name}`}/>:
       (
         <div className="register-background">
           <div className="register-component">

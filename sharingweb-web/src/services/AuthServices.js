@@ -2,7 +2,7 @@ import http from './BaseService';
 
 const register = shop => http.post('/auth/register', shop)
 
-const editShop = shop => http.post('/auth/editshop')
+const editShop = shop => http.post('/auth/editshop', shop)
 
 const authenticate = credentials => http.post('/auth/login', credentials)
 
