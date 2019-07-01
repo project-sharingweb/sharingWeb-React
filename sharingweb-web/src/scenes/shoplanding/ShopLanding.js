@@ -4,6 +4,8 @@ import ShopService from '../../services/ShopService'
 import LandingHeader from './components/LandingHeader';
 import ProductCard from './components/ProductSection';
 import { withShopContext } from '../../contexts/ShopStore'
+import ProductMd from'./components/ProductMd'
+
 
 const modifyName = (name) => {
   name = name.split("")
@@ -69,6 +71,7 @@ class ShopLanding extends React.Component {
         </div>
         <div className="container shop-product-section">
           <h2>Products</h2>
+          <ProductMd />
           {products && list}
         </div>
       </div>

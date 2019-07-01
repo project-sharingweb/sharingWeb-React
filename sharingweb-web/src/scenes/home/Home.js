@@ -19,15 +19,45 @@ class Home extends React.Component {
     register: false
   }
 
+  modifyLogin = () => {
+    const {login} = this.state
+
+    login ?
+    this.setState({
+      ...this.state,
+      login: false
+    }):
+    this.setState({
+      ...this.state,
+      login: true
+    })
+
+  } 
+
+  modifyRegister = () => {
+    const {register} = this.state
+
+    register ?
+    this.setState({
+      ...this.state,
+      register: false
+    }):
+    this.setState({
+      ...this.state,
+      register: true
+    })
+
+  } 
+
   render() {
     const {register, login } = this.state
     return (
       <div data-aos="fade-up">
-        {register && <Register></Register>}
-        {login && <Login></Login>}
+        {register && <Register register={this.modifyRegister}></Register>}
+        {login && <Login login={this.modifyLogin}></Login>}
         <div className="first-section">
           <HomeSharingHeader></HomeSharingHeader>
-          <HomeImage></HomeImage>
+          <HomeImage login={this.modifyLogin} register={this.modifyRegister}></HomeImage>
         </div>
         <AboutUs></AboutUs>
         <Examples></Examples>

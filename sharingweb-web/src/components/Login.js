@@ -48,7 +48,7 @@ class Login extends React.Component {
     this.setState({
       shop: {
         ...this.state.shop,
-        [name]: modifyName(value)
+        [name]: value
       },
       errors: {
         ...this.state.errors,
