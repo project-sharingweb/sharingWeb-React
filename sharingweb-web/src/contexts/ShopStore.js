@@ -21,7 +21,7 @@ class ShopStoreImpl extends Component {
       .then(
         shops => {
           if (shops) {
-            shops = shops.filter(item => item.name === getShopName(history.location.pathname))
+            shops = shops.filter(item => item.urlName === getShopName(history.location.pathname))
             this.setState({ shop: shops[0] })
           } else {
             history.navigate('/error/404')
@@ -31,10 +31,20 @@ class ShopStoreImpl extends Component {
       )
   }
 
+  updateShop = name => {
+    ShopService.shopDetail(name)
+    .then( response => {
+      console.log(response)
+    this.setState({
+      shop: response
+    })})
+  }
+
   render() {
     return (
       <ShopContext.Provider value={{
         shop: this.state.shop,
+        updateShop: this.updateShop
       }}>
         {this.props.children}
       </ShopContext.Provider>

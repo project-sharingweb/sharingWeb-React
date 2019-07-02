@@ -24,33 +24,22 @@ class ShopLanding extends React.Component {
     products: []
   }
 
-  componentDidMount() {
-    const { shop } = this.props
-    if (shop) {
-      ShopService.listProducts(shop.name)
-        .then(products =>this.setState({products: products}),
-        error => console.error(error))
-    }
-  }
-
   componentDidUpdate(prevProps) {
     const { shop } = this.props
-    if (shop !== prevProps.shop) {
-      ShopService.listProducts(shop.name)
-      .then(products => {
-        if (products.length !== this.state.products.length){
-        this.setState({products: products})}
-      },
-      error => console.error(error))
-    }
+      if (shop !== prevProps.shop) {
+        ShopService.listProducts(shop.name)
+        .then(products => {
+          if (products.length !== this.state.products.length){
+          this.setState({products: products})}
+        },
+        error => console.error(error))
+      }
   }
 
 
   render() {
     const { shop} = this.props 
-    console.log(shop)
     const {products} = this.state
-    console.log(products)
     let list; 
     if(products){
       list = products.map((item, i) => {

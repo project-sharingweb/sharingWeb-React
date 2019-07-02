@@ -3,6 +3,7 @@ import '../css/Register.css'
 import AuthServices from '../services/AuthServices'
 import { Redirect } from 'react-router-dom'
 import { WithAuthContext } from '../contexts/AuthStore'
+import { withShopContext } from '../contexts/ShopStore'
 
 const PASS_PATTERN  = /^(((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])))/;
 
@@ -71,6 +72,8 @@ class Login extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
     const { shop } = this.state
+
+    this.props.updateShop(modifyName(shop.name))
 
     AuthServices.authenticate(shop)
       .then(
@@ -164,4 +167,4 @@ class Login extends React.Component {
   }
 }
 
-export default WithAuthContext(Login)
+export default withShopContext(WithAuthContext(Login))
