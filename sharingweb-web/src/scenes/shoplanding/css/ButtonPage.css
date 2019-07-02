@@ -1,0 +1,18 @@
+.instructions-footer{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.623);
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    z-index: 1000;
+    height: 80px;
+    justify-content: flex-end;
+    align-items: center
+}
+.more{
+    
+}
+
+.button-shop {
+    height: 50px;
+}

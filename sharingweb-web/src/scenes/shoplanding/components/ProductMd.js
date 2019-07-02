@@ -1,11 +1,15 @@
 import React from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter, MDBIcon, MDBTooltip,  MDBBadge, MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBBtn } from "mdbreact";
+import { withShopContext} from "../../../contexts/ShopStore"
 
-const ProductMd = () => {
+
+const ProductMd = (props) => {
+  const {shop, products} = props
+  console.log(products)
   return (
     <section className="text-center my-5">
       <h2 className="h1-responsive font-weight-bold text-center my-5">
-      Zapatos LOLI
+      {shop.name}
       </h2>
       <p className="grey-text text-center w-responsive mx-auto mb-5">
         your preferd shop in Chamberi.
@@ -21,11 +25,11 @@ const ProductMd = () => {
                   />
                   <MDBCardBody cascade>
                     <a href="#!" className="text-muted">
-                      <h5>Shoes</h5>
+                      {/* <h5>{products[0].category}</h5> */}
                     </a>
                     <MDBCardTitle>
                       <strong>
-                        <a href="#!">Leather boots</a>
+                        <a href="#!"></a>
                       </strong>
                     </MDBCardTitle>
                     <MDBCardText>
@@ -45,4 +49,4 @@ const ProductMd = () => {
   );
 }
 
-export default ProductMd;
+export default withShopContext(ProductMd);

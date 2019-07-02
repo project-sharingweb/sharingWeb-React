@@ -5,6 +5,7 @@ import LandingHeader from './components/LandingHeader';
 import ProductCard from './components/ProductSection';
 import { withShopContext } from '../../contexts/ShopStore'
 import ProductMd from'./components/ProductMd'
+import ButtonPage from './components/ButtonPage';
 
 
 const modifyName = (name) => {
@@ -60,14 +61,16 @@ class ShopLanding extends React.Component {
       <div>
         {shop && <div className=""> 
             <div style={navbarColor}><LandingHeader></LandingHeader></div>
+            <ButtonPage />
             <div className="container shop-main-image">
               <h1>{shopName}</h1>
               <p>{shop && shop.moto}</p>
             </div>
             <div className="container shop-product-section">
               <h2>Products</h2>
-              <ProductMd />
+              <ProductMd products={products} />
               {products && list}
+              
             </div>
         </div>}
       </div>
