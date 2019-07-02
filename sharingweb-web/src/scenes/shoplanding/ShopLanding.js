@@ -15,7 +15,7 @@ class ShopLanding extends React.Component {
     if(products){
       list = products.map((item, i) => {
         return <ProductCard key={i} product={item}></ProductCard>
-      }).slice(0, 9)
+      }).slice(0, 11)
     }
 
     return (
