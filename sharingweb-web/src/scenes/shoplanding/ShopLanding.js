@@ -3,6 +3,8 @@ import './css/ShopLanding.css'
 import LandingHeader from './components/LandingHeader';
 import { withShopContext } from '../../contexts/ShopStore'
 import ProductCard from'./components/ProductCard'
+import ButtonPage from './components/ButtonPage';
+import LandingFooter from './components/LandingFooter';
 
 
 class ShopLanding extends React.Component {
@@ -22,9 +24,12 @@ class ShopLanding extends React.Component {
       <div>
         {shop && <div className=""> 
             <div style={shop.styles.nav}><LandingHeader></LandingHeader></div>
-            <div className="container shop-main-image">
-              <h1>{shop.name}</h1>
-              <p>{shop.moto}</p>
+            <ButtonPage />
+            <div className="shop-main-image">
+              <div className="container">
+                <h1>{shop.name}</h1>
+                <p>{shop.moto}</p>
+              </div>
             </div>
             <div className="container shop-product-section">
               <h2>Products</h2>
@@ -32,6 +37,7 @@ class ShopLanding extends React.Component {
                 {list}
               </div>
             </div>
+            <LandingFooter></LandingFooter>
         </div>}
       </div>
     )

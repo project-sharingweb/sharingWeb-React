@@ -112,7 +112,14 @@ class Login extends React.Component {
       (goShop === true) ?
       <Redirect to={`/shops/${modifyName(this.state.name)}`}/>:
       (
-        <div className="register-background">
+        <div className="register-background" data-aos="zoom-in"
+        data-aos-offset="200"
+        data-aos-delay="20"
+        data-aos-duration="500"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        data-aos-anchor-placement="top">
           <div className="register-component">
             <button className="btn btn-danger close-button" onClick={() => 
               this.props.login()}

@@ -24,7 +24,7 @@ class ShopStoreImpl extends Component {
           if (shops) {
             shops = shops.filter(item => item.urlName === getShopName(history.location.pathname))
             ShopService.listProducts(getShopName(history.location.pathname))
-            .then(res => this.setState({ shop: shops[0], products: res }), error => console.error(error))
+              .then(res => this.setState({ shop: shops[0], products: res }), error => console.error(error))
           } else {
             history.navigate('/error/404')
           }
@@ -35,10 +35,10 @@ class ShopStoreImpl extends Component {
 
   updateShop = name => {
     ShopService.shopDetail(name)
-    .then( response => {
-    this.setState({
-      shop: response
-    })})
+    .then( response => { 
+      ShopService.listProducts(response.urlName)
+      .then(res => this.setState({ shop: response, products: res }), error => console.error(error))
+    })
   }
 
   render() {

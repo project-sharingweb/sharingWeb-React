@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../../images/logosharing.png'
+import logo from '../../../images/logo-limpio.png'
 import '../css/HomeSharingHeader.css'
 
 

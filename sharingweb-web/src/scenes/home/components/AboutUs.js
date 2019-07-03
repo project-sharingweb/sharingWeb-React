@@ -10,8 +10,15 @@ import responsiveLogo from '../../../images/disponible moviles.png'
 const AboutUs = () => {
 
   return(
-    <div id="about-us" className="aboutUs-section">
-      <div className="container">
+    <div id="about-us"  data-aos="fade-left"
+      data-aos-offset="200"
+      data-aos-delay="20"
+      data-aos-duration="500"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+      data-aos-once="false"
+      data-aos-anchor-placement="top">
+      <div className="container aboutUs-section">
         <h2>The easiest way to create your website</h2>
         <p>You wont need more than 10 minutes to have a beautiful site</p>
         <div className="aboutus-content">

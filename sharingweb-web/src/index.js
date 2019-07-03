@@ -9,6 +9,8 @@ import "mdbreact/dist/css/mdb.css";
 import "jquery/dist/jquery.min.js"
 import "popper.js/dist/esm/popper.min.js"
 import "mdbreact/dist/mdbreact.esm.js"
+import 'aos/dist/aos.css'
+import 'aos/dist/aos'
 import { BrowserRouter } from 'react-router-dom'
 import { ShopStore } from './contexts/ShopStore';
 import { AuthStore } from './contexts/AuthStore'

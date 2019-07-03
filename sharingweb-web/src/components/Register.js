@@ -102,7 +102,14 @@ class Register extends React.Component {
       (goLogin === true) ?
       <Redirect to="/login"/>:
       (
-        <div className="register-background">
+        <div className="register-background" data-aos="zoom-in"
+        data-aos-offset="200"
+        data-aos-delay="20"
+        data-aos-duration="500"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        data-aos-anchor-placement="top">
           <div className="register-component">
             <button className="btn btn-danger close-button" onClick={() => 
               this.props.register()}

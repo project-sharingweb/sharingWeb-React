@@ -52,7 +52,7 @@ class Home extends React.Component {
   render() {
     const {register, login } = this.state
     return (
-      <div data-aos="fade-up">
+      <div>
         {register && <Register register={this.modifyRegister}></Register>}
         {login && <Login login={this.modifyLogin}></Login>}
         <div className="first-section">

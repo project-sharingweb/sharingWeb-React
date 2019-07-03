@@ -9,7 +9,14 @@ import commentsLogo3 from '../../../images/juan.png';
 const Comments = () => {
 
   return (
-    <div id="comments" className="comments-section">
+    <div id="comments" className="comments-section" data-aos="fade-right"
+      data-aos-offset="200"
+      data-aos-delay="20"
+      data-aos-duration="500"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+      data-aos-once="false"
+      data-aos-anchor-placement="top">
         <div className="container">
           <h2>Here you can find the comments of our users</h2>
           <div className="comments-content">

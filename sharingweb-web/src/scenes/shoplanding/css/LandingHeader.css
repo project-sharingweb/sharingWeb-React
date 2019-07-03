@@ -1,39 +1,38 @@
-.landing-navbar {
-  margin: 0;
+.landing-navbar2 {
+  margin-top: 0;
   width: 100%;
-  background-color: white;
-  border-bottom: rgba(26, 26, 26, 0.288) 2px solid;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap
 }
 
-.landing-navbar a {
+.landing-navbar2 .link {
   text-decoration: none;
-  color: #1A1A1A;
+  color: #1A1A1A; 
 }
 
-.navbar-items {
+.navbar-items2 {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap
+  flex-wrap: wrap;
+  margin-top: 16px
 }
 
-.logo-image {
-  margin: 10px 40px;
-  width: 250px;
-  height: auto;
+.logo-image2 {
+  margin: 18px 40px 20px 0;
+  width: 100px; 
+  height: 60%;
 }
 
-.nav-bar-li {
+.nav-bar-li2 {
   list-style: none;
   margin: 15px;
   font-size: 1px;
   color: #1A1A1A;
-  border: rgba(0, 177, 114, 0) solid 4px;
+  border: rgba(0, 177, 114, 0) solid 1px;
 }
 
-.logo-image:hover {
+.logo-image2:hover {
   transform: rotate(720deg);
   transition-duration: 2s;
   transition-timing-function: linear;
@@ -41,51 +40,51 @@
 
 }
 
-.nav-bar-li:hover {
-  border:  rgba(0, 177, 114, 1) solid 4px;
+.nav-bar-li2:hover {
+  border:  rgba(0, 177, 114, 1) solid 2px;
   transition: border;
   transition-duration: 1s;
   transition-timing-function: linear;
   transition-delay: 0s;
 }
 
-.li1 {
-  animation-name: appearance;
+.newli1 {
+  animation-name: newappearance;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); 
 }
 
-.li2 {
-  animation-name: appearance;
+.newli2 {
+  animation-name: newappearance;
   animation-duration: 1s; 
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.li3 {
-  animation-name: appearance;
+.newli3 {
+  animation-name: newappearance;
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); 
 }
 
 
-.li4 {
-  animation-name: appearance;
+.newli4 {
+  animation-name: newappearance;
   animation-duration: 2s; 
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 
-@keyframes appearance {
+@keyframes newappearance {
   0% {
     font-size: 1px;
   }
 
   100% {
-    font-size: 26px;
+    font-size: 20px;
   }
 }
 

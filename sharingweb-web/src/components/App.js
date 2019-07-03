@@ -7,12 +7,14 @@ import AboutUs from '../scenes/shoplanding/components/AboutUs';
 import { withShopContext } from '../contexts/ShopStore'
 import Register from './Register'
 import Login from './Login'
+import AOS from 'aos';
 
 
 
 class App extends React.Component {
 
   render() {
+    AOS.init();
     return (
       <Switch>
           <Route exact path="/" component={Home}></Route>
