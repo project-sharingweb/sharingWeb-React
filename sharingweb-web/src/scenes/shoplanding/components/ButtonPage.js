@@ -5,7 +5,8 @@ import "../css/ButtonPage.css"
 
 class ButtonPage extends React.Component {
   state={
-    seeMore: false
+    seeMore: false,
+    home: false
   }
   
   modifyseeMore = () => {
@@ -30,14 +31,15 @@ class ButtonPage extends React.Component {
 
 
   render() {
+    const { edit } = this.props
     console.log(this.state.seeMore)
     return (
-      <div className="instructions-footer">
-        <div className="more" onClick={()=> this.modifyseeMore()}> See more </div>
-        {this.state.seeMore && <p>asncljaehuvkbehjvbe</p>}
-        <button className="btn btn-default button-shop">Edit Page</button>
-        <button className="btn btn-default button-shop">Add Products</button>
-      </div>
+        <div className="instructions-footer">
+          <div className="more" onClick={()=> this.modifyseeMore()}> See more </div>
+          {this.state.seeMore && <p className="white">asncljaehuvkbehjvbe</p>}
+          <button className="btn btn-default button-shop" onClick={() => edit()}>Edit Page</button>
+          <button className="btn btn-default button-shop">Add Products</button>
+        </div>
     )
   }
 }

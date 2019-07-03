@@ -13,6 +13,7 @@ function getShopName(str) {
 class ShopStoreImpl extends Component {
   state = {
     shop: null,
+    shopBack: null,
     products: null
   }
 

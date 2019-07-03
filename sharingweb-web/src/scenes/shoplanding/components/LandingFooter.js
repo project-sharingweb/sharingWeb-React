@@ -6,9 +6,9 @@ import MapContainer from '../../../components/MapContainer';
 const LandingFooter = ({shop}) => {
   return (
     <div >
-      <MDBFooter color="blue" className="font-small pt-4 mt-4">
+      <MDBFooter color="blue" className="font-small">
         <MDBContainer fluid className="container text-center text-md-left">
-          <MDBRow>
+          <MDBRow className="pt-5 pb-5">
             <MDBCol md="4">
               <h5 className="title">{shop.name}</h5>
               <p>
@@ -16,10 +16,10 @@ const LandingFooter = ({shop}) => {
                 content.
               </p>
             </MDBCol>
-            <MDBCol md="6">
+            <MDBCol md="5" className="ml-3 mr-5 map-height">
               <MapContainer></MapContainer>
             </MDBCol>
-            <MDBCol md="2">
+            <MDBCol md="2" className="">
               <h5 className="title">Links</h5>
               <ul>
                 <li className="list-unstyled">
@@ -40,7 +40,7 @@ const LandingFooter = ({shop}) => {
         </MDBContainer>
         <div className="footer-copyright text-center py-3">
           <MDBContainer fluid className="pt-3 pb-3">
-            &copy; {new Date().getFullYear()} Copyright: <span> Powered by: SharingWeb</span>
+            &copy; {new Date().getFullYear()} Copyright: <span className="bold"> Powered by: SharingWeb</span>
           </MDBContainer>
         </div>
       </MDBFooter>
