@@ -5,7 +5,8 @@ import "../css/ButtonPage.css"
 
 class ButtonPage extends React.Component {
   state={
-    seeMore: false
+    seeMore: false,
+    home: false
   }
   
   modifySeeMore = () => {
@@ -30,6 +31,7 @@ class ButtonPage extends React.Component {
 
 
   render() {
+    const { edit } = this.props
     console.log(this.state.seeMore)
     return (
       <div className="container instructions-footer">

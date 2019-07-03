@@ -21,3 +21,16 @@
   justify-content: space-between;
   align-items: stretch;
 }
+
+.landing-main-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.editform-wrapper {
+  width: 40%;
+}
+
+.landing-wrapper{
+  width: 60%;
+}
