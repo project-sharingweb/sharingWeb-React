@@ -19,6 +19,7 @@ class ShopLanding extends React.Component {
   }
 
 
+
   render() {
     const { shop, products } = this.props
     const {edit} = this.state
@@ -36,7 +37,7 @@ class ShopLanding extends React.Component {
             {edit && <div className="editform-wrapper"><EditForm></EditForm></div>}
             <div className={edit && "landing-wrapper"}> 
               <div style={shop.styles.nav}><LandingHeader></LandingHeader></div>
-              <ButtonPage edit={this.modifyEdit}/>
+              {!edit && <ButtonPage edit={this.modifyEdit}/>}
               <div className="shop-main-image">
                 <div className="container">
                   <h1>{shop.name}</h1>

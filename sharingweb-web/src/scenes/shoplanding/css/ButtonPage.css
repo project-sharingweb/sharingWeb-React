@@ -1,25 +1,23 @@
-.instructions-footer{
-    display: flex;
+.instructions-footer-wrapper{
     background-color: rgba(0, 0, 0, 0.623);
     position: fixed;
     bottom: 0px;
     width: 100%;
-    z-index: 1000;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex-direction: column;
+    z-index: 1000; 
 }
 
-.button-rows{
-    width: 100%;
+.instructions-footer{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
 }
 
 
 .more {
     color: white;
+    font-weight: 700;
+
 }
 
 .more-info{
