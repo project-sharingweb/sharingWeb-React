@@ -41,7 +41,7 @@ class ButtonPage extends React.Component {
         <div className="button-rows">
           <div className="more" onClick={()=> this.modifySeeMore()}> See more </div>
           <div className="button-shop">
-            <button className="btn btn-default button-shop">Edit Page</button>
+            <button className="btn btn-default button-shop" onClick={()=> edit()}>Edit Page</button>
             <button className="btn btn-default button-shop">Add Products</button>
           </div>
         </div>

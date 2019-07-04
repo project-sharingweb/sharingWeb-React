@@ -32,10 +32,8 @@
 }
 
 .close-button {
+  color: red;
   float: right;
-}
-
-.close-icon{
-  font-size: 20px
+  padding: 10px;
 }
 

@@ -10,7 +10,7 @@ import EditForm from './components/EditForm';
 
 class ShopLanding extends React.Component {
   state = {
-    edit: false
+    edit: true
   }
 
   modifyEdit = () => {
@@ -33,10 +33,10 @@ class ShopLanding extends React.Component {
       <div>
         {shop &&
           <div className={edit && "landing-main-wrapper"}>
-            {edit && <div className="editform-wrapper"><EditForm></EditForm></div>}
+            {edit && <div className="editform-wrapper"><EditForm edit={this.modifyEdit}></EditForm></div>}
             <div className={edit && "landing-wrapper"}> 
               <div style={shop.styles.nav}><LandingHeader></LandingHeader></div>
-              <ButtonPage edit={this.modifyEdit}/>
+              {!edit &&<ButtonPage edit={this.modifyEdit}/>}
               <div className="shop-main-image">
                 <div className="container">
                   <h1>{shop.name}</h1>
