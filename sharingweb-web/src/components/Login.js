@@ -121,9 +121,7 @@ class Login extends React.Component {
         data-aos-once="false"
         data-aos-anchor-placement="top">
           <div className="register-component">
-            <button className="btn btn-danger close-button" onClick={() => 
-              this.props.login()}
-              ><i className="fa fa-times-circle close-icon"></i></button>
+            <i onClick={() => this.props.login()} className="fa fa-times-circle close-button"></i>
             <h1>Log in</h1>
             <form onSubmit={this.handleSubmit} className="register-form">
             <div className="form-group">

@@ -15,7 +15,7 @@
 }
 
 .aboutus-content {
-  margin-top: 50px;
+  margin: 50px 0 40px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

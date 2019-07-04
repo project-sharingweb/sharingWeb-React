@@ -14,18 +14,19 @@ class ShopStoreImpl extends Component {
   state = {
     shop: null,
     shopBack: null,
-    products: null
+    products: null,
+    cart: []
   }
 
   componentDidMount() {
     const { history } = this.props;
-    ShopService.listShops()
+    const shopName = getShopName(history.location.pathname)
+    ShopService.shopDetail(shopName)
       .then(
-        shops => {
-          if (shops) {
-            shops = shops.filter(item => item.urlName === getShopName(history.location.pathname))
-            ShopService.listProducts(getShopName(history.location.pathname))
-              .then(res => this.setState({ shop: shops[0], products: res }), error => console.error(error))
+        shop => {
+          if (shop) {
+            ShopService.listProducts(shopName)
+              .then(res => this.setState({ shop: shop, products: res, shopBack:shop }), error => console.error(error))
           } else {
             history.navigate('/error/404')
           }
@@ -47,6 +48,7 @@ class ShopStoreImpl extends Component {
       <ShopContext.Provider value={{
         shop: this.state.shop,
         products: this.state.products,
+        shopBack: this.state.shopBack,
         updateShop: this.updateShop
       }}>
         {this.props.children}
