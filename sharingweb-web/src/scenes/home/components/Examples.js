@@ -1,7 +1,5 @@
 import React from 'react'
 import "../css/example.css"
-import BoxExample from './BoxExample';
-import ExampleLogo from '../../../images/example.png'
 import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
 "mdbreact";
 
@@ -9,15 +7,6 @@ import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDB
 const Example = () => {
 
   return(
-    // <div id="examples" className="example-section">
-    //   <div className="container">
-    //     <h2>This is a example create in Sharing Web.</h2>
-    //     <p></p>
-    //     <div className="example-content">
-    //       <BoxExample image={ExampleLogo} title="Landing page" text=""></BoxExample>
-    //     </div>
-    //   </div>
-    // </div>
     <div data-aos="fade-up"
     data-aos-offset="200"
     data-aos-delay="20"

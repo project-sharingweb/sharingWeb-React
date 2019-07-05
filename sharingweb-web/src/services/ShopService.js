@@ -24,6 +24,9 @@ const orderDetail = (name, id) => http.get(`/shops/${name}/orders/${id}`)
 const purchase = product => http.post('shops/purchase', product) 
   .then(res => res.data)
 
+const editShop = shop => http.put('/shops/editshop', shop)
+  .then(res => res.data)
+
 export default {listShops,
   shopDetail,
   listProducts,
@@ -31,5 +34,6 @@ export default {listShops,
   addProduct,
   listOrders,
   orderDetail,
-  purchase
+  purchase,
+  editShop
 }

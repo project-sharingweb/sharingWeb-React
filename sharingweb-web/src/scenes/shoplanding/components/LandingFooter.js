@@ -6,12 +6,12 @@ import MapContainer from '../../../components/MapContainer';
 const LandingFooter = ({shop}) => {
   return (
     <div >
-      <MDBFooter style={shop.nav} className="font-small">
+      <MDBFooter style={shop.styles.footerBackground} className="font-small">
         <MDBContainer fluid className="container text-center text-md-left">
           <MDBRow className="pt-5 pb-5">
             <MDBCol md="4">
-              <h5 style={{color: "black"}} className="title">{shop.name}</h5>
-              <p style={{color: "black"}}>
+              <h5 style={shop.styles.footerFont} className="title">{shop.name}</h5>
+              <p style={shop.styles.footerFont}>
                 Here you can use rows and columns here to organize your footer
                 content.
                 {shop.contact}
@@ -21,19 +21,19 @@ const LandingFooter = ({shop}) => {
               <MapContainer></MapContainer>
             </MDBCol>
             <MDBCol md="2">
-              <h5 style={{color: "black"}} className="title">Links</h5>
+              <h5 style={shop.styles.footerFont} className="title">Links</h5>
               <ul>
                 <li className="list-unstyled">
-                  <a style={{color: "black"}} href="#!">Link 1</a>
+                  <a style={shop.styles.footerFont} href="#!">Link 1</a>
                 </li>
                 <li className="list-unstyled">
-                  <a style={{color: "black"}} href="#!">Link 2</a>
+                  <a style={shop.styles.footerFont} href="#!">Link 2</a>
                 </li>
                 <li className="list-unstyled">
-                  <a style={{color: "black"}} href="#!">Link 3</a>
+                  <a style={shop.styles.footerFont} href="#!">Link 3</a>
                 </li>
                 <li className="list-unstyled">
-                  <a style={{color: "black"}} href="#!">Link 4</a>
+                  <a style={shop.styles.footerFont} href="#!">Link 4</a>
                 </li>
               </ul>
             </MDBCol>

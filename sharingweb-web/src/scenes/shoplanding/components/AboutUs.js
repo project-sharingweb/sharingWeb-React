@@ -6,22 +6,24 @@ import ButtonPage from './ButtonPage';
 
 
 
-const AboutUs = props => {
-
+const AboutUs = ({shop}) => {
+  
 
   return (
     <div>
-      <LandingHeader></LandingHeader>
-  
-      <ButtonPage></ButtonPage> 
-      <div className="container">
-        <p>{props.shop.aboutUs}</p>
-      </div>
+      {shop && 
+      <div> 
+        <LandingHeader></LandingHeader>
+    
+        <ButtonPage></ButtonPage> 
+        <div className="container">
+          <p>{shop.aboutUs}</p>
+        </div>
 
-      <div instructions-footer>
-        <LandingFooter></LandingFooter>
-      </div>
-      
+        <div instructions-footer>
+          <LandingFooter></LandingFooter>
+        </div>
+      </div>}
     </div>
     
 

@@ -6,11 +6,14 @@ import ProductCard from'./components/ProductCard'
 import ButtonPage from './components/ButtonPage';
 import LandingFooter from './components/LandingFooter';
 import EditForm from './components/EditForm';
+import { WithAuthContext } from '../../contexts/AuthStore'
+import AddProductForm from './components/AddProductForm';
 
 
 class ShopLanding extends React.Component {
   state = {
-    edit: true
+    edit: true,
+    addProduct: false,
   }
 
   modifyEdit = () => {
@@ -18,11 +21,16 @@ class ShopLanding extends React.Component {
     edit ? this.setState({ ...this.state, edit: false}) : this.setState({...this.state, edit: true})
   }
 
+  modifyAdd = () => {
+    const {addProduct} = this.state
+    addProduct ? this.setState({ ...this.state, addProduct: false}) : this.setState({...this.state, addProduct: true})
+  }
+
 
 
   render() {
-    const { shop, products } = this.props
-    const {edit} = this.state
+    const { shop, products, isAuthenticated } = this.props
+    const {edit, addProduct} = this.state
     let list; 
     if(products){
       list = products.map((item, i) => {
@@ -33,14 +41,15 @@ class ShopLanding extends React.Component {
     return (
       <div>
         {shop &&
-          <div className={edit && "landing-main-wrapper"}>
+          <div style={shop.styles.background} className={(edit || addProduct) && "landing-main-wrapper"}>
             {edit && <div className="editform-wrapper"><EditForm edit={this.modifyEdit}></EditForm></div>}
-            <div className={edit && "landing-wrapper"}> 
+            {addProduct && <div className="editform-wrapper"><AddProductForm add={this.modifyAdd}></AddProductForm></div>}
+            <div className={(edit || addProduct) && "landing-wrapper"}> 
               <div style={shop.styles.nav}><LandingHeader></LandingHeader></div>
-              {!edit && <ButtonPage edit={this.modifyEdit}/>}
-              <div className="shop-main-image">
+              {isAuthenticated() && !edit && !addProduct && <ButtonPage edit={this.modifyEdit} add={this.modifyAdd}/>}
+              <div style={shop.styles.landingImage} className="shop-main-image">
                 <div className="container">
-                  <h1>{shop.name}</h1>
+                  <h1 style={shop.styles.titleFont}>{shop.name}</h1>
                   <p>{shop.moto}</p>
                 </div>
               </div>
@@ -61,4 +70,4 @@ class ShopLanding extends React.Component {
 }
 
 
-export default withShopContext(ShopLanding)
+export default WithAuthContext(withShopContext(ShopLanding))

@@ -21,7 +21,8 @@ class ShopStoreImpl extends Component {
   componentDidMount() {
     const { history } = this.props;
     const shopName = getShopName(history.location.pathname)
-    ShopService.shopDetail(shopName)
+    if (shopName) {
+      ShopService.shopDetail(shopName)
       .then(
         shop => {
           if (shop) {
@@ -33,6 +34,7 @@ class ShopStoreImpl extends Component {
         },
         error => console.error(error)
       )
+    }
   }
 
   updateShop = name => {
@@ -43,13 +45,112 @@ class ShopStoreImpl extends Component {
     })
   }
 
+  resetEdition = () => {
+    this.setState({
+      ...this.state,
+      shop: this.state.shopBack
+    })
+  }
+
+  handleChange = e => {
+    const { name, value } = e.target;
+
+    this.setState({
+      ...this.state,
+      shop: {
+        ...this.state.shop,
+        [name]: value
+      }
+    })
+  }
+
+  handleStyleChange = e => {
+    const { name, value } = e.target
+
+
+    switch (name) {
+      case "nav":
+          this.setState({
+            ...this.state,
+            shop: {
+              ...this.state.shop,
+              styles:{
+                ...this.state.shop.styles,
+                nav: { backgroundColor: value}
+              }
+            }
+          })
+        break;
+        case "titleFont":
+          this.setState({
+            ...this.state,
+            shop: {
+              styles:{
+                ...this.state.shop.styles,
+                titleFont: {color: value}
+              }
+            }
+          })
+        break;
+      case "background":
+          this.setState({
+            ...this.state,
+            shop: {
+              styles:{
+                ...this.state.shop.styles,
+                background: { backgroundColor: value}
+              }
+            }
+          })
+        break;
+        case "footerBackground":
+          this.setState({
+            ...this.state,
+            shop: {
+              styles:{
+                ...this.state.shop.styles,
+                footerBackground: { backgroundColor: value}
+              }
+            }
+          })
+        break;
+        case "purchaseButton":
+          this.setState({
+            ...this.state,
+            shop: {
+              styles:{
+                ...this.state.shop.styles,
+                purchaseButton: { backgroundColor: value}
+              }
+            }
+          })
+        break;
+        case "footerFont":
+          this.setState({
+            ...this.state,
+            shop: {
+              styles:{
+                ...this.state.shop.styles,
+                footerFont: {color: value}
+              }
+            }
+          })
+        break;
+      default:
+          this.setState({...this.state}) 
+    }
+  }
+
   render() {
     return (
       <ShopContext.Provider value={{
         shop: this.state.shop,
         products: this.state.products,
         shopBack: this.state.shopBack,
-        updateShop: this.updateShop
+        updateShop: this.updateShop,
+        onStyleChange: this.handleStyleChange,
+        onChange: this.handleChange,
+        onReset: this.resetEdition
       }}>
         {this.props.children}
       </ShopContext.Provider>
