@@ -12,7 +12,7 @@ const listProducts = name => http.get(`/shops/${name}/products`)
 const productDetail = (name, id) => http.get(`/shops/${name}/products/${id}`)
   .then(res => res.data)
 
-const addProduct = product => http.post('/addProduct', product) 
+const addProduct = product => http.post(`/shops/${product.shopName}/products`, product) 
   .then(res => res.data)
 
 const listOrders = name => http.get(`/shops/${name}/orders`)
@@ -21,10 +21,10 @@ const listOrders = name => http.get(`/shops/${name}/orders`)
 const orderDetail = (name, id) => http.get(`/shops/${name}/orders/${id}`)
   .then(res => res.data)
 
-const purchase = product => http.post('shops/purchase', product) 
+const purchase = order => http.post(`shops/${order.shopName}/orders`, order) 
   .then(res => res.data)
 
-const editShop = shop => http.put('/shops/editshop', shop)
+const editShop = shop => http.put(`/shops/${shop.urlName}`, shop)
   .then(res => res.data)
 
 export default {listShops,

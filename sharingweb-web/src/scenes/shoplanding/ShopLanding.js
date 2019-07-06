@@ -61,8 +61,8 @@ class ShopLanding extends React.Component {
                   </div>
                 </div>
               </div>
-              <LandingFooter></LandingFooter>
           </div>
+          <LandingFooter></LandingFooter>
         </div>}
       </div>
     )

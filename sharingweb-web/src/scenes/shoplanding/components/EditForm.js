@@ -3,10 +3,58 @@ import '../css/EditForm.css'
 import {withShopContext} from '../../../contexts/ShopStore'
 
 class EditForm extends React.Component {
+  state = {
+    shop: this.props.shop
+  }
+
+  handleChange = event => {
+    const { name, value } = event.target;
+
+    this.setState({
+      shop: {
+        ...this.state.shop,
+        [name]: value
+      }
+    })
+    this.props.onShopChange(this.state.shop)
+  }
+
+  handleStyleChange = event => {
+
+    const updateShop = style => {
+      this.setState({
+        shop: {
+          ...this.state.shop,
+          styles: {
+            ...this.state.shop.styles,
+            ...style
+          }
+        }
+      }, () => this.props.onShopChange(this.state.shop))
+    }
+
+    const { name, value } = event.target
+    switch (name) {
+      case "titleFont":
+      case "navLinks":
+      case "footerFont":
+        updateShop({[name]: {color: value}});
+        break;
+      case "nav":
+      case "background":
+      case "footerBackground":
+      case "purchaseButton":
+        updateShop({[name]: { backgroundColor: value }});
+        break;
+      default:
+        console.error(`Unknown shop style: ${name}`);
+    }
+  }
 
 
   render() {
-    const {edit, shop, onStyleChange, onChange, onReset} = this.props
+    const {edit, onReset} = this.props
+    const { shop } = this.state
     return (
       <div className="edit-form-wrapper">
         <div>
@@ -20,7 +68,16 @@ class EditForm extends React.Component {
                 value={shop.styles.nav}
                 className={`form-control`}
                 id="exampleInputNav"
-                onChange={onStyleChange}/>
+                onChange={this.handleStyleChange}/>
+            </div>
+            <div className="form-group">
+              <label htmlFor="exampleInputNavLinks">Nav font color</label>
+              <input name='navLinks'
+                type="color"
+                value={shop.styles.navLinks}
+                className={`form-control`}
+                id="exampleInputNavLinks"
+                onChange={this.handleStyleChange}/>
             </div>
             <div className="form-group">
               <label htmlFor="exampleInputTitleColor">Title color</label>
@@ -29,25 +86,25 @@ class EditForm extends React.Component {
                 value={shop.styles.titleFont}
                 className={`form-control`}
                 id="exampleInputTitleColor"
-                onChange={onStyleChange}/>
+                onChange={this.handleStyleChange}/>
             </div>
             <div className="form-group">
               <label htmlFor="exampleInputLogo">Logo</label>
               <input name='logo'
-                type="file"
+                type="text"
                 value={shop.logo}
                 className={`form-control`}
                 id="exampleInputLogo"
-                onChange={onStyleChange}/>
+                onChange={this.handleChange}/>
             </div>
             <div className="form-group">
               <label htmlFor="exampleInputBackGroundImage">Background Image</label>
-              <input name='logo'
-                type="file"
-                value={shop.backgroundImage}
+              <input name='landingImage'
+                type="text"
+                value={shop.styles.landingImage}
                 className={`form-control`}
                 id="exampleInputBackGroundImage"
-                onChange={onStyleChange}/>
+                onChange={this.handleStyleChange}/>
             </div>
             <div className="form-group">
               <label htmlFor="exampleInputMoto">Moto</label>
@@ -56,7 +113,7 @@ class EditForm extends React.Component {
                 value={shop.moto}
                 className={`form-control`}
                 id="exampleInputMoto"
-                onChange={onChange}
+                onChange={this.handleChange}
                 placeholder="Type your moto..."/>
             </div>
             <div className="form-group">
@@ -66,7 +123,7 @@ class EditForm extends React.Component {
                 value={shop.styles.background}
                 className={`form-control`}
                 id="exampleInputBackGround"
-                onChange={onStyleChange}/>
+                onChange={this.handleStyleChange}/>
             </div>
             <div className="form-group">
               <label htmlFor="exampleInputFooterColor">Footer color</label>
@@ -75,7 +132,7 @@ class EditForm extends React.Component {
                 value={shop.styles.footerBackground}
                 className={`form-control`}
                 id="exampleInputFooterColor"
-                onChange={onStyleChange}/>
+                onChange={this.handleStyleChange}/>
             </div>
             <div className="form-group">
               <label htmlFor="exampleInputFooterFontColor">Footer font color</label>
@@ -84,7 +141,7 @@ class EditForm extends React.Component {
                 value={shop.styles.footerFont}
                 className={`form-control`}
                 id="exampleInputFooterFontColorColor"
-                onChange={onStyleChange}/>
+                onChange={this.handleStyleChange}/>
             </div>
             <button type="submit" className="btn btn-default">Save</button>
             <button className="btn btn-danger" onClick={(e) =>{ 

@@ -2,25 +2,26 @@ import React from 'react'
 import LandingHeader from './LandingHeader'
 import { withShopContext } from '../../../contexts/ShopStore'
 import LandingFooter from './LandingFooter';
-import ButtonPage from './ButtonPage';
+import '../css/AboutUs.css'
 
 
 
-const AboutUs = ({shop}) => {
+const AboutUs = ({shop, onShopChange}) => {
   
 
   return (
     <div>
       {shop && 
-      <div> 
+      <div className="about-us-wrapper"> 
         <LandingHeader></LandingHeader>
-    
-        <ButtonPage></ButtonPage> 
+        
+
         <div className="container">
-          <p>{shop.aboutUs}</p>
+          <h1 className="about-us-title">About us</h1>
+          <p className="about-us-text">{shop.aboutUs}</p>
         </div>
 
-        <div instructions-footer>
+        <div style={{width: "100%"}}>
           <LandingFooter></LandingFooter>
         </div>
       </div>}

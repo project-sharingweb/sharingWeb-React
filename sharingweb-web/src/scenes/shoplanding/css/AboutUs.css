@@ -1,7 +1,20 @@
-.instructions-footer{
+.about-us-wrapper{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex-direction: column;
+    height: 100vh
 }
+
+.about-us-title {
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 100px
+}
+
+.about-us-text {
+    width: 100%
+}
+
 

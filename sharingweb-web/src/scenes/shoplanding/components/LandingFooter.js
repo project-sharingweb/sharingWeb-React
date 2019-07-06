@@ -2,10 +2,12 @@ import React from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import {withShopContext} from '../../../contexts/ShopStore'
 import MapContainer from '../../../components/MapContainer';
+import { Link } from 'react-router-dom'
+import '../css/LandingFooter.css'
 
 const LandingFooter = ({shop}) => {
   return (
-    <div >
+    <div className="landing-footer-down">
       <MDBFooter style={shop.styles.footerBackground} className="font-small">
         <MDBContainer fluid className="container text-center text-md-left">
           <MDBRow className="pt-5 pb-5">
@@ -41,7 +43,7 @@ const LandingFooter = ({shop}) => {
         </MDBContainer>
         <div className="footer-copyright text-center py-3">
           <MDBContainer fluid className="pt-3 pb-3">
-            &copy; {new Date().getFullYear()} Copyright: <span className="bold"> Powered by: SharingWeb</span>
+            &copy; {new Date().getFullYear()} Copyright: <Link to="/"><span className="bold"> Powered by: SharingWeb</span></Link>
           </MDBContainer>
         </div>
       </MDBFooter>
