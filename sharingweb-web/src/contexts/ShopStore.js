@@ -85,6 +85,7 @@ class ShopStoreImpl extends Component {
           this.setState({
             ...this.state,
             shop: {
+              ...this.state.shop,
               styles:{
                 ...this.state.shop.styles,
                 titleFont: {color: value}
@@ -96,6 +97,7 @@ class ShopStoreImpl extends Component {
           this.setState({
             ...this.state,
             shop: {
+              ...this.state.shop,
               styles:{
                 ...this.state.shop.styles,
                 background: { backgroundColor: value}
@@ -107,6 +109,7 @@ class ShopStoreImpl extends Component {
           this.setState({
             ...this.state,
             shop: {
+              ...this.state.shop,
               styles:{
                 ...this.state.shop.styles,
                 footerBackground: { backgroundColor: value}
@@ -118,6 +121,7 @@ class ShopStoreImpl extends Component {
           this.setState({
             ...this.state,
             shop: {
+              ...this.state.shop,
               styles:{
                 ...this.state.shop.styles,
                 purchaseButton: { backgroundColor: value}
@@ -129,6 +133,7 @@ class ShopStoreImpl extends Component {
           this.setState({
             ...this.state,
             shop: {
+              ...this.state.shop,
               styles:{
                 ...this.state.shop.styles,
                 footerFont: {color: value}
