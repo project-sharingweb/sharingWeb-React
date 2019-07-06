@@ -18,18 +18,13 @@ class ButtonPage extends React.Component {
       ...this.state,
       seeMore: false
     })
-    }else {
+    } else {
       this.setState({
         ...this.state,
         seeMore: true
       })
   }
   }
-
-
-
-
-
 
   render() {
     const { edit, add } = this.props
