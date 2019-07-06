@@ -28,6 +28,7 @@ const ProductCard = ({product}) => {
             <span className="float-left">{product.price}€</span>
             <span className="float-right">
             </span>
+            <button>Add to cart</button>
           </MDBCardFooter>
         </MDBCardBody>
       </MDBCard>
