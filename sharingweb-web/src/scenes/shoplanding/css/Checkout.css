@@ -1,0 +1,61 @@
+.checkout-form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.name-form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.form-name{
+    width: 50%
+}
+
+.form-LastName{
+    width: 50%,
+}
+
+.direcction-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: inline;
+}
+
+.form-email{
+    
+    width: 100%;
+}
+.email-label{
+    width: 7%
+}
+
+.email-box{
+    width: 90%;
+}
+
+.box-label{
+    width: 100%
+}
+
+.box-input{
+    width: 100%
+}
+.boxes-label{
+    width: 100%
+}
+.boxes-input{
+    width: 100%
+}
+.label-box{
+    width: 100%
+}
+.input-box{
+    width: 98%
+}
+

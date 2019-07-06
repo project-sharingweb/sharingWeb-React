@@ -10,6 +10,7 @@ import Login from './Login'
 import AOS from 'aos';
 import ListProducts from '../scenes/shoplanding/components/ListProducts';
 import Orders from '../scenes/shoplanding/components/Orders';
+import Checkout from '../scenes/shoplanding/components/Checkout';
 
 
 
@@ -26,6 +27,7 @@ class App extends React.Component {
           <Route exact path="/shops/:name/about-us"component={AboutUs}></Route>
           <Route exact path="/shops/:name/products"component={ListProducts}></Route>
           <Route exact path="/shops/:name/orders"component={Orders}></Route>
+          <Route exact path="/shops/:name/checkout"component={Checkout}></Route>
       </Switch>
     );
   }

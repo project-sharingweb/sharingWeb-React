@@ -203,7 +203,7 @@ class Register extends React.Component {
                   onBlur={this.handleBlur}
                   placeholder="Longitude"/>
               </div>
-              <a href="https://www.latlong.net/" target='_blank' className="btn btn-default register-button">Find your coordinates</a>
+              <a href="https://www.latlong.net/" target='blank' className="btn btn-default register-button">Find your coordinates</a>
               <button type="submit" className="btn btn-primary register-button">Submit</button>
             </form>
           </div>
