@@ -12,7 +12,7 @@ import AddProductForm from './components/AddProductForm';
 
 class ShopLanding extends React.Component {
   state = {
-    edit: true,
+    edit: false,
     addProduct: false,
   }
 
@@ -35,16 +35,16 @@ class ShopLanding extends React.Component {
     if(products){
       list = products.map((item, i) => {
         return <ProductCard key={i} product={item}></ProductCard>
-      }).slice(0, 11)
+      }).slice(0, 12)
     }
 
     return (
       <div>
         {shop &&
-          <div style={shop.styles.background} className={(edit || addProduct) && "landing-main-wrapper"}>
+          <div style={shop.styles.background} className={(edit || addProduct) ? "landing-main-wrapper" : undefined}>
             {edit && <div className="editform-wrapper"><EditForm edit={this.modifyEdit}></EditForm></div>}
             {addProduct && <div className="editform-wrapper"><AddProductForm add={this.modifyAdd}></AddProductForm></div>}
-            <div className={(edit || addProduct) && "landing-wrapper"}> 
+            <div className={(edit || addProduct) ? "landing-wrapper" : undefined}> 
               <div style={shop.styles.nav}><LandingHeader></LandingHeader></div>
               {isAuthenticated() && !edit && !addProduct && <ButtonPage edit={this.modifyEdit} add={this.modifyAdd}/>}
               <div style={shop.styles.landingImage} className="shop-main-image">
@@ -54,7 +54,14 @@ class ShopLanding extends React.Component {
                 </div>
               </div>
               <div className="container">
-                <div className="shop-product-section">
+                <div className="shop-product-section" data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-delay="20"
+                data-aos-duration="500"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                data-aos-anchor-placement="top">
                   <h2>Products</h2>
                   <div className="products-wrapper">
                     {list}

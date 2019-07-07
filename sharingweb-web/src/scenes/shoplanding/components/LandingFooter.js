@@ -4,7 +4,6 @@ import {withShopContext} from '../../../contexts/ShopStore'
 import MapContainer from '../../../components/MapContainer';
 import { Link } from 'react-router-dom'
 import '../css/LandingFooter.css'
-import AboutUs from '../../home/components/AboutUs';
 
 const LandingFooter = ({shop}) => {
   return (
@@ -26,10 +25,10 @@ const LandingFooter = ({shop}) => {
               <h5 style={shop.styles.footerFont} className="title">Links</h5>
               <ul>
                 <li className="list-unstyled">
-                  <a style={shop.styles.footerFont} href="#AboutUs">About us</a>
+                  <Link style={shop.styles.footerFont} to={`/shops/${shop.urlName}/about-us`}>About us</Link>
                 </li>
                 <li className="list-unstyled">
-                  <a style={shop.styles.footerFont} href="#products">Products</a>
+                  <Link style={shop.styles.footerFont} to={`/shops/${shop.urlName}/products`}>Products</Link>
                 </li>
                 <li className="list-unstyled">
                   <a style={shop.styles.footerFont} href="#orders">Orders</a>

@@ -27,7 +27,7 @@ class ShopStoreImpl extends Component {
         shop => {
           if (shop) {
             ShopService.listProducts(shopName)
-              .then(res => this.setState({ shop: shop, products: res, shopBack:shop }), error => console.error(error))
+              .then(res => this.setState({ ...this.state, shop: shop, products: res, shopBack:shop }), error => console.error(error))
           } else {
             history.navigate('/error/404')
           }
@@ -41,7 +41,7 @@ class ShopStoreImpl extends Component {
     ShopService.shopDetail(name)
     .then( response => { 
       ShopService.listProducts(response.urlName)
-      .then(res => this.setState({ shop: response, products: res }), error => console.error(error))
+      .then(res => this.setState({...this.state, shop: response, products: res, shopBack: response }), error => console.error(error))
     })
   }
 

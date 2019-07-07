@@ -3,22 +3,22 @@ import http from './BaseService';
 const listShops = () => http.get('/shops')
   .then(res => res.data)
 
-const shopDetail = name => http.get(`/shops/${name}`)
+const shopDetail = urlName => http.get(`/shops/${urlName}`)
   .then(res => res.data)
 
-const listProducts = name => http.get(`/shops/${name}/products`)
+const listProducts = urlName => http.get(`/shops/${urlName}/products`)
   .then(res => res.data)
 
-const productDetail = (name, id) => http.get(`/shops/${name}/products/${id}`)
+const productDetail = (urlName, id) => http.get(`/shops/${urlName}/products/${id}`)
   .then(res => res.data)
 
 const addProduct = product => http.post(`/shops/${product.shopName}/products`, product) 
   .then(res => res.data)
 
-const listOrders = name => http.get(`/shops/${name}/orders`)
+const listOrders = urlName => http.get(`/shops/${urlName}/orders`)
   .then(res => res.data)
 
-const orderDetail = (name, id) => http.get(`/shops/${name}/orders/${id}`)
+const orderDetail = (urlName, id) => http.get(`/shops/${urlName}/orders/${id}`)
   .then(res => res.data)
 
 const purchase = order => http.post(`shops/${order.shopName}/orders`, order) 

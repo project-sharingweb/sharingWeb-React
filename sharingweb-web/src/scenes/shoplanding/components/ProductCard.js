@@ -5,12 +5,13 @@ import '../css/ProductCard.css'
 const ProductCard = ({product}) => {
   return (
     <div className="product-wrapper">
-      <MDBCard narrow ecommerce className="mb-2">
+      <MDBCard narrow ecommerce className="mb-2 card-wrapper">
         <MDBCardImage
           cascade
           top
           src={product.image}
           alt="sample photo"
+          className="card-image"
         />
         <MDBCardBody cascade>
           <a href="#!" className="text-muted">
@@ -22,7 +23,7 @@ const ProductCard = ({product}) => {
             </strong>
           </MDBCardTitle>
           <MDBCardText>
-            {product.description}
+            {product.descriptionPreview}
           </MDBCardText>
           <MDBCardFooter className="px-1">
             <span className="float-left">{product.price}€</span>

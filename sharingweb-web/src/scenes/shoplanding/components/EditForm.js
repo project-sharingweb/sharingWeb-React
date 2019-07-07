@@ -1,6 +1,7 @@
 import React from 'react'
 import '../css/EditForm.css'
 import {withShopContext} from '../../../contexts/ShopStore'
+import ShopService from '../../../services/ShopService'
 
 class EditForm extends React.Component {
   state = {
@@ -15,8 +16,7 @@ class EditForm extends React.Component {
         ...this.state.shop,
         [name]: value
       }
-    })
-    this.props.onShopChange(this.state.shop)
+    }, () => this.props.onShopChange(this.state.shop))
   }
 
   handleStyleChange = event => {
@@ -46,10 +46,21 @@ class EditForm extends React.Component {
       case "purchaseButton":
         updateShop({[name]: { backgroundColor: value }});
         break;
+      case "landingImage":
+        updateShop({[name]: {backgroundImage: value}})
+        break;
       default:
         console.error(`Unknown shop style: ${name}`);
     }
   }
+
+  handleSubmit = event => {
+    event.preventDefault()
+    const { shop } = this.state
+
+    ShopService.editShop(shop)
+      .then(shop => this.props.updateShop(shop.urlName), error => console.error(error))
+  } 
 
 
   render() {
@@ -60,7 +71,7 @@ class EditForm extends React.Component {
         <div>
           <h1 className="edit-form-main-title">Design your page <i onClick={() => edit()} className="fa fa-times-circle icon-edit-form"></i></h1>
         </div>
-        <form onSubmit="" className="register-form form-wrapper">
+        <form onSubmit={this.handleSubmit} className="register-form form-wrapper">
           <div className="form-group">
               <label htmlFor="exampleInputNav">Navbar color</label>
               <input name='nav'
@@ -101,7 +112,7 @@ class EditForm extends React.Component {
               <label htmlFor="exampleInputBackGroundImage">Background Image</label>
               <input name='landingImage'
                 type="text"
-                value={shop.styles.landingImage}
+                value={shop.styles.landingImage.backgroundImage}
                 className={`form-control`}
                 id="exampleInputBackGroundImage"
                 onChange={this.handleStyleChange}/>

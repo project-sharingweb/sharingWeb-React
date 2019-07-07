@@ -46,6 +46,18 @@ class Register extends React.Component {
     goLogin: false
   }
 
+  getlocation = () => {
+    navigator.geolocation.getCurrentPosition(pos => {
+      this.setState({
+        ...this.state,
+        shop: {
+          ...this.shop,
+          latitude: pos.latitude,
+          longitude: pos.longitude
+      }})
+    });
+  }
+
   handleChange = e => {
     const { name, value } = e.target;
     const isValid = validators[name](value)

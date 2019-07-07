@@ -15,16 +15,19 @@ const ListProducts = (props) => {
     }
 
   return (
-    
     <div>
-      <LandingHeader></LandingHeader>
-      <div className="container">
-        <div className="products-wrapper">
-            {list}
+    {props.shop &&
+      <div style={props.shop.styles.background}>
+        <LandingHeader></LandingHeader>
+        <div className="container">
+          <div className="products-wrapper">
+              {list}
+          </div>
         </div>
-      </div>
-      <LandingFooter></LandingFooter>
+        <LandingFooter></LandingFooter>
+      </div>}
     </div>
+
   )
 }
 

@@ -3,32 +3,50 @@ import LandingHeader from './LandingHeader'
 import { withShopContext } from '../../../contexts/ShopStore'
 import LandingFooter from './LandingFooter';
 import '../css/AboutUs.css'
+import {WithAuthContext} from '../../../contexts/AuthStore'
+import AboutUsForm from './AboutUsForm'
 
 
 
-const AboutUs = ({shop, onShopChange}) => {
+class AboutUs extends React.Component {
+  state = {
+    edit: false,
+    shop: this.props.shop
+  }
+
+  modifyEdit = () => {
+    const {edit} = this.state
+    edit ? this.setState({ ...this.state, edit: false}) : this.setState({...this.state, edit: true})
+  }
   
+  render() {
+    const {shop, onShopChange, isAuthenticated} = this.props
+    const {edit} = this.state
+    return (
+      <div>
+        {shop &&
+        <div>
+          <LandingHeader></LandingHeader>
+          <div style={shop.styles.background} className="about-us-wrapper">        
+            {edit && <AboutUsForm edit={this.modifyEdit}></AboutUsForm>}
+            
 
-  return (
-    <div>
-      {shop && 
-      <div className="about-us-wrapper"> 
-        <LandingHeader></LandingHeader>
-        
+            <div className="container">
+              <h1 className="about-us-title">About us</h1>
+              <p className="about-us-text">{shop.aboutUs}</p>  
+              {isAuthenticated() && <div className="edit-aboutus-button-wrapper"><button className="btn btn-default" onClick={() => this.modifyEdit()}>edit</button></div>}       
+            </div>
 
-        <div className="container">
-          <h1 className="about-us-title">About us</h1>
-          <p className="about-us-text">{shop.aboutUs}</p>
-        </div>
+            <div style={{width: "100%"}}>
+              <LandingFooter></LandingFooter>
+            </div>
+          </div>
+        </div>}
+      </div>
+      
 
-        <div style={{width: "100%"}}>
-          <LandingFooter></LandingFooter>
-        </div>
-      </div>}
-    </div>
-    
-
-  )
+    )
+  }
 }
 
-export default withShopContext(AboutUs)
+export default WithAuthContext(withShopContext(AboutUs))

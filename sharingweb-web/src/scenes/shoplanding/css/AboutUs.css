@@ -1,9 +1,9 @@
 .about-us-wrapper{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-start;
     flex-direction: column;
-    height: 100vh
+    height: 100vh;
 }
 
 .about-us-title {
@@ -14,7 +14,14 @@
 }
 
 .about-us-text {
-    width: 100%
+    width: 100%;
+    white-space: pre-wrap;
+}
+
+.edit-aboutus-button-wrapper{
+    width: 100%;
+    text-align: center;
+    margin-top: 50px
 }
 
 
