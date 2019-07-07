@@ -65,7 +65,7 @@ class EditForm extends React.Component {
               <label htmlFor="exampleInputNav">Navbar color</label>
               <input name='nav'
                 type="color"
-                value={shop.styles.nav}
+                value={shop.styles.nav.backgroundColor}
                 className={`form-control`}
                 id="exampleInputNav"
                 onChange={this.handleStyleChange}/>
@@ -74,7 +74,7 @@ class EditForm extends React.Component {
               <label htmlFor="exampleInputNavLinks">Nav font color</label>
               <input name='navLinks'
                 type="color"
-                value={shop.styles.navLinks}
+                value={shop.styles.navLinks.color}
                 className={`form-control`}
                 id="exampleInputNavLinks"
                 onChange={this.handleStyleChange}/>
@@ -83,7 +83,7 @@ class EditForm extends React.Component {
               <label htmlFor="exampleInputTitleColor">Title color</label>
               <input name='titleFont'
                 type="color"
-                value={shop.styles.titleFont}
+                value={shop.styles.titleFont.color}
                 className={`form-control`}
                 id="exampleInputTitleColor"
                 onChange={this.handleStyleChange}/>
@@ -120,7 +120,7 @@ class EditForm extends React.Component {
               <label htmlFor="exampleInputBackGround">Background color</label>
               <input name='background'
                 type="color"
-                value={shop.styles.background}
+                value={shop.styles.background.backgroundColor}
                 className={`form-control`}
                 id="exampleInputBackGround"
                 onChange={this.handleStyleChange}/>
@@ -129,7 +129,7 @@ class EditForm extends React.Component {
               <label htmlFor="exampleInputFooterColor">Footer color</label>
               <input name='footerBackground'
                 type="color"
-                value={shop.styles.footerBackground}
+                value={shop.styles.footerBackground.backgroundColor}
                 className={`form-control`}
                 id="exampleInputFooterColor"
                 onChange={this.handleStyleChange}/>

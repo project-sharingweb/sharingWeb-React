@@ -7,13 +7,13 @@ import '../css/LandingHeader.css'
 
 
 
-const LandingHeader = ({ shop, isAuthenticated, onShopChange }) => {
+const LandingHeader = ({ shop, isAuthenticated, onShopAuthChange }) => {
 
   const handleLogout = () => {
     AuthServices.logout()
     .then(
       response => {
-        onShopChange()
+        onShopAuthChange()
       },
       error => console.error(error)
     )
