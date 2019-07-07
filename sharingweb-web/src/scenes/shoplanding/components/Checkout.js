@@ -41,7 +41,7 @@ class Checkout extends React.Component{
 
 render() {
     const {shop} = this.props
-    const {order, touch} = this.state
+    const {order} = this.state
     return (
         <div>
             {shop &&
