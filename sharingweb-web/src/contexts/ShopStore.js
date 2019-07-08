@@ -59,6 +59,13 @@ class ShopStoreImpl extends Component {
     })
   }
 
+  addToCart = product => {
+    this.setState({
+      ...this.state,
+      cart: this.state.cart.push(product.id)
+    })
+  }
+
 
 
   render() {
@@ -70,7 +77,8 @@ class ShopStoreImpl extends Component {
         updateShop: this.updateShop,
         onShopChange: this.handleShopChange,
         onReset: this.resetEdition,
-        cart: this.state.cart
+        cart: this.state.cart,
+        addToCart: this.state.addToCart
       }}>
         {this.props.children}
       </ShopContext.Provider>

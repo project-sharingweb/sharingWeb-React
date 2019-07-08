@@ -46,14 +46,16 @@ class Register extends React.Component {
     goLogin: false
   }
 
-  getlocation = () => {
+  getlocation = (e) => {
+    e.preventDefault()
+  
     navigator.geolocation.getCurrentPosition(pos => {
       this.setState({
         ...this.state,
         shop: {
-          ...this.shop,
-          latitude: pos.latitude,
-          longitude: pos.longitude
+          ...this.state.shop,
+          latitude: pos.coords.latitude,
+          longitude: pos.coords.longitude
       }})
     });
   }
@@ -215,7 +217,7 @@ class Register extends React.Component {
                   onBlur={this.handleBlur}
                   placeholder="Longitude"/>
               </div>
-              <a href="https://www.latlong.net/" target='blank' className="btn btn-default register-button">Find your coordinates</a>
+              <button onClick={this.getlocation} className="btn btn-default register-button">Get your coordinates</button>
               <button type="submit" className="btn btn-primary register-button">Submit</button>
             </form>
           </div>

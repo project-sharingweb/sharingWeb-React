@@ -3,6 +3,7 @@ import LandingHeader from './LandingHeader'
 import LandingFooter from './LandingFooter';
 import {withShopContext} from '../../../contexts/ShopStore'
 import "../css/Checkout.css"
+import ShopService from '../../../services/ShopService'
 
 
 
@@ -17,10 +18,6 @@ class Checkout extends React.Component{
         zipCode: "",
         city: "",
         country: ""
-        },
-        touch: {
-            name: false,
-            password: false
         }
     }
 
@@ -34,7 +31,18 @@ class Checkout extends React.Component{
         })
     }
 
-    
+    handleSubmit = e => {
+        e.preventDefault()
+        const {order} = this.state 
+        order.products = this.props.cart
+        order.shopName = this.props.shop.urlName
+
+        ShopService.purchase(order)
+            .then(res => {
+                window.location.assign(res.url)
+            })
+        
+    }
 
 
 
