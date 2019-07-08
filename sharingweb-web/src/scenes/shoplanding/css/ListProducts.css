@@ -5,9 +5,9 @@
     align-items: stretch;
 }
 
-.instructions-footer{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-direction: column;
+
+.category-title {
+    width: 100%;
+    text-align: center;
+    margin: 20px auto;
 }
