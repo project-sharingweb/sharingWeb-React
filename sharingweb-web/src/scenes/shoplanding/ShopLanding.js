@@ -37,7 +37,7 @@ class ShopLanding extends React.Component {
         return <ProductCard key={i} product={item}></ProductCard>
       }).slice(0, 12)
     }
-
+    if (shop) console.log(shop.styles.landingImage)
     return (
       <div>
         {shop &&

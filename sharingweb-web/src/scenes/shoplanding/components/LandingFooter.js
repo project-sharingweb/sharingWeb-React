@@ -33,9 +33,6 @@ const LandingFooter = ({shop}) => {
                 <li className="list-unstyled">
                   <a style={shop.styles.footerFont} href="#orders">Orders</a>
                 </li>
-                <li className="list-unstyled">
-                  <a style={shop.styles.footerFont} href="#Logout">Log out</a>
-                </li>
               </ul>
             </MDBCol>
           </MDBRow>

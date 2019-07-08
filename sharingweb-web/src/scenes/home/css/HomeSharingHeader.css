@@ -40,7 +40,7 @@
 
 }
 
-.nav-bar-li2:hover {
+.nav-bar-li2 a:hover {
   border:  rgba(0, 177, 114, 1) solid 2px;
   transition: border;
   transition-duration: 1s;
