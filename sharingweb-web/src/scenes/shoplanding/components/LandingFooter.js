@@ -16,7 +16,7 @@ const LandingFooter = ({shop}) => {
               <p style={shop.styles.footerFont}>
                 In {shop.name} online store you can find what you were looking for.
               </p>
-              <p> Phone number {shop.contact} </p>
+              <p style={shop.styles.footerFont}> Phone number {shop.contact} </p>
             </MDBCol>
             <MDBCol md="5" className="ml-3 mr-5 map-height">
               <MapContainer></MapContainer>
@@ -38,8 +38,8 @@ const LandingFooter = ({shop}) => {
           </MDBRow>
         </MDBContainer>
         <div className="footer-copyright text-center py-3">
-          <MDBContainer fluid className="pt-3 pb-3">
-            &copy; {new Date().getFullYear()} Copyright: <Link to="/"><span className="bold"> Powered by: SharingWeb</span></Link>
+          <MDBContainer style={shop.styles.footerFont} fluid className="pt-3 pb-3">
+            &copy; {new Date().getFullYear()} Copyright: <Link to="/"><span style={shop.styles.footerFont} className="bold"> Powered by: SharingWeb</span></Link>
           </MDBContainer>
         </div>
       </MDBFooter>

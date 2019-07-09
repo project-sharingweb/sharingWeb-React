@@ -60,10 +60,36 @@ class ShopStoreImpl extends Component {
   }
 
   addToCart = product => {
-    this.setState({
-      ...this.state,
-      cart: this.state.cart.push(product.id)
-    })
+    if (this.state.cart === []) {
+      product.amount = 1  
+      this.setState({
+        ...this.state,
+        cart: this.state.cart.push(product)
+      })
+    } else {
+      let counter = 0 
+      const newCart = this.state.cart.map(item => {
+        if (item.id === product.id) {
+          item.amount += 1
+          counter++
+          return item
+        } else {
+          return item
+        }
+      })
+      if (counter === 0){
+        product.amount = 1  
+        this.setState({
+          ...this.state,
+          cart: this.state.cart.push(product)
+        })
+      } else {
+      this.setState({
+        ...this.state,
+        cart: newCart
+      })
+      }
+    }
   }
 
 
