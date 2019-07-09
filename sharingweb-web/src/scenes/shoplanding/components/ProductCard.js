@@ -1,8 +1,9 @@
 import React from "react";
 import { MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter } from "mdbreact";
 import '../css/ProductCard.css'
+import {withShopContext} from '../../../contexts/ShopStore'
 
-const ProductCard = ({product}) => {
+const ProductCard = ({product, addToCart}) => {
   return (
     <div className="product-wrapper">
       <MDBCard narrow ecommerce className="mb-2 card-wrapper">
@@ -29,7 +30,7 @@ const ProductCard = ({product}) => {
             <span className="float-left">{product.price}€</span>
             <span className="float-right">
             </span>
-            <button>Add to cart</button>
+            <button onClick={() => addToCart}>Add to cart</button>
           </MDBCardFooter>
         </MDBCardBody>
       </MDBCard>
@@ -37,4 +38,4 @@ const ProductCard = ({product}) => {
   );
 }
 
-export default ProductCard;
+export default withShopContext(ProductCard);

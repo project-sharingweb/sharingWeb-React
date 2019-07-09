@@ -53,7 +53,7 @@ render() {
     return (
         <div>
             {shop &&
-            <div>
+            <div style={shop.styles.background}>
                 <LandingHeader></LandingHeader>
                 <div className="checkout-form mt-2 mb-5"> 
                     <h1>Checkout</h1>
