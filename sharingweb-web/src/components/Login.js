@@ -78,7 +78,7 @@ class Login extends React.Component {
     AuthServices.authenticate(shop)
       .then(
         response => {
-          this.props.onShopAuthChange(response.data)
+          this.props.onShopAuthChange(response)
           this.setState({ 
             goShop: true,
             name: shop.name

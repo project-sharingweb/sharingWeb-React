@@ -28,7 +28,7 @@ const LandingHeader = ({ shop, isAuthenticated, onShopAuthChange }) => {
             <div className="nav-bar-li2 newli2"><Link style={shop.styles.navLinks} className="Link" to={`/shops/${shop.urlName}/products`}>Products</Link></div>
             {isAuthenticated () ? 
             <div className="nav-bar-li2 newli3"><Link style={shop.styles.navLinks} className="Link" to={`/shops/${shop.urlName}/orders`}>Orders</Link></div> : 
-            <div className="nav-bar-li2 newli4"><Link style={shop.styles.navLinks} className="Link" to={`/shops/${shop.urlName}/cart`}><i class="fa fa-shopping-cart"></i>
+            <div className="nav-bar-li2 newli4"><Link style={shop.styles.navLinks} className="Link" to={`/shops/${shop.urlName}/cart`}><i className="fa fa-shopping-cart"></i>
             </Link></div>} 
             {isAuthenticated() && <div className="nav-bar-li2 newli4"><Link style={shop.styles.navLinks} className="Link" to={`/shops/${shop.urlName}`}><i className="Link fa fa-sign-out" onClick={e => {
               e.preventDefault()
