@@ -2,11 +2,12 @@ import React from "react";
 import { MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter } from "mdbreact";
 import '../css/ProductCard.css'
 import {withShopContext} from '../../../contexts/ShopStore'
+import { Link } from 'react-router-dom';
 
 class ProductCard extends React.Component {
 
   render() {
-    const {product, addToCart} = this.props  
+    const {shop, product, addToCart} = this.props  
     return (
         <div className="product-wrapper">
           <MDBCard narrow ecommerce className="mb-2 card-wrapper">
@@ -23,7 +24,7 @@ class ProductCard extends React.Component {
               </a>
               <MDBCardTitle>
                 <strong>
-                  <a href="#!">{product.name}</a>
+                  <Link to={`/shops/${shop.urlName}/products/${product.id}`}>{product.name}</Link>
                 </strong>
               </MDBCardTitle>
               <MDBCardText>
