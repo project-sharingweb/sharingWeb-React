@@ -2,8 +2,9 @@ import React from "react";
 import { MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter } from "mdbreact";
 import '../css/ProductCard.css'
 import {withShopContext} from '../../../contexts/ShopStore'
+import { Link } from 'react-router-dom';
 
-const ProductCard = ({product, addToCart}) => {
+const ProductCard = ({shop, product, addToCart}) => {
   return (
     <div className="product-wrapper">
       <MDBCard narrow ecommerce className="mb-2 card-wrapper">
@@ -15,12 +16,12 @@ const ProductCard = ({product, addToCart}) => {
           className="card-image"
         />
         <MDBCardBody cascade>
-          <a href="#!" className="text-muted">
+          <Link href="#!" className="text-muted">
             <h5>{product.category}</h5>
-          </a>
+          </Link>
           <MDBCardTitle>
             <strong>
-              <a href="#!">{product.name}</a>
+              <Link to={`/shops/${shop.urlName}/products/${product.id}`}>{product.name}</Link>
             </strong>
           </MDBCardTitle>
           <MDBCardText>

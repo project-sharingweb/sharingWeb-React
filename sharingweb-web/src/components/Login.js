@@ -72,7 +72,6 @@ class Login extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
     const { shop } = this.state
-
     this.props.updateShop(modifyName(shop.name))
 
     AuthServices.authenticate(shop)
