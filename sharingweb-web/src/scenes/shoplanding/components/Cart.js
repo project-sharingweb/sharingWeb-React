@@ -6,20 +6,24 @@ import '../css/Cart.css'
 
 
 
-const Cart = ({shop, cart}) => {
+const Cart = ({shop, cart, addToCart, unAddToCart, removeFromCart}) => {
   console.log(cart)
   let list;
   if(cart){
     list = cart.map( (item, i) => {
       return (<div key={i} className="cart-product">
-        <div>
-          <div>{item.image}</div>
-          <div>{item.name}</div>
-          <button className="btn btn-danger">Remove</button>
+        <div className="cart-product-info cart-main-first">
+          <div className="mr-2">
+            <img className="cart-img" src={item.image} alt="product"></img>
+          </div>
+          <div>
+            <div>{item.name}</div>
+            <button className="btn btn-danger" onClick={() => removeFromCart(item)}>Remove</button>
+          </div>
         </div>
-        <div>{item.price}€</div>
-        <div><input type="number"></input></div>
-        <div>{item.price * item.amount}€</div>
+        <div className="cart-main-second">{item.price}€</div>
+        <div className="cart-main-second"><p>{item.amount}</p></div>
+        <div className="cart-main-third">{item.price * item.amount}€</div>
       </div>)
     })
   }
@@ -38,8 +42,8 @@ const Cart = ({shop, cart}) => {
               <div className="cart-main-second">price</div>
               <div className="cart-main-second">Quantity</div>
               <div className="cart-main-third">Total</div>
-              {list}
             </div>
+            {list}
           </div>
         </div>
         <LandingFooter></LandingFooter>

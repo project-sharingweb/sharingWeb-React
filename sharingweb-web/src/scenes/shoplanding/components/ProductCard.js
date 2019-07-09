@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 class ProductCard extends React.Component {
 
   render() {
-    const {shop, product, addToCart} = this.props  
+    const {shop, product, addToCart} = this.props
     return (
         <div className="product-wrapper">
           <MDBCard narrow ecommerce className="mb-2 card-wrapper">
@@ -34,7 +34,7 @@ class ProductCard extends React.Component {
                 <span className="float-left">{product.price}€</span>
                 <span className="float-right">
                 </span>
-                <button onClick={() => addToCart(product)}>Add to cart</button>
+                <button className="btn btn-primary" onClick={() => addToCart(product)}>Add to cart</button>
               </MDBCardFooter>
             </MDBCardBody>
           </MDBCard>
