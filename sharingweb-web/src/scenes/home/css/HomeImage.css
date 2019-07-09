@@ -5,8 +5,8 @@
   align-items: center;
   width: 100%;
   flex-wrap: wrap;
-  background-image: url("https://img.pixers.pics/pho_wat(s3:700/FO/10/35/82/51/3/700_FO103582513_b63e9ae6801484c2afbb3a97f23ca9e8.jpg,700,467,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,417,jpg)/vinilos-bokeh-ligero-abstracto-con-desenfoque-de-fondo-de-color-efecto-del-filtro-de-tono-de-epoca.jpg.jpg");
-  background-size: cover;
+  background-image: url("https://res.cloudinary.com/dvjtdeyli/image/upload/v1562697888/game-images/Image_2019-07-09_at_8.42.39_PM_uxns9s.png");
+  background-size: contain;
 }
 
 .main-image-text{

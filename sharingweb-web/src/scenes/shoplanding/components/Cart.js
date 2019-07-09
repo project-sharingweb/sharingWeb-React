@@ -7,9 +7,9 @@ import '../css/Cart.css'
 
 
 const Cart = ({shop, cart}) => {
-
+  console.log(cart)
   let list;
-  if(shop){
+  if(cart){
     list = cart.map( (item, i) => {
       return (<div key={i} className="cart-product">
         <div>
@@ -38,6 +38,7 @@ const Cart = ({shop, cart}) => {
               <div className="cart-main-second">price</div>
               <div className="cart-main-second">Quantity</div>
               <div className="cart-main-third">Total</div>
+              {list}
             </div>
           </div>
         </div>
