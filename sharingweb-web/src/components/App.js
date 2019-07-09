@@ -12,6 +12,7 @@ import ListProducts from '../scenes/shoplanding/components/ListProducts';
 import Orders from '../scenes/shoplanding/components/Orders';
 import Checkout from '../scenes/shoplanding/components/Checkout';
 import DetailProduct from '../scenes/shoplanding/components/DetailProduct';
+import ProductCard from '../scenes/shoplanding/components/ProductCard';
 
 
 
@@ -30,6 +31,7 @@ class App extends React.Component {
           <Route exact path="/shops/:name/orders"component={Orders}></Route>
           <Route exact path="/shops/:name/checkout"component={Checkout}></Route>
           <Route exact path="/shops/:name/detail-product"component={DetailProduct}></Route>
+          
       </Switch>
     );
   }
