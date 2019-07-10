@@ -39,7 +39,6 @@ class Login extends React.Component {
       password: false
     },
     goShop: false,
-    wrongCredentials: false
   }
 
   handleChange = e => {
@@ -84,14 +83,15 @@ class Login extends React.Component {
           })
         },
         error => {
-          this.setState({ 
-            wrongCredentials: true,
+          this.setState({
+            ...this.state,
             errors: {
+              ...this.state.errors,
               name: true,
               password: true
-            }
+            },
           })
-        }
+      }
       )
   }
 

@@ -96,7 +96,16 @@ class Register extends React.Component {
         response => {
           this.setState({ goLogin: true})
         }, 
-        error => console.error(error)
+        error => {
+            this.setState({
+              ...this.state,
+              errors: {
+                ...this.state.errors,
+                email: true,
+                name: true
+              },
+            })
+        }
       )
   }
 
@@ -184,7 +193,7 @@ class Register extends React.Component {
                     </div>)}
                     {touch.name && errors.name && (
                     <div className="invalid-feedback">
-                      Shop name is required.
+                      Shop name is required. The name is already registered
                     </div>)}
               </div>
               <div className="form-group">

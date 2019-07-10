@@ -57,3 +57,14 @@
   width: 100px;
   height: 100px
 }
+
+.container .cart-checkout {
+  font-size: 1rem;
+  border: 2px rgba(0, 0, 0, 0.315) solid;
+}
+
+.cart-checkout-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end
+}

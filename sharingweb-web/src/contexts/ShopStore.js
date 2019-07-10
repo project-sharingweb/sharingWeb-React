@@ -29,7 +29,7 @@ class ShopStoreImpl extends Component {
             ShopService.listProducts(shopName)
               .then(res => this.setState({ ...this.state, shop: shop, products: res, shopBack:shop }), error => console.error(error))
           } else {
-            history.navigate('/error/404')
+            history.push('/error/404')
           }
         },
         error => console.error(error)
@@ -117,6 +117,19 @@ class ShopStoreImpl extends Component {
     }
   }
 
+  deleteProduct = product => {
+    ShopService.deleteProduct(product)
+      .then(response => {
+        ShopService.listProducts(product.name)
+          .then(products => {
+            this.setState({
+              ...this.state,
+              products: products
+            }, error => console.error(error))
+          }, error => console.error(error))
+      })
+  }
+
 
 
   render() {
@@ -131,7 +144,8 @@ class ShopStoreImpl extends Component {
         cart: this.state.cart,
         addToCart: this.addToCart,
         removeFromCart: this.removeFromCart,
-        unAddToCart: this.unAddToCart
+        unAddToCart: this.unAddToCart,
+        deleteProduct: this.deleteProduct
       }}>
         {this.props.children}
       </ShopContext.Provider>

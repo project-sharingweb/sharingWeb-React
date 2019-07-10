@@ -16,6 +16,8 @@ const listOrders = urlName => http.get(`/shops/${urlName}/orders`)
 
 const orderDetail = (urlName, id) => http.get(`/shops/${urlName}/orders/${id}`)
 
+const deleteProduct = product => http.post(`/shops/${product.shopName}/products/delete`, product)
+
 const purchase = order => http.post(`shops/${order.shopName}/orders`, order) 
 
 const editShop = shop => http.put(`/shops/${shop.urlName}`, shop)
@@ -28,5 +30,6 @@ export default {listShops,
   listOrders,
   orderDetail,
   purchase,
-  editShop
+  editShop,
+  deleteProduct
 }

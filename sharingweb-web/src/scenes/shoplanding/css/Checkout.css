@@ -59,3 +59,25 @@
     width: 98%
 }
 
+.paypal-logo {
+  font-family: Verdana, Tahoma;
+  font-weight: bold;
+  font-size: 26px;
+}
+
+.paypal-logo1 {
+  color: #253b80;
+  font-weight: 700
+}
+
+.paypal-logo2 {
+  color: #179bd7;
+  font-weight: 700
+}
+  
+.paypal-button {
+    padding: 15px 30px;
+    border: 1px solid #FF9933;
+    border-radius: 5px;
+    background-image: linear-gradient(#FFF0A8, #F9B421);
+}

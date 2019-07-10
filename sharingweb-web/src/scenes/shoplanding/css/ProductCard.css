@@ -10,3 +10,7 @@
 .card-image {
   height: 255px
 }
+
+.card-price {
+  font-size: 1.3rem
+}

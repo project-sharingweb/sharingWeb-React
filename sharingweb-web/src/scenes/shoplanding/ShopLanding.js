@@ -8,12 +8,14 @@ import LandingFooter from './components/LandingFooter';
 import EditForm from './components/EditForm';
 import { WithAuthContext } from '../../contexts/AuthStore'
 import AddProductForm from './components/AddProductForm';
+import {Redirect} from 'react-router-dom'
 
 
 class ShopLanding extends React.Component {
   state = {
     edit: false,
     addProduct: false,
+    onDelete: false
   }
 
   modifyEdit = () => {
@@ -26,19 +28,24 @@ class ShopLanding extends React.Component {
     addProduct ? this.setState({ ...this.state, addProduct: false}) : this.setState({...this.state, addProduct: true})
   }
 
+  modifyOnDelete = () => {
+    const {onDelete} = this.state
+    onDelete ? this.setState({ ...this.state, onDelete: false}) : this.setState({...this.state, onDelete: true})
+  }
 
 
   render() {
     const { shop, products, isAuthenticated } = this.props
-    const {edit, addProduct} = this.state
+    const {edit, addProduct, onDelete} = this.state
     let list; 
     if(products){
       list = products.map((item, i) => {
-        return <ProductCard key={i} product={item} addToCart={this.props.addToCart}></ProductCard>
+        return <ProductCard key={i} product={item} onDelete={this.modifyOnDelete}></ProductCard>
       }).slice(0, 12)
     }
     return (
       <div>
+        { onDelete && <Redirect to={`/shops/${shop.urlName}`}/>}
         {shop &&
           <div style={shop.styles.background} className={(edit || addProduct) ? "landing-main-wrapper" : undefined}>
             {edit && <div className="editform-wrapper"><EditForm edit={this.modifyEdit}></EditForm></div>}

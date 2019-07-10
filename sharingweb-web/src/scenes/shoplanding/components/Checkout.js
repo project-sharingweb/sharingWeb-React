@@ -17,8 +17,10 @@ class Checkout extends React.Component{
         street: "",
         zipCode: "",
         city: "",
-        country: ""
-        }
+        country: "",
+        products: this.props.cart ? this.props.cart.map(item => item.id): null,
+        cart: this.props.cart ? this.props.cart : null
+      }
     }
 
     handleChange = e => {
@@ -57,7 +59,7 @@ render() {
                 <LandingHeader></LandingHeader>
                 <div className="checkout-form mt-2 mb-5"> 
                     <h1>Checkout</h1>
-                    <form onSubmit={this.handleSubmit} className="order-form" mt-2>
+                    <form onSubmit={this.handleSubmit} className="order-form mt-2" >
                         <div className="name-form mt-4"> 
                             <div className="form-name">
                                 <label htmlFor="exampleInputname" className="box-label">Name</label>
@@ -140,8 +142,11 @@ render() {
                                 
                             </div>
                         </div>
-                        
-                        <button type="submit" className="btn btn-primary register-button mt-4">Pay to PayPal</button>
+                            <button type="submit" className="paypal-button mt-4">
+                                <span className="paypal-button-title">Buy now with</span>
+                                <span className="paypal-logo1"><i>Pay</i></span>
+                                <span className="paypal-logo2"><i>Pal</i></span>
+                            </button>
                     </form>
                 
                 </div>

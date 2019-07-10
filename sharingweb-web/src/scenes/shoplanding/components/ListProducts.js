@@ -14,7 +14,6 @@ class ListProducts extends React.Component {
 
   handleChange = e => {
     const {value} = e.target
-    console.log(value)
     this.setState({
       category: value
     })
@@ -26,7 +25,7 @@ class ListProducts extends React.Component {
     let list;
     let options;
     if(products){
-        const categories = [... new Set(products.map(item => item.category))]
+        const categories = [...new Set(products.map(item => item.category))]
           options = categories.map((item, i) => {
             return <option key={i} value={item}>{item}</option>
           })
