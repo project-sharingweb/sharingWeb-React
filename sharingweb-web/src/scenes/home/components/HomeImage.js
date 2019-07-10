@@ -6,7 +6,7 @@ const HomeImage = props => {
   return(
     <div className="container-demo">
       <div className="container-img">
-        <img src='http://placehold.it/300x300'/>
+        <img alt="landing page pic" src='http://placehold.it/300x300'/>
 
       </div>
       <div className="container-content">
