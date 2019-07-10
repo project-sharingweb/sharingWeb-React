@@ -9,15 +9,10 @@ class AuthStore extends React.Component {
   }
 
   handleShopChange = shop => {
-    
+
     this.setState({shop})
-    if (shop) {
-      
-      localStorage.setItem(CURRENT_SHOP_KEY, JSON.stringify(shop))}
-    else {
-      console.log("hola")
-      localStorage.removeItem(CURRENT_SHOP_KEY)}
-  }
+    if (shop) localStorage.setItem(CURRENT_SHOP_KEY, JSON.stringify(shop))
+    else localStorage.removeItem(CURRENT_SHOP_KEY)}
 
   isAuthenticated = () => this.state.shop && this.state.shop.name
 

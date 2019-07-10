@@ -15,7 +15,7 @@ class ShopStoreImpl extends Component {
     shop: null,
     shopBack: null,
     products: null,
-    cart: []
+    cart: null
   }
 
   componentDidMount() {
@@ -60,35 +60,60 @@ class ShopStoreImpl extends Component {
   }
 
   addToCart = product => {
-    if (this.state.cart === []) {
-      product.amount = 1  
+    if (!this.state.cart) {
+      const newObj = [{...product, amount: 1}]
       this.setState({
-        ...this.state,
-        cart: this.state.cart.push(product)
+        cart: newObj
       })
     } else {
-      let counter = 0 
-      const newCart = this.state.cart.map(item => {
-        if (item.id === product.id) {
-          item.amount += 1
-          counter++
-          return item
-        } else {
-          return item
-        }
-      })
-      if (counter === 0){
-        product.amount = 1  
-        this.setState({
-          ...this.state,
-          cart: this.state.cart.push(product)
+      let counter = 0
+      let theCart = [...this.state.cart]
+        theCart = theCart.map(item => {
+          if (item.id === product.id) {
+            counter++
+            item.amount = item.amount + 1
+            return item
+          } else {return item}
         })
-      } else {
+        if(counter === 0){
+          const newObj = {...product, amount: 1}
+          theCart.push(newObj)
+          this.setState({
+            ...this.state,
+            cart: theCart
+          })
+        }
+        else {
+          this.setState({
+            ...this.state,
+            cart: theCart
+          })
+        }
+    }
+  }
+
+  removeFromCart = product => {
+    const newCart = this.state.cart.filter(item => item.id !== product.id)
       this.setState({
         ...this.state,
         cart: newCart
       })
-      }
+  }
+
+  unAddToCart = product => {
+    if(product.amount > 1){
+      const newCart = this.state.cart.map(item => {
+        if (item.id === product.id) {
+          item.amount = item.amount - 1
+          return item
+        } else {return item}
+      })
+      this.setState({
+        ...this.state,
+        cart: newCart
+      })
+    } else {
+      this.removeFromCart(product)
     }
   }
 
@@ -104,7 +129,9 @@ class ShopStoreImpl extends Component {
         onShopChange: this.handleShopChange,
         onReset: this.resetEdition,
         cart: this.state.cart,
-        addToCart: this.state.addToCart
+        addToCart: this.addToCart,
+        removeFromCart: this.removeFromCart,
+        unAddToCart: this.unAddToCart
       }}>
         {this.props.children}
       </ShopContext.Provider>
