@@ -9,7 +9,7 @@
   background-size: cover;
 }
 
-.main-image-text{
+.container-content{
   margin: 100px 0;
   width: 100%;
   display: flex;
@@ -36,4 +36,26 @@
 .main-button{
   width: 35%;
   align-self: flex-end
+}
+
+.container-demo {
+  display: flex;
+}
+
+.container-img {
+  order: 1;
+}
+
+
+@media (max-width: 768px) {
+  .container-demo {
+    flex-wrap: wrap;
+  }
+  .container-img {
+    order: 0;
+  }
+
+  .main-text-p {
+    width: 100%;
+  }
 }
