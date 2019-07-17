@@ -32,6 +32,28 @@
   width: 15%;
 }
 
+
+
+.p-cart-quantity {
+  width: 30%;
+  border: 2px black solid;
+  text-align: center;
+  background-color: white
+}
+
+.quantity-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.button-cart-quantity {
+  width: 100%;
+  cursor: pointer;
+  display: block;
+  font-size: 1.8rem !important
+}
+
 .cart-main-third {
   width: 10%;
   text-align: end;

@@ -17,3 +17,7 @@ code {
   font-size: 1.3rem
 }
 
+.main-background {
+  min-height: 67vh;
+  position: relative;
+}

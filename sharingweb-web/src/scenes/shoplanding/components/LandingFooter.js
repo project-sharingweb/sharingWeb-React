@@ -1,11 +1,14 @@
 import React from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
-import {withShopContext} from '../../../contexts/ShopStore'
+import {withShopContext} from '../../../contexts/ShopStore';
+import {WithAuthContext} from '../../../contexts/AuthStore';
 import MapContainer from '../../../components/MapContainer';
 import { Link } from 'react-router-dom'
 import '../css/LandingFooter.css'
 
-const LandingFooter = ({shop}) => {
+const LandingFooter = props => {
+  const {shop, isAuthenticated} = props
+
   return (
     <div className="landing-footer-down">
       <MDBFooter style={shop.styles.footerBackground} className="font-small">
@@ -30,9 +33,9 @@ const LandingFooter = ({shop}) => {
                 <li className="list-unstyled">
                   <Link style={shop.styles.footerFont} to={`/shops/${shop.urlName}/products`}>Products</Link>
                 </li>
-                <li className="list-unstyled">
-                  <a style={shop.styles.footerFont} href="#orders">Orders</a>
-                </li>
+                { isAuthenticated() && <li className="list-unstyled">
+                  <Link style={shop.styles.footerFont} to={`/shops/${shop.urlName}/orders`}>Orders</Link>
+                </li>}
               </ul>
             </MDBCol>
           </MDBRow>
@@ -47,4 +50,4 @@ const LandingFooter = ({shop}) => {
   );
 }
 
-export default withShopContext(LandingFooter);
+export default WithAuthContext(withShopContext(LandingFooter));

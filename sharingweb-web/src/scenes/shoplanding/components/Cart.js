@@ -21,7 +21,13 @@ const Cart = ({shop, cart, addToCart, unAddToCart, removeFromCart}) => {
           </div>
         </div>
         <div className="cart-main-second">{item.price}€</div>
-        <div className="cart-main-second"><p>{item.amount}</p></div>
+        <div className="cart-main-second quantity-wrapper">
+          <p className="p-cart-quantity mr-4 pt-2">{item.amount}</p>
+          <div>
+            <i className="fa fa-chevron-circle-up button-cart-quantity" onClick={() => addToCart(item)}></i>
+            <i className="fa fa-chevron-circle-down button-cart-quantity" onClick={() => unAddToCart(item)}></i>
+          </div>
+        </div>
         <div className="cart-main-third">{item.price * item.amount}€</div>
       </div>)
     })
@@ -31,7 +37,7 @@ const Cart = ({shop, cart, addToCart, unAddToCart, removeFromCart}) => {
   return (
     <div>
       {shop &&
-      <div style={shop.styles.background}>
+      <div style={shop.styles.background} className="main-background">
         <LandingHeader></LandingHeader>
         <div className="container">
           <h1 className="cart-title">Your Cart</h1>

@@ -44,7 +44,7 @@ class ShopLanding extends React.Component {
       }).slice(0, 12)
     }
     return (
-      <div>
+      <div className="main-background">
         { onDelete && <Redirect to={`/shops/${shop.urlName}`}/>}
         {shop &&
           <div style={shop.styles.background} className={(edit || addProduct) ? "landing-main-wrapper" : undefined}>
@@ -69,7 +69,7 @@ class ShopLanding extends React.Component {
                 data-aos-once="false"
                 data-aos-anchor-placement="top">
                   <h2>Products</h2>
-                  <div className="products-wrapper">
+                  <div className="products-wrapper pb-5">
                     {list}
                   </div>
                 </div>

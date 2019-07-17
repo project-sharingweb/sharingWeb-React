@@ -44,7 +44,7 @@ class ListProducts extends React.Component {
     return (
       <div>
       {shop &&
-        <div style={shop.styles.background}>
+        <div style={shop.styles.background} className="main-background">
           <LandingHeader></LandingHeader>
           <div className="container">
             <div className="mt-4">

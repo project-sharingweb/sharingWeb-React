@@ -23,9 +23,9 @@
 }
 
 .logo-image2 {
-  margin: 18px 40px 20px 0;
-  width: 100px; 
-  height: 60%;
+  margin: 18px 40px 20px 0; 
+  max-height: 65px;
+  width: auto
 }
 
 .nav-bar-li2 {

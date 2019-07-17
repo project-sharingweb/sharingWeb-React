@@ -17,5 +17,6 @@
 
 .icon-edit-form {
   color: red;
-  float: right
+  float: right;
+  cursor: pointer;
 }

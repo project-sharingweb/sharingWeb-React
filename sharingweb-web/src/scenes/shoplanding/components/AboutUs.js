@@ -25,9 +25,9 @@ class AboutUs extends React.Component {
     return (
       <React.Fragment>
         {shop &&
-        <div style={shop.styles.background}>
+        <div style={shop.styles.background} className="main-background">
           <LandingHeader></LandingHeader>
-          <div className="about-us-wrapper mt-5">        
+          <div className="about-us-wrapper mt-5 pb-5">        
             {edit && <AboutUsForm edit={this.modifyEdit}></AboutUsForm>}
             
 
@@ -37,9 +37,8 @@ class AboutUs extends React.Component {
               {isAuthenticated() && <div className="edit-aboutus-button-wrapper"><button className="btn btn-default" onClick={() => this.modifyEdit()}>edit</button></div>}       
             </div>
 
-            <div style={{width: "100%"}} className="mt-5">
-              <LandingFooter></LandingFooter>
-            </div>
+
+            <LandingFooter></LandingFooter>
           </div>
         </div>}
       </React.Fragment>

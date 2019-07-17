@@ -15,6 +15,7 @@ class ShopStoreImpl extends Component {
     shop: null,
     shopBack: null,
     products: null,
+    orders: null,
     cart: null
   }
 
@@ -27,7 +28,8 @@ class ShopStoreImpl extends Component {
         shop => {
           if (shop) {
             ShopService.listProducts(shopName)
-              .then(res => this.setState({ ...this.state, shop: shop, products: res, shopBack:shop }), error => console.error(error))
+              .then(shopProducts => ShopService.listOrders(shopName)
+                .then( shopOrders => this.setState({ ...this.state, shop: shop, products: shopProducts, orders: shopOrders, shopBack:shop }), error => console.error(error)))
           } else {
             history.push('/error/404')
           }
@@ -41,7 +43,8 @@ class ShopStoreImpl extends Component {
     ShopService.shopDetail(name)
     .then( response => { 
       ShopService.listProducts(response.urlName)
-      .then(res => this.setState({...this.state, shop: response, products: res, shopBack: response }), error => console.error(error))
+        .then(shopProducts => ShopService.listOrders(response.urlName)
+          .then( shopOrders => this.setState({ ...this.state, shop: response, products: shopProducts, orders: shopOrders, shopBack:response }), error => console.error(error)))
     })
   }
 
@@ -137,6 +140,7 @@ class ShopStoreImpl extends Component {
       <ShopContext.Provider value={{
         shop: this.state.shop,
         products: this.state.products,
+        orders: this.state.orders,
         shopBack: this.state.shopBack,
         updateShop: this.updateShop,
         onShopChange: this.handleShopChange,

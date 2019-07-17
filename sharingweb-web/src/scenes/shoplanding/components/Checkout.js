@@ -55,9 +55,9 @@ render() {
     return (
         <div>
             {shop &&
-            <div style={shop.styles.background}>
+            <div style={shop.styles.background} className="main-background">
                 <LandingHeader></LandingHeader>
-                <div className="checkout-form mt-2 mb-5"> 
+                <div className="checkout-form pt-5 pb-5"> 
                     <h1>Checkout</h1>
                     <form onSubmit={this.handleSubmit} className="order-form mt-2" >
                         <div className="name-form mt-4"> 
