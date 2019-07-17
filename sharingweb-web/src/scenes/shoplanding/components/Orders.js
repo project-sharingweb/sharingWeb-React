@@ -26,7 +26,7 @@ class Orders extends React.Component {
           </div>
           <div className="cart-main-second">{item.price}€</div>
           <div className="cart-main-second"><p>{item.amount}</p></div>
-          <div className="cart-main-third">{item.price * item.amount}€</div>
+          <div className="cart-main-third">{item.products.length >=1 &&item.products[0].price}€</div>
         </div>)
       })
     } 

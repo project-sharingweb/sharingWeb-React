@@ -19,7 +19,9 @@ class Checkout extends React.Component{
         city: "",
         country: "",
         products: this.props.cart ? this.props.cart.map(item => item.id): null,
-        cart: this.props.cart ? this.props.cart : null
+        cart: this.props.cart ? this.props.cart : null,
+        price: this.props.cart ? this.props.cart.reduce((acc, item)=> acc + (parseInt(item.price)*item.amount), 0).toString() : null,
+        amounts: this.props.cart ? this.props.cart.map(item => item.amount): null,
       }
     }
 
@@ -36,7 +38,6 @@ class Checkout extends React.Component{
     handleSubmit = e => {
         e.preventDefault()
         const {order} = this.state 
-        order.products = this.props.cart
         order.shopName = this.props.shop.urlName
 
         ShopService.purchase(order)

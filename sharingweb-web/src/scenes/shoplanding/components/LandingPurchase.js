@@ -9,7 +9,7 @@ const SuccessPurchase = ({shop, logo, title, message, red}) => {
   return (
     <div>
       {shop &&
-        <div style={shop.styles.background}>
+        <div style={shop.styles.background} className="main-background pb-2">
           <LandingHeader></LandingHeader>
           <div className=" container payment-success-wrapper">
             <h1 className="payment-success-title">{title}</h1>
