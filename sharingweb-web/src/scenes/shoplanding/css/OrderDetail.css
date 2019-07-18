@@ -1,0 +1,44 @@
+.order-detail-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center
+}
+
+.order-info {
+  padding: 20px;
+  width: 60%
+}
+
+.order-info h2 {
+  font-weight: 700;
+  font-size: 2rem
+}
+.order-info p {
+  font-size: 1.5rem
+}
+
+.order-address  {
+  padding: 20px;
+}
+
+.order-address h2 {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.order-address p {
+  font-size: 1.5rem
+}
+
+.fulfill-button {
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 20px;
+  margin: 0 auto;
+  display: block;
+  background-color: greenyellow;
+  border: 2px green solid;
+  border-radius: 10%;
+}

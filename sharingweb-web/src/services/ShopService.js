@@ -22,6 +22,8 @@ const purchase = order => http.post(`shops/${order.shopName}/orders`, order)
 
 const editShop = shop => http.put(`/shops/${shop.urlName}`, shop)
 
+const editOrder = (id, shop) => http.post(`/shops/${shop}/orders/${id}`)
+
 export default {listShops,
   shopDetail,
   listProducts,
@@ -31,5 +33,6 @@ export default {listShops,
   orderDetail,
   purchase,
   editShop,
-  deleteProduct
+  deleteProduct,
+  editOrder
 }

@@ -1,3 +1,75 @@
 .orders-main-wrapper {
     background-color: #e89898;
 }
+
+.order-title {
+    margin: 50px 0;
+    width: 100%;
+    font-weight: 700;
+    text-align: center; 
+  }
+  
+  .info-order-wrapping {
+    margin: 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  .order-product-main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 1.3rem;
+    border-bottom: 2px rgba(0, 0, 0, 0.185) solid;
+    padding: 20px
+  }
+  
+  .order-main-first {
+    width: 50%
+  }
+  
+  .order-main-second {
+    width: 15%;
+  }
+
+  .order-main-third {
+    width: 20%;
+    text-align: end;
+  }
+
+  .order-product {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 1.3rem;
+    border-bottom: 2px rgba(0, 0, 0, 0.185) solid;
+    padding: 20px;
+    align-items: center
+  }
+
+  .in-process {
+    padding: 5px;
+    border: gold 4px solid;
+    background-color: rgb(255, 255, 0);
+    color: black;
+  }
+
+  .completed {
+    border: green 2px solid;
+    background-color: greenyellow;
+    color: black;
+    padding: 5px;
+  }
+
+  .pending {
+    border: darkred 2px solid;
+    background-color: red;
+    color: black;
+    padding: 5px;
+  }

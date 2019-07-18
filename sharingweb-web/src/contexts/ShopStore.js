@@ -133,6 +133,23 @@ class ShopStoreImpl extends Component {
       })
   }
 
+  fulfillOrder = (id, urlName) => {
+    ShopService.editOrder(id, urlName)
+      .then(order => {
+        const newOrders = this.state.orders.map(item => {
+          if (item.id === order.id) {
+            return order
+          } else {
+            return item
+          }
+        }) 
+        this.setState({
+          ...this.state,
+          orders: newOrders
+        })
+      }, error => console.error(error))
+  }
+
 
 
   render() {
@@ -149,7 +166,8 @@ class ShopStoreImpl extends Component {
         addToCart: this.addToCart,
         removeFromCart: this.removeFromCart,
         unAddToCart: this.unAddToCart,
-        deleteProduct: this.deleteProduct
+        deleteProduct: this.deleteProduct,
+        fulfillOrder: this.fulfillOrder
       }}>
         {this.props.children}
       </ShopContext.Provider>

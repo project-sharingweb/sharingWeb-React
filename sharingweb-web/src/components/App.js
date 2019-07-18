@@ -16,6 +16,7 @@ import Cart from '../scenes/shoplanding/components/Cart'
 import LandingPurchase from '../scenes/shoplanding/components/LandingPurchase';
 import logoPay from '../images/successpay.svg'
 import failPay from '../images/failedpay.svg'
+import OrderDetail from '../scenes/shoplanding/components/OrderDetail'
 
 
 class App extends React.Component {
@@ -31,6 +32,7 @@ class App extends React.Component {
           <Route exact path="/shops/:name/about-us"component={AboutUs}></Route>
           <Route exact path="/shops/:name/products"component={ListProducts}></Route>
           <Route exact path="/shops/:name/orders"component={Orders}></Route>
+          <Route exact path="/shops/:name/orders/:id"component={OrderDetail}></Route>
           <Route exact path="/shops/:name/checkout"component={Checkout}></Route>
           <Route exact path="/shops/:name/products/:id"component={DetailProduct}></Route>
           <Route exact path="/shops/:name/cart"component={Cart}></Route>
