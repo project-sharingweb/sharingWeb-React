@@ -10,7 +10,12 @@ const listProducts = urlName => http.get(`/shops/${urlName}/products`)
 
 const productDetail = (urlName, id) => http.get(`/shops/${urlName}/products/${id}`)
 
-const addProduct = product => http.post(`/shops/${product.shopName}/products`, product) 
+const addProduct = product => {
+  const data = new FormData();
+  Object.keys(product).forEach(prop => data.append(prop, product[prop]))
+  
+  return  http.post(`/shops/${product.shopName}/products`, data)
+} 
 
 const listOrders = urlName => http.get(`/shops/${urlName}/orders`)
 
@@ -20,7 +25,12 @@ const deleteProduct = product => http.post(`/shops/${product.shopName}/products/
 
 const purchase = order => http.post(`shops/${order.shopName}/orders`, order) 
 
-const editShop = shop => http.put(`/shops/${shop.urlName}`, shop)
+const editShop = (shop, img) => { 
+  const data = new FormData();
+  Object.keys(shop).forEach(prop => data.append(prop, shop[prop]))
+  data.append("background", img)
+  return http.put(`/shops/${shop.urlName}`, data)
+}
 
 const editOrder = (id, shop) => http.post(`/shops/${shop}/orders/${id}`)
 

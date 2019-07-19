@@ -18,13 +18,13 @@ class AddProductForm extends React.Component {
   }
 
   handleChange = e => {
-    const {name, value} = e.target
+    const {name, value, files} = e.target
 
     this.setState({
       ...this.state,
       product:{
         ...this.state.product,
-        [name]: value
+        [name]: files && files[0] ? files[0] : value
       }
     })
   }
@@ -93,8 +93,7 @@ class AddProductForm extends React.Component {
           <div className="form-group">
             <label htmlFor="inputImage">Image</label>
             <input name='image'
-              type="text"
-              value={product.image}
+              type="file"
               className={`form-control`}
               onChange={this.handleChange}
               id="inputImage"/>

@@ -5,23 +5,25 @@ import ShopService from '../../../services/ShopService'
 
 class EditForm extends React.Component {
   state = {
-    shop: this.props.shop
+    shop: this.props.shop,
+    background: ""
   }
 
   handleChange = event => {
-    const { name, value } = event.target;
+    const { name, value, files } = event.target;
 
     this.setState({
+      ...this.state,
       shop: {
         ...this.state.shop,
-        [name]: value
+        [name]: files && files[0] ? files[0] : value
       }
     }, () => this.props.onShopChange(this.state.shop))
   }
 
   handleStyleChange = event => {
 
-    const updateShop = style => {
+    const updateShop = (style, val) => {
       this.setState({
         shop: {
           ...this.state.shop,
@@ -29,25 +31,26 @@ class EditForm extends React.Component {
             ...this.state.shop.styles,
             ...style
           }
-        }
+        },
+        background: val
       }, () => this.props.onShopChange(this.state.shop))
     }
 
-    const { name, value } = event.target
+    const { name, value, files } = event.target
     switch (name) {
       case "titleFont":
       case "navLinks":
       case "footerFont":
-        updateShop({[name]: {color: value}});
+        updateShop({[name]: {color: value}}, "");
         break;
       case "nav":
       case "background":
       case "footerBackground":
       case "purchaseButton":
-        updateShop({[name]: { backgroundColor: value }});
+        updateShop({[name]: { backgroundColor: value }}, "");
         break;
       case "landingImage":
-        updateShop({[name]: {backgroundImage: value}})
+        updateShop({[name]: {backgroundImage: files && files[0] ? files[0] : value}}, files && files[0] ? files[0] : value)
         break;
       default:
         console.error(`Unknown shop style: ${name}`);
@@ -56,9 +59,9 @@ class EditForm extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    const { shop } = this.state
+    const { shop, background } = this.state
 
-    ShopService.editShop(shop)
+    ShopService.editShop(shop, background)
       .then(shop => this.props.updateShop(shop.urlName), error => console.error(error))
   } 
 
@@ -100,21 +103,19 @@ class EditForm extends React.Component {
                 onChange={this.handleStyleChange}/>
             </div>
             <div className="form-group">
-              <label htmlFor="exampleInputLogo">Logo</label>
+              <label htmlFor="Logo">Logo</label>
               <input name='logo'
-                type="text"
-                value={shop.logo}
+                type="file"
                 className={`form-control`}
-                id="exampleInputLogo"
+                id="logo"
                 onChange={this.handleChange}/>
             </div>
             <div className="form-group">
-              <label htmlFor="exampleInputBackGroundImage">Background Image</label>
+              <label htmlFor="BackGroundImage">Background Image</label>
               <input name='landingImage'
-                type="text"
-                value={shop.styles.landingImage.backgroundImage}
+                type="file"
                 className={`form-control`}
-                id="exampleInputBackGroundImage"
+                id="BackGroundImage"
                 onChange={this.handleStyleChange}/>
             </div>
             <div className="form-group">
