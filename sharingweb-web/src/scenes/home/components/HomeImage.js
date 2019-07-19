@@ -1,12 +1,13 @@
 import React from 'react'
 import '../css/HomeImage.css'
+import fotico from '../../../images/background.jpg'
 
 const HomeImage = props => {
   
   return(
-    <div className="container-demo">
+    <div className="container container-demo">
       <div className="container-img">
-        <img alt="landing page pic" src='http://placehold.it/300x300'/>
+        <img className="image-background-home" alt="landing page pic" src={fotico}/>
 
       </div>
       <div className="container-content">

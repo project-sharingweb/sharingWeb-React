@@ -34,7 +34,7 @@ class OrderDetail extends React.Component {
           {isAuthenticated() ? (
             <div style={shop.styles.background} className="main-background">
             <LandingHeader></LandingHeader>
-            <div className="container">
+            <div className="container pb-5">
               <h1 className="order-title">Order #{myOrder.number}</h1>
               <div className="order-detail-wrapper">
                 <div className="order-info">
