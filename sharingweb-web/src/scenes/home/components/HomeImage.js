@@ -5,7 +5,8 @@ import fotico from '../../../images/background.jpg'
 const HomeImage = props => {
   
   return(
-    <div className="container container-demo">
+    <div className="home-image-wrapper">
+      <div className="container container-demo">
       <div className="container-img">
         <img className="image-background-home" alt="landing page pic" src={fotico}/>
 
@@ -18,7 +19,7 @@ const HomeImage = props => {
           <button className="btn btn-default" onClick={() => props.register()}>Register in Sharing web</button>
         </div>
       </div>
-
+      </div>
     </div>
     
   )
