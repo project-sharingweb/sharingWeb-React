@@ -1,0 +1,15 @@
+
+.detail-product-wrapper{
+    display: flex;
+}
+.imageAndTexto{
+    width: 100%
+}
+.image{
+    width: 200px;
+}
+
+.texto{
+    width: 50%;
+}
+

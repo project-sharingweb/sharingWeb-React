@@ -35,15 +35,19 @@
 
 .main-button{
   width: 35%;
-  align-self: flex-end
+  align-self: flex-start
 }
 
 .container-demo {
   display: flex;
+  align-items: center;
 }
 
 .container-img {
   order: 1;
+}
+.image-background-home{
+  width: 600px;
 }
 
 
@@ -57,5 +61,9 @@
 
   .main-text-p {
     width: 100%;
+  }
+  .image-background-home{
+    margin: 0 auto;
+    width: 400px;
   }
 }
