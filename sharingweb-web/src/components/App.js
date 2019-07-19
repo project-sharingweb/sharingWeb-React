@@ -17,6 +17,7 @@ import LandingPurchase from '../scenes/shoplanding/components/LandingPurchase';
 import logoPay from '../images/successpay.svg'
 import failPay from '../images/failedpay.svg'
 import OrderDetail from '../scenes/shoplanding/components/OrderDetail'
+import NotFound from './NotFound';
 
 
 class App extends React.Component {
@@ -38,6 +39,7 @@ class App extends React.Component {
           <Route exact path="/shops/:name/cart"component={Cart}></Route>
           <Route exact path="/shops/:name/success/:id" component={() => <LandingPurchase logo={logoPay} message="Your payment was successful!" title="Thank You!"/>}></Route>
           <Route exact path="/shops/:name/failed" component={() => <LandingPurchase logo={failPay} message="Your payment failed. Please try again" title="We are sorry" red="red"/>}></Route>
+          <Route path="/" component={NotFound}></Route>
       </Switch>
     );
   }

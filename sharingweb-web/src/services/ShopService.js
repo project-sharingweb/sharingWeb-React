@@ -25,7 +25,8 @@ const deleteProduct = product => http.post(`/shops/${product.shopName}/products/
 
 const purchase = order => http.post(`shops/${order.shopName}/orders`, order) 
 
-const editShop = (shop, img) => { 
+const editShop = (shop, img) => {
+  if (img === ""){return http.put(`/shops/${shop.urlName}`, shop)} 
   const data = new FormData();
   Object.keys(shop).forEach(prop => data.append(prop, shop[prop]))
   data.append("background", img)

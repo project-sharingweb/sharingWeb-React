@@ -25,7 +25,7 @@ class AboutUsForm extends React.Component {
 
     const { shop } = this.state
 
-    ShopService.editShop(shop)
+    ShopService.editShop(shop, "")
       .then(shop => {
         this.props.updateShop(shop.urlName)
         this.props.edit()

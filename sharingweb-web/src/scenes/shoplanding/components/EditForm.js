@@ -63,7 +63,15 @@ class EditForm extends React.Component {
 
     ShopService.editShop(shop, background)
       .then(shop => this.props.updateShop(shop.urlName), error => console.error(error))
-  } 
+  }
+  
+  handleSubmit2 = event => {
+    event.preventDefault()
+    const { shop, background } = this.state
+
+    ShopService.editShop(shop, background)
+      .then(shop => this.props.updateShop(shop.urlName), error => console.error(error))
+  }
 
 
   render() {
@@ -100,22 +108,6 @@ class EditForm extends React.Component {
                 value={shop.styles.titleFont.color}
                 className={`form-control`}
                 id="exampleInputTitleColor"
-                onChange={this.handleStyleChange}/>
-            </div>
-            <div className="form-group">
-              <label htmlFor="Logo">Logo</label>
-              <input name='logo'
-                type="file"
-                className={`form-control`}
-                id="logo"
-                onChange={this.handleChange}/>
-            </div>
-            <div className="form-group">
-              <label htmlFor="BackGroundImage">Background Image</label>
-              <input name='landingImage'
-                type="file"
-                className={`form-control`}
-                id="BackGroundImage"
                 onChange={this.handleStyleChange}/>
             </div>
             <div className="form-group">
@@ -159,6 +151,25 @@ class EditForm extends React.Component {
             <button className="btn btn-danger" onClick={(e) =>{ 
               e.preventDefault()
               onReset()}}>Reset</button>
+        </form>
+        <form onSubmit={this.handleSubmit2} className="register-form form-wrapper">
+          <div className="form-group">
+            <label htmlFor="Logo">Logo</label>
+            <input name='logo'
+              type="file"
+              className={`form-control`}
+              id="logo"
+              onChange={this.handleChange}/>
+          </div>
+          <div className="form-group">
+            <label htmlFor="BackGroundImage">Background Image</label>
+            <input name='landingImage'
+              type="file"
+              className={`form-control`}
+              id="BackGroundImage"
+              onChange={this.handleStyleChange}/>
+          </div>
+          <button type="submit" className="btn btn-default">Save</button>
         </form>
       </div>
     )
