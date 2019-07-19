@@ -122,8 +122,8 @@ class ShopStoreImpl extends Component {
 
   deleteProduct = product => {
     ShopService.deleteProduct(product)
-      .then(response => {
-        ShopService.listProducts(product.name)
+      .then(response => { 
+        ShopService.listProducts(product.shopName)
           .then(products => {
             this.setState({
               ...this.state,

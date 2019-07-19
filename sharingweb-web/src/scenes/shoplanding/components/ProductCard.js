@@ -2,14 +2,13 @@ import React from "react";
 import { MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter } from "mdbreact";
 import '../css/ProductCard.css'
 import {withShopContext} from '../../../contexts/ShopStore'
-import { Link } from 'react-router-dom';
+import { Link, } from 'react-router-dom';
 import {WithAuthContext} from '../../../contexts/AuthStore'
 
 class ProductCard extends React.Component {
 
   eliminate = () => {
     this.props.deleteProduct(this.props.product)
-    //this.props.onDelete()
   }
   
   render() {
