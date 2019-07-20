@@ -71,11 +71,11 @@ class Login extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
     const { shop } = this.state
-    this.props.updateShop(modifyName(shop.name))
 
     AuthServices.authenticate(shop)
       .then(
         response => {
+          this.props.updateShop(modifyName(shop.name))
           this.props.onShopAuthChange(response)
           this.setState({ 
             goShop: true,
@@ -83,8 +83,8 @@ class Login extends React.Component {
           })
         },
         error => {
+          debugger
           this.setState({
-            ...this.state,
             errors: {
               ...this.state.errors,
               name: true,
