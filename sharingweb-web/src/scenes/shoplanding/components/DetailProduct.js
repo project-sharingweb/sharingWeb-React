@@ -8,33 +8,33 @@ import "../css/DetailProduct.css"
 
 
 const DetailProducts = (props) => {
+const {shop, products} = props
+
 let myProduct
-  if (props.shop){  
-  myProduct = props.products.filter(product => product.id === props.match.params.id)[0]
+  if (shop){  
+  myProduct = products.filter(product => product.id === props.match.params.id)[0]
 }
   return (
     <div>
-      {props.shop && 
+      {shop && 
     
-    <div>
+    <div style={shop.styles.background} className="main-background">
       <LandingHeader></LandingHeader>
 
 
-      <div className="container detail-product-wrapper">
+      <div className="container detail-product-wrapper pb-5">
           <div className="product-detail-main-section">
-            <div className="">
+            <div>
               <img className="image-detail-product" src={myProduct.image} alt="product pic"/>
             </div>
-            <div className="texto">
-              <h1>{myProduct.name}</h1>
-              <p><span class='wrong-price'>{myProduct.price*2}.00€</span> <span className='correct-price'>{myProduct.price}.00€</span></p>
-              <button className="btn btn-md btn-primary">Add to cart</button>
-              <p>{myProduct.description}</p>
+            <div className="product-detail-info-section">
+              <h1 style={shop.styles.text}>{myProduct.name}</h1>
+              <p><span className='wrong-price'>{myProduct.price*2}€</span> <span className='correct-price'>{myProduct.price}€</span></p>
+              <button style={{width: "500px"}} className="btn btn-md btn-primary">Add to cart</button>
+              <p style={shop.styles.text} className="detail-product-description">{myProduct.description}</p>
+              <p style={shop.styles.background} className="tell-to-buy"><strong style={shop.styles.text}>Click </strong><span className="tell-to-buy-clic">Add To Cart</span><strong style={shop.styles.text}> To Get Yours Now! Limited Quantity - Will sell out fast!</strong></p>
             </div>
           </div>
-
-          <div className="description"></div>
-          
       </div>
       
       <LandingFooter></LandingFooter>

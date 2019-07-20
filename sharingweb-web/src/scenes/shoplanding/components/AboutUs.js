@@ -32,8 +32,8 @@ class AboutUs extends React.Component {
             
 
             <div className="container">
-              <h1 className="about-us-title">About us</h1>
-              <p className="about-us-text">{shop.aboutUs}</p>  
+              <h1 style={shop.styles.text} className="about-us-title">About us</h1>
+              <p style={shop.styles.text} className="about-us-text">{shop.aboutUs}</p>  
               {isAuthenticated() && <div className="edit-aboutus-button-wrapper"><button className="btn btn-default" onClick={() => this.modifyEdit()}>edit</button></div>}       
             </div>
 

@@ -48,13 +48,13 @@ class ListProducts extends React.Component {
           <LandingHeader></LandingHeader>
           <div className="container">
             <div className="mt-4">
-              <label className="mr-sm-2" htmlFor="inlineFormCustomSelect">Choose your category</label>
+              <label style={shop.styles.text} className="mr-sm-2" htmlFor="inlineFormCustomSelect">Choose your category</label>
               <select className="custom-select mr-sm-2" id="inlineFormCustomSelect" onChange={this.handleChange}>
               <option  value="all">Show all products...</option>
               {options}
               </select>
             </div>
-            <h1 className="category-title">{category.charAt(0).toUpperCase() + category.slice(1)}</h1>
+            <h1 style={shop.styles.text} className="category-title">{category.charAt(0).toUpperCase() + category.slice(1)}</h1>
             <div className="products-wrapper mb-5">
                 {list}
             </div>

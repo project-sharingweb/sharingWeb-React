@@ -35,14 +35,14 @@ class OrderDetail extends React.Component {
           <img className="cart-img" src={item.image} alt="product"></img>
         </div>
         <div>
-          <div>{item.name}</div>
+          <div style={shop.styles.text}>{item.name}</div>
         </div>
       </div>
-      <div className="cart-main-second">{item.price}€</div>
+      <div style={shop.styles.text} className="cart-main-second">{item.price}€</div>
       <div className="cart-main-second quantity-wrapper">
         <p className="p-cart-quantity mr-4 pt-2">{myOrder.amounts[i]}</p>
       </div>
-      <div className="cart-main-third">{item.price * myOrder.amounts[i]}€</div>
+      <div style={shop.styles.text} className="cart-main-third">{item.price * myOrder.amounts[i]}€</div>
     </div>)
     })
   }
@@ -59,23 +59,23 @@ class OrderDetail extends React.Component {
               <h1 className="order-title">Order #{myOrder.number}</h1>
               <div className="order-detail-wrapper">
                 <div className="order-info">
-                  <h2>{myOrder.name} {myOrder.lastName}</h2>
-                  <p>{myOrder.email}</p>
+                  <h2 style={shop.styles.text}>{myOrder.name} {myOrder.lastName}</h2>
+                  <p style={shop.styles.text}>{myOrder.email}</p>
                   
                 </div>
                 <div className="order-address">
-                  <h2>Shipping information</h2>
-                  <p>{myOrder.street}</p>
-                  <p>{myOrder.city} {myOrder.zipCode}</p>
-                  <p>{myOrder.country}</p>
+                  <h2 style={shop.styles.text}>Shipping information</h2>
+                  <p style={shop.styles.text}>{myOrder.street}</p>
+                  <p style={shop.styles.text}>{myOrder.city} {myOrder.zipCode}</p>
+                  <p style={shop.styles.text}>{myOrder.country}</p>
                 </div>
               </div>
               <div className="info-cart-wrapping mb-5">
                 <div className="cart-product-main">
-                  <div className="cart-main-first">Product</div>
-                  <div className="cart-main-second">price</div>
-                  <div className="cart-main-second">Quantity</div>
-                  <div className="cart-main-third">Total</div>
+                  <div style={shop.styles.text} className="cart-main-first">Product</div>
+                  <div style={shop.styles.text} className="cart-main-second">price</div>
+                  <div style={shop.styles.text} className="cart-main-second">Quantity</div>
+                  <div style={shop.styles.text} className="cart-main-third">Total</div>
                 </div>
                 {list}
               </div>

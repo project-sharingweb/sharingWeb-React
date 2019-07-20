@@ -34,7 +34,7 @@ class Orders extends React.Component {
           list = orders.map( (item, i) => {
             return (<div key={i} className="order-product">
               <div className="order-product-info order-main-first"><Link to={`/shops/${shop.urlName}/orders/${item.id}`}>#{item.number} / {item.name} {item.lastName}</Link></div>
-              <div className="order-main-second">{item.price}€</div>
+              <div style={shop.styles.text} className="order-main-second">{item.price}€</div>
               <div className="order-main-third"><span className={item.status === "in process" ? "in-process": item.status}>{item.status}</span></div>
             </div>)
           })
@@ -43,7 +43,7 @@ class Orders extends React.Component {
           list = filtered.map((item, i) => {
             return (<div key={i} className="order-product">
                 <div className="order-product-info order-main-first"><Link to={`/shops/${shop.urlName}/orders/${item.id}`}>#{item.number} / {item.name} {item.lastName}</Link></div>
-                <div className="order-main-second">{item.price}€</div>
+                <div style={shop.styles.text} className="order-main-second">{item.price}€</div>
                 <div className="order-main-third"><span className={item.status === "in process" ? "in-process": item.status}>{item.status}</span></div>
               </div>)
             })
@@ -58,9 +58,9 @@ class Orders extends React.Component {
             <div style={shop.styles.background} className="main-background">
               <LandingHeader></LandingHeader>
               <div className="container pb-4">
-                <h1 className="order-title">Orders</h1>
+                <h1 style={shop.styles.text} className="order-title">Orders</h1>
                 <div className="mt-4">
-                  <label className="mr-sm-2" htmlFor="inlineFormCustomSelect">Choose Status</label>
+                  <label style={shop.styles.text} className="mr-sm-2" htmlFor="inlineFormCustomSelect">Choose Status</label>
                   <select className="custom-select mr-sm-2" id="inlineFormCustomSelect" onChange={this.handleChange}>
                   <option  value="all">Show all orders...</option>
                   {options}
@@ -68,9 +68,9 @@ class Orders extends React.Component {
                 </div>
                 <div className="info-order-wrapping mb-5">
                 <div className="order-product-main">
-                  <div className="order-main-first">Number / Name</div>
-                  <div className="order-main-second">Value</div>
-                  <div className="order-main-third">Status</div>
+                  <div style={shop.styles.text} className="order-main-first">Number / Name</div>
+                  <div style={shop.styles.text} className="order-main-second">Value</div>
+                  <div style={shop.styles.text} className="order-main-third">Status</div>
                 </div>
                 {list}
                 </div>

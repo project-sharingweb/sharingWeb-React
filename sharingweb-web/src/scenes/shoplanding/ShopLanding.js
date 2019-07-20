@@ -56,7 +56,7 @@ class ShopLanding extends React.Component {
               <div style={shop.styles.landingImage} className="shop-main-image">
                 <div className="container">
                   <h1 style={shop.styles.titleFont}>{shop.name}</h1>
-                  <p>{shop.moto}</p>
+                  <p style={shop.styles.motoColor} >{shop.moto}</p>
                 </div>
               </div>
               <div className="container">
@@ -68,7 +68,7 @@ class ShopLanding extends React.Component {
                 data-aos-mirror="true"
                 data-aos-once="false"
                 data-aos-anchor-placement="top">
-                  <h2>Products</h2>
+                  <h2 style={shop.styles.text}>Products</h2>
                   <div className="products-wrapper pb-5">
                     {list}
                   </div>

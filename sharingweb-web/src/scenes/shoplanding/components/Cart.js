@@ -16,11 +16,11 @@ const Cart = ({shop, cart, addToCart, unAddToCart, removeFromCart}) => {
             <img className="cart-img" src={item.image} alt="product"></img>
           </div>
           <div>
-            <div>{item.name}</div>
+            <div style={shop.styles.text}>{item.name}</div>
             <button className="btn btn-danger" onClick={() => removeFromCart(item)}>Remove</button>
           </div>
         </div>
-        <div className="cart-main-second">{item.price}€</div>
+        <div style={shop.styles.text} className="cart-main-second">{item.price}€</div>
         <div className="cart-main-second quantity-wrapper">
           <p className="p-cart-quantity mr-4 pt-2">{item.amount}</p>
           <div>
@@ -28,7 +28,7 @@ const Cart = ({shop, cart, addToCart, unAddToCart, removeFromCart}) => {
             <i className="fa fa-chevron-circle-down button-cart-quantity" onClick={() => unAddToCart(item)}></i>
           </div>
         </div>
-        <div className="cart-main-third">{item.price * item.amount}€</div>
+        <div style={shop.styles.text} className="cart-main-third">{item.price * item.amount}€</div>
       </div>)
     })
   }
@@ -40,20 +40,20 @@ const Cart = ({shop, cart, addToCart, unAddToCart, removeFromCart}) => {
       <div style={shop.styles.background} className="main-background">
         <LandingHeader></LandingHeader>
         <div className="container">
-          <h1 className="cart-title">Your Cart</h1>
+          <h1 style={shop.styles.text} className="cart-title">Your Cart</h1>
           <div className="info-cart-wrapping mb-5">
             <div className="cart-product-main">
-              <div className="cart-main-first">Product</div>
-              <div className="cart-main-second">price</div>
-              <div className="cart-main-second">Quantity</div>
-              <div className="cart-main-third">Total</div>
+              <div style={shop.styles.text} className="cart-main-first">Product</div>
+              <div style={shop.styles.text} className="cart-main-second">price</div>
+              <div style={shop.styles.text} className="cart-main-second">Quantity</div>
+              <div style={shop.styles.text} className="cart-main-third">Total</div>
             </div>
             {list}
             <div className="cart-product-main">
               <div className="cart-main-first"></div>
-              <div className="cart-main-second">{cart && cart.reduce((acc,a)=> acc + parseInt(a.price), 0)}</div>
+              <div style={shop.styles.text} className="cart-main-second">{cart && cart.reduce((acc,a)=> acc + parseInt(a.price), 0)}</div>
               <div className="cart-main-second"></div>
-              <div className="cart-main-third">{cart && cart.reduce((acc,a)=> acc + (parseInt(a.price)*a.amount), 0)}</div>
+              <div style={shop.styles.text} className="cart-main-third">{cart && cart.reduce((acc,a)=> acc + (parseInt(a.price)*a.amount), 0)}</div>
             </div>
             <div className="cart-checkout-wrapper">
               <Link to={`/shops/${shop.urlName}/checkout`} className="btn btn-success mt-4 mb-4 cart-checkout">Checkout</Link>

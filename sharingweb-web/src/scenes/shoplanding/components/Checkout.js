@@ -60,15 +60,15 @@ render() {
             <div style={shop.styles.background} className="main-background">
                 <LandingHeader></LandingHeader>
                 <div className="checkout-form pt-5 pb-5"> 
-                    <h1>Checkout</h1>
+                    <h1 style={shop.styles.text}>Checkout</h1>
                     <form onSubmit={this.handleSubmit} className="order-form mt-2" >
                         <div className="name-form mt-4"> 
                             <div className="form-name">
-                                <label htmlFor="exampleInputname" className="box-label">Name</label>
+                                <label style={shop.styles.text} htmlFor="name" className="box-label">Name</label>
                                 <input name='name' className="box-input"
                                 type="text"
                                 value={order.name}
-                                id="exampleInputEmail1"
+                                id="name"
                                 aria-describedby="orderNameHelp"
                                 onChange={this.handleChange}
                                 onBlur={this.handleBlur}
@@ -76,11 +76,11 @@ render() {
                                 
                             </div>
                             <div className="form-LastName">
-                                <label htmlFor="exampleInputLastLastName" className="box-label">LastName</label>
+                                <label style={shop.styles.text} htmlFor="LastLastName" className="box-label">LastName</label>
                                 <input name='lastName' className="box-input"
                                 type="string"
                                 value={order.lastName}
-                                id="exampleInputlastName"
+                                id="lastName"
                                 onChange={this.handleChange}
                                 onBlur={this.handleBlur}
                                 />
@@ -88,22 +88,22 @@ render() {
                         </div>
                         
                         <div className="form-email mt-4" >
-                            <label htmlFor="exampleInputemail" className="boxes-label">Email</label>
+                            <label style={shop.styles.text} htmlFor="email" className="boxes-label">Email</label>
                             <input name='email' className="boxes-input"
                             type="string"
                             value={order.email}
-                            id="exampleInputemail"
+                            id="email"
                             onChange={this.handleChange}
                             onBlur={this.handleBlur}
                             placeholder="you@example.com"/>
                             
                         </div>
                         <div className="form-street mt-4">
-                            <label htmlFor="exampleInputLastStreet" className="boxes-label">Street</label>
+                            <label style={shop.styles.text} htmlFor="Street" className="boxes-label">Street</label>
                             <input name='street' className="boxes-input"
                             type="string"
                             value={order.street}
-                            id="exampleInputStreet"
+                            id="Street"
                             onChange={this.handleChange}
                             onBlur={this.handleBlur}
                             placeholder="1234 Main St"/>
@@ -111,33 +111,33 @@ render() {
                         </div>
                         <div className="direcction-box mt-4">
                             <div className="form-zipCode">
-                                <label htmlFor="exampleInputLastZipCode" className="label-box">ZipCode</label>
+                                <label style={shop.styles.text} htmlFor="LastZipCode" className="label-box">ZipCode</label>
                                 <input name='zipCode' className="input-box"
                                 type="string"
                                 value={order.zipCode}
-                                id="exampleInputzipCode"
+                                id="zipCode"
                                 onChange={this.handleChange}
                                 onBlur={this.handleBlur}
                                 />
                                 
                             </div>
                             <div className="form-city">
-                                <label htmlFor="exampleInputCity" className="label-box">City</label>
+                                <label style={shop.styles.text} htmlFor="City" className="label-box">City</label>
                                 <input name='city' className="input-box"
                                 type="string"
                                 value={order.city}
-                                id="exampleInputCity"
+                                id="City"
                                 onChange={this.handleChange}
                                 onBlur={this.handleBlur}
                                 placeholder=""/>
                                 
                             </div>
                             <div className="form-country">
-                                <label htmlFor="exampleInputCountry" className="label-box">Country</label>
+                                <label style={shop.styles.text} htmlFor="Country" className="label-box">Country</label>
                                 <input name='country' className="input-box"
                                 type="country"
                                 value={order.password}
-                                id="exampleInputCountry"
+                                id="Country"
                                 onChange={this.handleChange}
                                 onBlur={this.handleBlur}
                                 placeholder=""/>

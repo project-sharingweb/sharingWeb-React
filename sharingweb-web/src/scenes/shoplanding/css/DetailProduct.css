@@ -2,22 +2,30 @@
 .detail-product-wrapper{
     display: flex;
     flex-direction: column;
+    margin: 30px 0;
+    
 }
 .product-detail-main-section{
     display: flex;
     justify-content: space-between;
-    width: 100%
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center
 }
 
 .wrong-price{
     color: red;
     text-decoration-line: line-through;
-    font-size: 1.3rem
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-right: 30px
 }
 
 .correct-price{
     color: green;
-    font-size: 1.3rem
+    font-size: 1.3rem;
+    font-weight: 700
 }
 .image-detail-product{
     width: 400px;
@@ -27,4 +35,36 @@
 .texto{
     width: 50%;
 }
+
+.detail-product-description {
+    white-space: pre-wrap;
+    width: 500px
+}
+
+.tell-to-buy{
+    margin-bottom: 15px;
+    color: #727072;
+    font-family: Roboto, HelveticaNeue, 'Helvetica Neue', sans-serif;
+    background-color: #fefefe;
+}
+
+.tell-to-buy-clic {
+    color: #00c8ff;
+    font-weight: 700;
+}
+
+.product-detail-info-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
+
+
+
+
+@media (max-width: 800px) {
+
+
+}
+
 
