@@ -21,19 +21,20 @@ let myProduct
 
 
       <div className="container detail-product-wrapper">
-          <div className="imageAndTexto">
-            <div className="image">
-              <img className="logo-image2" src={myProduct.image} alt="product-card"/>
+          <div className="product-detail-main-section">
+            <div className="">
+              <img className="image-detail-product" src={myProduct.image} alt="product pic"/>
             </div>
             <div className="texto">
-              <li>Name</li>
-              <li>Category</li>
-              <li>Price</li>
+              <h1>{myProduct.name}</h1>
+              <p><span class='wrong-price'>{myProduct.price*2}.00€</span> <span className='correct-price'>{myProduct.price}.00€</span></p>
+              <button className="btn btn-md btn-primary">Add to cart</button>
+              <p>{myProduct.description}</p>
             </div>
           </div>
 
           <div className="description"></div>
-          <button className="btn btn-md btn-primary">Add to cart</button>
+          
       </div>
       
       <LandingFooter></LandingFooter>

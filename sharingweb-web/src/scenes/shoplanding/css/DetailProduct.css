@@ -1,12 +1,27 @@
 
 .detail-product-wrapper{
     display: flex;
+    flex-direction: column;
 }
-.imageAndTexto{
+.product-detail-main-section{
+    display: flex;
+    justify-content: space-between;
     width: 100%
 }
-.image{
-    width: 200px;
+
+.wrong-price{
+    color: red;
+    text-decoration-line: line-through;
+    font-size: 1.3rem
+}
+
+.correct-price{
+    color: green;
+    font-size: 1.3rem
+}
+.image-detail-product{
+    width: 400px;
+    height: 400px;
 }
 
 .texto{
