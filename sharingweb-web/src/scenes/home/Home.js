@@ -53,7 +53,7 @@ class Home extends React.Component {
     const {register, login } = this.state
     return (
       <div>
-        {register && <Register register={this.modifyRegister}></Register>}
+        {register && <Register register={this.modifyRegister} login={this.modifyLogin}></Register>}
         {login && <Login login={this.modifyLogin}></Login>}
         <div className="first-section">
           <HomeSharingHeader></HomeSharingHeader>

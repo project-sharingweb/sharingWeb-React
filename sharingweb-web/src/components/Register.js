@@ -1,7 +1,6 @@
 import React from 'react'
 import '../css/Register.css'
 import AuthServices from '../services/AuthServices'
-import { Redirect } from 'react-router-dom'
 
 
 const EMAIL_PATTERN = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -42,8 +41,7 @@ class Register extends React.Component {
       contact: false,
       latitude: false,
       longitude: false
-    },
-    goLogin: false
+    }
   }
 
   getlocation = (e) => {
@@ -94,7 +92,8 @@ class Register extends React.Component {
     AuthServices.register(shop)
       .then(
         response => {
-          this.setState({ goLogin: true})
+          this.props.register()
+          this.props.login()
         }, 
         error => {
             this.setState({
@@ -119,12 +118,8 @@ class Register extends React.Component {
   }
 
   render() { 
-    const { shop, errors, touch, goLogin } = this.state
+    const { shop, errors, touch } = this.state
     return (
-
-      (goLogin === true) ?
-      <Redirect to="/login"/>:
-      (
         <div className="register-background" data-aos="zoom-in"
         data-aos-offset="200"
         data-aos-delay="20"
@@ -232,7 +227,6 @@ class Register extends React.Component {
           </div>
         </div>
       ) 
-    )
   }
 }
 
