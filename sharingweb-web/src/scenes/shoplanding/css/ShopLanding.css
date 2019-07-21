@@ -45,3 +45,15 @@
 .landing-wrapper{
   width: 75%;
 }
+
+@media (max-width: 775px) {
+
+.hide-me {
+  display: none;
+}
+
+.editform-wrapper {
+  width: 100%;
+}
+
+}

@@ -15,7 +15,13 @@ class ShopLanding extends React.Component {
   state = {
     edit: false,
     addProduct: false,
-    onDelete: false
+    onDelete: false,
+    seeMore: false
+  }
+
+  modifySeeMore = () => {
+    const {seeMore} = this.state
+    seeMore ? this.setState({ ...this.state, seeMore: false}) : this.setState({...this.state, seeMore: true})
   }
 
   modifyEdit = () => {
@@ -36,7 +42,7 @@ class ShopLanding extends React.Component {
 
   render() {
     const { shop, products, isAuthenticated } = this.props
-    const {edit, addProduct, onDelete} = this.state
+    const {edit, addProduct, onDelete, seeMore} = this.state
     let list; 
     if(products){
       list = products.map((item, i) => {
@@ -47,12 +53,13 @@ class ShopLanding extends React.Component {
       <div className="main-background">
         { onDelete && <Redirect to={`/shops/${shop.urlName}`}/>}
         {shop &&
-          <div style={shop.styles.background} className={(edit || addProduct) ? "landing-main-wrapper" : undefined}>
+          <React.Fragment>
+          {isAuthenticated() && !edit && !addProduct && <ButtonPage edit={this.modifyEdit} add={this.modifyAdd} seeMore={this.modifySeeMore}/>}
+          <div style={shop.styles.background} className={((edit || addProduct) ? "landing-main-wrapper" : seeMore ? "hide-me" : undefined)}>
             {edit && <div className="editform-wrapper"><EditForm edit={this.modifyEdit}></EditForm></div>}
             {addProduct && <div className="editform-wrapper"><AddProductForm add={this.modifyAdd}></AddProductForm></div>}
-            <div className={(edit || addProduct) ? "landing-wrapper" : undefined}> 
+            <div className={(edit || addProduct) ? "landing-wrapper hide-me" : undefined}> 
               <div style={shop.styles.nav}><LandingHeader></LandingHeader></div>
-              {isAuthenticated() && !edit && !addProduct && <ButtonPage edit={this.modifyEdit} add={this.modifyAdd}/>}
               <div style={shop.styles.landingImage} className="shop-main-image">
                 <div className="container">
                   <h1 style={shop.styles.titleFont}>{shop.name}</h1>
@@ -77,6 +84,7 @@ class ShopLanding extends React.Component {
               <LandingFooter></LandingFooter>          
             </div>
           </div>
+          </React.Fragment>
         }
       </div>
     )

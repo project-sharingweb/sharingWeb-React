@@ -1,5 +1,5 @@
 .instructions-footer-wrapper{
-    background-color: rgba(0, 0, 0, 0.623);
+    background-color: rgba(0, 0, 0, 0.76);
     position: fixed;
     bottom: 0px;
     width: 100%;
@@ -17,10 +17,31 @@
 .more {
     color: white;
     font-weight: 700;
-
+    cursor: pointer;
+    border: white 2px solid;
+    margin: 5px;
+    padding: 5px
 }
 
 .more-info{
     align-content: flex-start;
     color: white;
+}
+
+.more-info h2 {
+    text-decoration: underline;
+    font-size: 1.4rem
+}
+
+.more-info p {
+    font-size: 1.2rem;
+    font-weight: 700
+}
+
+@media (max-width: 775px) {
+    .instructions-footer-wrapper-mobile{
+        background-color: rgba(0, 0, 0, 0.76);
+        width: 100%;
+        position: relative; 
+    }
 }
