@@ -20,7 +20,7 @@ const AboutUs = () => {
       data-aos-anchor-placement="top">
       <div className="container aboutUs-section">
         <h2>The easiest way to create your website</h2>
-        <p>You wont need more than 10 minutes to have a beautiful site</p>
+        <p>You won't need more than 10 minutes to have a beautiful site</p>
         <div className="aboutus-content">
           <BoxAboutUs image={landingLogo} title="Quick landing creation" text="With sharing web you can create and personalize a beautiful landing in 10 minutes"></BoxAboutUs>
           <BoxAboutUs image={purposeLogo} title="Personal or professional" text="You can create your website for professional purposes or personal projects"></BoxAboutUs>

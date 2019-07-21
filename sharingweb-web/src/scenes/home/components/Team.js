@@ -22,7 +22,7 @@ const Team = () => {
           <h2>Our team</h2>
           <div className="team-content pb-5">
             <BoxTeam image={Marta} title="Full stack developer" text="Passionate about nature and social relationships."></BoxTeam>
-            <BoxTeam image={Guille} title="Full stack developer" text="Great professional with web programming and basketball"></BoxTeam>
+            <BoxTeam image={Guille} title="Full stack developer" text="Great professional passionate about web programming and basketball"></BoxTeam>
           </div>
         </div>
     </div>

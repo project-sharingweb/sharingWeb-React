@@ -38,15 +38,15 @@ const Footer = () => {
           </MDBCol>
           <hr className="clearfix w-100 d-md-none" />
           <MDBCol md="5" lg="3">
-            <h5 className="text-uppercase mb-4 font-weight-bold">Address</h5>
+            <h5 className="text-uppercase mb-4 font-weight-bold">Contact</h5>
             <p>
-              <i className="fa fa-home mr-3" /> Madrid
+              <i className="fa fa-home mr-3" /> C/ principe de vergara 112 Madrid 28002
             </p>
             <p>
               <i className="fa fa-envelope mr-3" /> info@sharingweb.com
             </p>
             <p>
-              <i className="fa fa-print mr-3" /> + 34 611 111 11
+              <i className="fa fa-print mr-3" /> + 34 644 370 205
             </p>
           </MDBCol>
           <hr className="clearfix w-100 d-md-none" />
@@ -55,10 +55,10 @@ const Footer = () => {
               Follow us
             </h5>
             <p>
-              <i className="fa fa-facebook" /> facebook
+              <i className="fa fa-facebook" /> Facebook
             </p>
             <p>
-              <i className="fa fa-twitter" /> Twiter
+              <i className="fa fa-twitter" /> Twitter
             </p>
             <p>
               <i className="fa fa-google-plus" /> Google
