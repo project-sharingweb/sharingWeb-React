@@ -55,15 +55,17 @@ class Home extends React.Component {
       <div>
         {register && <Register register={this.modifyRegister} login={this.modifyLogin}></Register>}
         {login && <Login login={this.modifyLogin}></Login>}
-        <div className="first-section">
-          <HomeSharingHeader></HomeSharingHeader>
-          <HomeImage login={this.modifyLogin} register={this.modifyRegister}></HomeImage>
+        <div className={(login || register)? "hide-me": undefined}>
+          <div className="first-section">
+            <HomeSharingHeader></HomeSharingHeader>
+            <HomeImage login={this.modifyLogin} register={this.modifyRegister}></HomeImage>
+          </div>
+          <AboutUs></AboutUs>
+          <Examples></Examples>
+          <Comments></Comments>
+          <Team></Team>
+          <Footer></Footer>
         </div>
-        <AboutUs></AboutUs>
-        <Examples></Examples>
-        <Comments></Comments>
-        <Team></Team>
-        <Footer></Footer>
       </div>
     )
   }

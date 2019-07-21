@@ -34,3 +34,14 @@
   font-size: 1.3rem
 }
 
+@media (max-width: 775px) {
+  .register-background-mobile{
+    background-color: rgba(240, 248, 255, 0.733);
+    padding: 3px;
+  }
+  .register-component{
+    background-color: white;
+    border: 2px solid rgba(58, 211, 178, 0.486);
+    width:100%;
+  }
+}

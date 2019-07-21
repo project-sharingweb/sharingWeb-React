@@ -11,3 +11,11 @@
     text-align: center;
     margin: 20px auto;
 }
+
+@media (max-width: 775px) {
+    .products-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

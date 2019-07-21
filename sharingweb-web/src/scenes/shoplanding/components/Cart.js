@@ -20,7 +20,7 @@ const Cart = ({shop, cart, addToCart, unAddToCart, removeFromCart}) => {
             <button className="btn btn-danger" onClick={() => removeFromCart(item)}>Remove</button>
           </div>
         </div>
-        <div style={shop.styles.text} className="cart-main-second">{item.price}€</div>
+        <div style={shop.styles.text} className="cart-main-second hiding-cart">{item.price}€</div>
         <div className="cart-main-second quantity-wrapper">
           <p className="p-cart-quantity mr-4 pt-2">{item.amount}</p>
           <div>
@@ -44,14 +44,14 @@ const Cart = ({shop, cart, addToCart, unAddToCart, removeFromCart}) => {
           <div className="info-cart-wrapping mb-5">
             <div className="cart-product-main">
               <div style={shop.styles.text} className="cart-main-first">Product</div>
-              <div style={shop.styles.text} className="cart-main-second">price</div>
-              <div style={shop.styles.text} className="cart-main-second">Quantity</div>
+              <div style={shop.styles.text} className="cart-main-second hiding-cart">price</div>
+              <div style={shop.styles.text} className="cart-main-second hiding-cart2">Quantity</div>
               <div style={shop.styles.text} className="cart-main-third">Total</div>
             </div>
             {list}
             <div className="cart-product-main">
               <div className="cart-main-first"></div>
-              <div style={shop.styles.text} className="cart-main-second">{cart && cart.reduce((acc,a)=> acc + parseInt(a.price), 0)}</div>
+              <div style={shop.styles.text} className="cart-main-second hiding-cart"></div>
               <div className="cart-main-second"></div>
               <div style={shop.styles.text} className="cart-main-third">{cart && cart.reduce((acc,a)=> acc + (parseInt(a.price)*a.amount), 0)}</div>
             </div>

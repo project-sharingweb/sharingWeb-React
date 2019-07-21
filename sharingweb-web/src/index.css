@@ -29,3 +29,11 @@ code {
   margin: 0 auto;
   display: block;
 }
+
+
+@media (max-width: 775px) {
+
+  .hide-me {
+    display: none;
+  }
+}  

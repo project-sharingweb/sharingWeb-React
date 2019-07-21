@@ -120,7 +120,7 @@ class Register extends React.Component {
   render() { 
     const { shop, errors, touch } = this.state
     return (
-        <div className="register-background" data-aos="zoom-in"
+        <div className="register-background register-background-mobile" data-aos="zoom-in"
         data-aos-offset="200"
         data-aos-delay="20"
         data-aos-duration="500"

@@ -4,6 +4,12 @@
   text-align: center;
 }
 
+.landing-shop-image-section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
 .shop-main-image h1 {
   font-weight: 700;
   font-size: 100px;
@@ -46,6 +52,10 @@
   width: 75%;
 }
 
+.title-landing-shop{
+  width: 100%;
+}
+
 @media (max-width: 775px) {
 
 .hide-me {
@@ -54,6 +64,12 @@
 
 .editform-wrapper {
   width: 100%;
+}
+
+.shop-main-image h1 {
+  font-weight: 700;
+  font-size: 50px;
+  padding: 50px 0;
 }
 
 }

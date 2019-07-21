@@ -37,7 +37,7 @@ class AboutUsForm extends React.Component {
     const {shop} = this.state
     
     return(
-      <div className="register-background" data-aos="zoom-in"
+      <div className="register-background register-background-mobile" data-aos="zoom-in"
         data-aos-offset="200"
         data-aos-delay="20"
         data-aos-duration="500"

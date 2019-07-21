@@ -90,3 +90,48 @@
   display: flex;
   justify-content: flex-end
 }
+
+
+@media (max-width: 992px) {
+  .hiding-cart{
+    display: none;
+  }
+  .cart-main-second {
+    width: 25%;
+  }
+}
+
+@media (max-width: 510px) {
+  .hiding-cart2{
+    display: none;
+  }
+
+  .cart-main-first {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .cart-main-second {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .cart-main-third {
+    width: 100%;
+    text-align: end;
+  }
+
+  .cart-product {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 1.3rem;
+    border-bottom: 2px rgba(0, 0, 0, 0.185) solid;
+    padding: 20px;
+    align-items: center
+  }
+
+}
+

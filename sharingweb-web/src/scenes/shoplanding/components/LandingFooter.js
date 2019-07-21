@@ -26,7 +26,7 @@ const LandingFooter = props => {
             </MDBCol>
             <MDBCol md="2">
               <h5 style={shop.styles.footerFont} className="title">Links</h5>
-              <ul>
+              <div>
                 <li className="list-unstyled">
                   <Link style={shop.styles.footerFont} to={`/shops/${shop.urlName}/about-us`}>About us</Link>
                 </li>
@@ -36,7 +36,7 @@ const LandingFooter = props => {
                 { isAuthenticated() && <li className="list-unstyled">
                   <Link style={shop.styles.footerFont} to={`/shops/${shop.urlName}/orders`}>Orders</Link>
                 </li>}
-              </ul>
+              </div>
             </MDBCol>
           </MDBRow>
         </MDBContainer>

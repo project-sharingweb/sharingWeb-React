@@ -25,10 +25,11 @@ class AboutUs extends React.Component {
     return (
       <React.Fragment>
         {shop &&
-        <div style={shop.styles.background} className="main-background">
+        <React.Fragment>
+        {edit && <AboutUsForm edit={this.modifyEdit}></AboutUsForm>}
+        <div style={shop.styles.background} className={edit ? "main-background hide-me":"main-background"}>
           <LandingHeader></LandingHeader>
           <div className="about-us-wrapper mt-5 pb-5">        
-            {edit && <AboutUsForm edit={this.modifyEdit}></AboutUsForm>}
             
 
             <div className="container">
@@ -40,7 +41,9 @@ class AboutUs extends React.Component {
 
             <LandingFooter></LandingFooter>
           </div>
-        </div>}
+
+        </div>
+        </React.Fragment>}
       </React.Fragment>
       
 

@@ -61,7 +61,7 @@ class ShopLanding extends React.Component {
             <div className={(edit || addProduct) ? "landing-wrapper hide-me" : undefined}> 
               <div style={shop.styles.nav}><LandingHeader></LandingHeader></div>
               <div style={shop.styles.landingImage} className="shop-main-image">
-                <div className="container">
+                <div className="container landing-shop-image-section">
                   <h1 style={shop.styles.titleFont}>{shop.name}</h1>
                   <p style={shop.styles.motoColor} >{shop.moto}</p>
                 </div>

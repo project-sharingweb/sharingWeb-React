@@ -162,7 +162,7 @@ class EditForm extends React.Component {
               <label htmlFor="FooterFontColor">Footer font color</label>
               <input name='footerFont'
                 type="color"
-                value={shop.styles.footerFont}
+                value={shop.styles.footerFont.color}
                 className={`form-control`}
                 id="FooterFontColorColor"
                 onChange={this.handleStyleChange}/>

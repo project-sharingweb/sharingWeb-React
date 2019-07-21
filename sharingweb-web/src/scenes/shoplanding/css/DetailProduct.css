@@ -62,9 +62,21 @@
 
 
 
-@media (max-width: 800px) {
-
-
+@media (max-width: 500px) {
+    .image-detail-product{
+        width: 100%;
+        height: 100%;
+    }
+    .detail-product-description {
+        white-space: pre-wrap;
+        width: 100%;
+    }
+    .product-detail-info-section{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%
+    }
 }
 
 

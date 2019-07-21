@@ -30,7 +30,7 @@ let myProduct
             <div className="product-detail-info-section">
               <h1 style={shop.styles.text}>{myProduct.name}</h1>
               <p><span className='wrong-price'>{myProduct.price*2}€</span> <span className='correct-price'>{myProduct.price}€</span></p>
-              <button style={{width: "500px"}} className="btn btn-md btn-primary">Add to cart</button>
+              <button  className="btn btn-md btn-primary button-detail-product" onClick={() => props.addToCart(myProduct)}>Add to cart</button>
               <p style={shop.styles.text} className="detail-product-description">{myProduct.description}</p>
               <p style={shop.styles.background} className="tell-to-buy"><strong style={shop.styles.text}>Click </strong><span className="tell-to-buy-clic">Add To Cart</span><strong style={shop.styles.text}> To Get Yours Now! Limited Quantity - Will sell out fast!</strong></p>
             </div>
