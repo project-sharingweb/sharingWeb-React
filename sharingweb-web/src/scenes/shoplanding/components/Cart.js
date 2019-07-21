@@ -44,7 +44,7 @@ const Cart = ({shop, cart, addToCart, unAddToCart, removeFromCart}) => {
           <div className="info-cart-wrapping mb-5">
             <div className="cart-product-main">
               <div style={shop.styles.text} className="cart-main-first">Product</div>
-              <div style={shop.styles.text} className="cart-main-second hiding-cart">price</div>
+              <div style={shop.styles.text} className="cart-main-second hiding-cart">Price</div>
               <div style={shop.styles.text} className="cart-main-second hiding-cart2">Quantity</div>
               <div style={shop.styles.text} className="cart-main-third">Total</div>
             </div>

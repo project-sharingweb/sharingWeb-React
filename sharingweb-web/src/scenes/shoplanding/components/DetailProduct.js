@@ -21,8 +21,9 @@ let myProduct
     <div style={shop.styles.background} className="main-background">
       <LandingHeader></LandingHeader>
 
-
+      <div className="container">
       <div className="container detail-product-wrapper pb-5">
+
           <div className="product-detail-main-section">
             <div>
               <img className="image-detail-product" src={myProduct.image} alt="product pic"/>
@@ -36,7 +37,7 @@ let myProduct
             </div>
           </div>
       </div>
-      
+      </div>
       <LandingFooter></LandingFooter>
     </div>
     }
