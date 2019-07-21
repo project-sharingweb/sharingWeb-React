@@ -30,7 +30,7 @@ const LandingHeader = ({ shop, isAuthenticated, onShopAuthChange, cart }) => {
             <div className="nav-bar-li2 newli3"><Link style={shop.styles.navLinks} className="Link" to={`/shops/${shop.urlName}/orders`}>Orders</Link></div> : 
             <div className="nav-bar-li2 newli4"><Link style={shop.styles.navLinks} className="Link" to={`/shops/${shop.urlName}/cart`}><i className="fa fa-shopping-cart"> {cart ? `(${cart.length})` : "(0)"}</i>
             </Link></div>} 
-            {isAuthenticated() && <div className="nav-bar-li2 newli4"><Link style={shop.styles.navLinks} className="Link" to={`/shops/${shop.urlName}`}><i className="Link fa fa-sign-out" onClick={e => {
+            {isAuthenticated() && <div className="nav-bar-li2 newli4"><Link style={shop.styles.navLinks} className="Link" to={`/shops/${shop.urlName}`}><i className="fa fa-sign-out" onClick={e => {
               e.preventDefault()
               handleLogout()}}>Log out</i></Link></div>}
         </div>

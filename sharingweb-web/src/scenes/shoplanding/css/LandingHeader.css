@@ -7,12 +7,12 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap
+  flex-wrap: wrap;
 }
 
 .landing-navbar2 .link {
   text-decoration: none;
-  color: #1A1A1A; 
+  color: #1A1A1A;
 }
 
 .navbar-items2 {
@@ -33,7 +33,7 @@
   margin: 15px;
   font-size: 1px;
   color: #1A1A1A;
-  border: rgba(0, 177, 114, 0) solid 1px;
+  border: rgba(0, 0, 0, 0) solid 1px;
 }
 
 .logo-image2:hover {
@@ -45,7 +45,8 @@
 }
 
 .Link:hover {
-  border:  rgba(0, 177, 114, 1) solid 2px;
+  padding: 5px;
+  border:  rgb(0, 0, 0) solid 2px;
   transition: border;
   transition-duration: 1s;
   transition-timing-function: linear;
