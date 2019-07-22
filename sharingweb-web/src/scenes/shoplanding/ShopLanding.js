@@ -57,7 +57,7 @@ class ShopLanding extends React.Component {
         { onDelete && <Redirect to={`/shops/${shop.urlName}`}/>}
         {shop &&
           <React.Fragment>
-          {(isAuthenticated() && this.props.shopUser.name === shop.name) && !edit && !addProduct && <ButtonPage edit={this.modifyEdit} add={this.modifyAdd} seeMore={this.modifySeeMore}/>}
+          {(isAuthenticated() && shopUser.name === shop.name) && !edit && !addProduct && <ButtonPage edit={this.modifyEdit} add={this.modifyAdd} seeMore={this.modifySeeMore}/>}
           <div style={shop.styles.background} className={((edit || addProduct) ? "landing-main-wrapper" : seeMore ? "hide-me" : undefined)}>
             {edit && <div className="editform-wrapper"><EditForm edit={this.modifyEdit}></EditForm></div>}
             {addProduct && <div className="editform-wrapper"><AddProductForm add={this.modifyAdd}></AddProductForm></div>}
