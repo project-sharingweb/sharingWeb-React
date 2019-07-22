@@ -17,6 +17,7 @@ const Cart = ({shop, cart, addToCart, unAddToCart, removeFromCart}) => {
           </div>
           <div>
             <div style={shop.styles.text}>{item.name}</div>
+            <p style={shop.styles.text}>{item.ChosenSize || item.size[0]}</p>
             <button className="btn btn-danger" onClick={() => removeFromCart(item)}>Remove</button>
           </div>
         </div>

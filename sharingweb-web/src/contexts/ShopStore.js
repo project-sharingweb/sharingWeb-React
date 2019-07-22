@@ -66,13 +66,14 @@ class ShopStoreImpl extends Component {
     if (!this.state.cart) {
       const newObj = [{...product, amount: 1}]
       this.setState({
+        ...this.state,
         cart: newObj
       })
     } else {
       let counter = 0
       let theCart = [...this.state.cart]
         theCart = theCart.map(item => {
-          if (item.id === product.id) {
+          if (item.id === product.id && item.ChosenSize === product.ChosenSize) {
             counter++
             item.amount = item.amount + 1
             return item
@@ -96,7 +97,7 @@ class ShopStoreImpl extends Component {
   }
 
   removeFromCart = product => {
-    const newCart = this.state.cart.filter(item => item.id !== product.id)
+    const newCart = this.state.cart.filter(item => (item.id !== product.id && item.size !== product.size))
       this.setState({
         ...this.state,
         cart: newCart
@@ -106,7 +107,7 @@ class ShopStoreImpl extends Component {
   unAddToCart = product => {
     if(product.amount > 1){
       const newCart = this.state.cart.map(item => {
-        if (item.id === product.id) {
+        if (item.id === product.id && item.size === product.size) {
           item.amount = item.amount - 1
           return item
         } else {return item}

@@ -12,7 +12,8 @@ class AddProductForm extends React.Component {
       category: "",
       description: "",
       price: "",
-      image: ""
+      image: "",
+      size: ""
     },
     goMain: false 
   }
@@ -32,6 +33,9 @@ class AddProductForm extends React.Component {
   handleSubmit = e => {
     e.preventDefault()
     const { product } = this.state
+
+    product.size = this.state.product.size.split(",")
+    console.log(product.size)
 
     ShopService.addProduct(product)
       .then(product => {
@@ -89,6 +93,16 @@ class AddProductForm extends React.Component {
               onChange={this.handleChange}
               id="inputPrice"
               placeholder="Type product price..."/>
+          </div>
+          <div className="form-group">
+            <label htmlFor="inputSizes">Sizes(introduce sizes separated by , eg: XL,L)</label>
+            <input name='size'
+              type="text"
+              value={product.size}
+              className={`form-control`}
+              onChange={this.handleChange}
+              id="inputSizes"
+              placeholder="Type sizes separated by , eg: 39,40,50"/>
           </div>
           <div className="form-group">
             <label htmlFor="inputImage">Image</label>

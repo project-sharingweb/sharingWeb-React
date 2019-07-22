@@ -22,7 +22,8 @@ class Checkout extends React.Component{
         cart: this.props.cart ? this.props.cart : null,
         price: this.props.cart ? this.props.cart.reduce((acc, item)=> acc + (parseInt(item.price)*item.amount), 0).toString() : null,
         amounts: this.props.cart ? this.props.cart.map(item => item.amount): null,
-        number: this.props.orders ? (this.props.orders.length + 1).toString(): "1"
+        number: this.props.orders ? (this.props.orders.length + 1).toString(): "1",
+        sizes: this.props.cart ? this.props.cart.map(item => item.ChosenSize || item.size[0]): null,
       }
     }
 

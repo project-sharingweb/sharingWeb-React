@@ -29,6 +29,7 @@ class OrderDetail extends React.Component {
   let list;
   if(shop) {
     list = myOrder.products.map((item, i) => {
+      console.log(item)
       return (<div key={i} className="cart-product">
       <div className="cart-product-info cart-main-first">
         <div className="mr-2">
@@ -36,6 +37,7 @@ class OrderDetail extends React.Component {
         </div>
         <div>
           <div style={shop.styles.text}>{item.name}</div>
+          <p style={shop.styles.text}>{myOrder.sizes[i]}</p>
         </div>
       </div>
       <div style={shop.styles.text} className="cart-main-second">{item.price}€</div>
