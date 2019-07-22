@@ -5,7 +5,8 @@ import LandingFooter from './LandingFooter';
 import '../css/LandingPurchase.css'
 
 const SuccessPurchase = ({shop, logo, title, message, red}) => {
-
+  if (shop) document.title = shop.name
+  if (shop) document.getElementById("ico").setAttribute("href", shop.logo)
   return (
     <div>
       {shop &&

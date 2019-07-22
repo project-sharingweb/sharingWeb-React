@@ -36,7 +36,8 @@ class DetailProducts extends React.Component {
 
   render() {
   const {shop, products} = this.props
-
+  if (shop) document.title = shop.name
+  if (shop) document.getElementById("ico").setAttribute("href", shop.logo)
   let myProduct
     if (shop){
       console.log(products)  

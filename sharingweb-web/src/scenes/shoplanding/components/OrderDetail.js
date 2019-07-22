@@ -13,6 +13,8 @@ class OrderDetail extends React.Component {
 
   render() {
   const {shop, isAuthenticated, fulfillOrder} = this.props
+  if (shop) document.title = shop.name
+  if (shop) document.getElementById("ico").setAttribute("href", shop.logo)
 
   const fulfillment = (id, name) => {
     fulfillOrder(id, name)
@@ -54,7 +56,7 @@ class OrderDetail extends React.Component {
       {this.state.goOrders && <Redirect to={`/shops/${shop.urlName}/orders`}></Redirect>}
       {shop && (
         <React.Fragment>
-          {isAuthenticated() ? (
+          {(isAuthenticated() && this.props.shopUser.name === shop.name) ? (
             <div style={shop.styles.background} className="main-background">
             <LandingHeader></LandingHeader>
             <div className="container pb-3">

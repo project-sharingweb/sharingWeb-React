@@ -18,7 +18,7 @@ const Comments = () => {
       data-aos-once="false"
       data-aos-anchor-placement="top">
         <div className="container">
-          <h2>Here you can find the comments of our users</h2>
+          <h2>Our users word</h2>
           <div className="comments-content">
             <BoxComments image={commentsLogo} title="David Gallego" text="I'm very happy with the result of my landing created with sharing web."></BoxComments>
             <BoxComments image={commentsLogo1} title="Abel Fernandez" text="Sharing web is the best quality-price option to create your online shop."></BoxComments>

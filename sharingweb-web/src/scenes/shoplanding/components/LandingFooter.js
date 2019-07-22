@@ -33,7 +33,7 @@ const LandingFooter = props => {
                 <li className="list-unstyled">
                   <Link style={shop.styles.footerFont} to={`/shops/${shop.urlName}/products`}>Products</Link>
                 </li>
-                { isAuthenticated() && <li className="list-unstyled">
+                { (isAuthenticated() && this.props.shopUser.name === shop.name) && <li className="list-unstyled">
                   <Link style={shop.styles.footerFont} to={`/shops/${shop.urlName}/orders`}>Orders</Link>
                 </li>}
               </div>

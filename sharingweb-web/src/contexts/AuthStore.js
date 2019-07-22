@@ -19,7 +19,7 @@ class AuthStore extends React.Component {
   render() {
     return (
       <AuthContext.Provider value={{
-        shop: this.state.shop,
+        shopUser: this.state.shop,
         onShopAuthChange: this.handleShopChange,
         isAuthenticated: this.isAuthenticated
       }}>

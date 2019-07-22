@@ -21,7 +21,8 @@ class Orders extends React.Component {
 
   render(){
     const {shop, orders, isAuthenticated} = this.props
-    
+    if (shop) document.title = shop.name
+    if (shop) document.getElementById("ico").setAttribute("href", shop.logo)
     const {showOrders} = this.state
     let list;
     let options;
@@ -54,7 +55,7 @@ class Orders extends React.Component {
         <React.Fragment>
           {shop && (
           <React.Fragment>
-            {isAuthenticated() ? (
+            {(isAuthenticated() && this.props.shopUser.name === shop.name) ? (
             <div style={shop.styles.background} className="main-background">
               <LandingHeader></LandingHeader>
               <div className="container pb-4">

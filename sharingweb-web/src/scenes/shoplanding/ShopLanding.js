@@ -41,7 +41,9 @@ class ShopLanding extends React.Component {
 
 
   render() {
-    const { shop, products, isAuthenticated } = this.props
+    const { shop, products, isAuthenticated, shopUser } = this.props
+    if (shop) document.title = shop.name
+    if (shop) document.getElementById("ico").setAttribute("href", shop.logo)
     const {edit, addProduct, onDelete, seeMore} = this.state
     let list; 
     if(products){
@@ -49,12 +51,15 @@ class ShopLanding extends React.Component {
         return <ProductCard key={i} product={item} onDelete={this.modifyOnDelete}></ProductCard>
       }).slice(0, 12)
     }
+    console.log(shop)
+    console.log(shopUser)
+
     return (
       <div className="main-background">
         { onDelete && <Redirect to={`/shops/${shop.urlName}`}/>}
         {shop &&
           <React.Fragment>
-          {isAuthenticated() && !edit && !addProduct && <ButtonPage edit={this.modifyEdit} add={this.modifyAdd} seeMore={this.modifySeeMore}/>}
+          {(isAuthenticated() && this.props.shopUser.name === shop.name) && !edit && !addProduct && <ButtonPage edit={this.modifyEdit} add={this.modifyAdd} seeMore={this.modifySeeMore}/>}
           <div style={shop.styles.background} className={((edit || addProduct) ? "landing-main-wrapper" : seeMore ? "hide-me" : undefined)}>
             {edit && <div className="editform-wrapper"><EditForm edit={this.modifyEdit}></EditForm></div>}
             {addProduct && <div className="editform-wrapper"><AddProductForm add={this.modifyAdd}></AddProductForm></div>}

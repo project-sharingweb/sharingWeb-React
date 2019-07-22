@@ -22,6 +22,8 @@ class ListProducts extends React.Component {
   render() {
     const {shop, products} = this.props
     const {category} = this.state
+    if (shop) document.title = shop.name + " - products"
+    if (shop) document.getElementById("ico").setAttribute("href", shop.logo)
     let list;
     let options;
     if(products){
