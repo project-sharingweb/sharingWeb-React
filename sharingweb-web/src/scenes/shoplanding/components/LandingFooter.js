@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 import '../css/LandingFooter.css'
 
 const LandingFooter = props => {
-  const {shop, isAuthenticated} = props
+  const {shop, isAuthenticated, shopUser} = props
 
   return (
     <div className="landing-footer-down">
@@ -33,7 +33,7 @@ const LandingFooter = props => {
                 <li className="list-unstyled">
                   <Link style={shop.styles.footerFont} to={`/shops/${shop.urlName}/products`}>Products</Link>
                 </li>
-                { (isAuthenticated() && this.props.shopUser.name === shop.name) && <li className="list-unstyled">
+                { (isAuthenticated() && shopUser.name === shop.name) && <li className="list-unstyled">
                   <Link style={shop.styles.footerFont} to={`/shops/${shop.urlName}/orders`}>Orders</Link>
                 </li>}
               </div>
