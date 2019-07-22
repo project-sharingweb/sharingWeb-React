@@ -31,7 +31,6 @@ class OrderDetail extends React.Component {
   let list;
   if(shop) {
     list = myOrder.products.map((item, i) => {
-      console.log(item)
       return (<div key={i} className="cart-product">
       <div className="cart-product-info cart-main-first">
         <div className="mr-2">

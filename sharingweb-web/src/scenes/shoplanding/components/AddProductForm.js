@@ -35,7 +35,6 @@ class AddProductForm extends React.Component {
     const { product } = this.state
 
     product.size = this.state.product.size.split(",")
-    console.log(product.size)
 
     ShopService.addProduct(product)
       .then(product => {

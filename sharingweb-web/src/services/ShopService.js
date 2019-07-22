@@ -13,7 +13,6 @@ const productDetail = (urlName, id) => http.get(`/shops/${urlName}/products/${id
 const addProduct = product => {
   const data = new FormData();
   Object.keys(product).forEach(prop => data.append(prop, product[prop]))
-  console.log(product.shopName)
   return  http.post(`/shops/${product.shopName}/products`, data)
 } 
 

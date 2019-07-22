@@ -24,9 +24,7 @@ class DetailProducts extends React.Component {
   }
 
   addingToCart = (product) => {
-    console.log(this.props.products)
     product.ChosenSize = this.state.size
-    console.log(this.props.products)
 
     this.props.addToCart(product)
     this.setState({
@@ -39,8 +37,7 @@ class DetailProducts extends React.Component {
   if (shop) document.title = shop.name
   if (shop) document.getElementById("ico").setAttribute("href", shop.logo)
   let myProduct
-    if (shop){
-      console.log(products)  
+    if (shop){ 
       myProduct = products.filter(product => product.id === this.props.match.params.id)[0]
   }
 

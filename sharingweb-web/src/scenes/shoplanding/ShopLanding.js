@@ -51,8 +51,6 @@ class ShopLanding extends React.Component {
         return <ProductCard key={i} product={item} onDelete={this.modifyOnDelete}></ProductCard>
       }).slice(0, 12)
     }
-    console.log(shop)
-    console.log(shopUser)
 
     return (
       <div className="main-background">
