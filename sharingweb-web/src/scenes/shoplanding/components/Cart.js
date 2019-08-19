@@ -29,7 +29,7 @@ const Cart = ({shop, cart, addToCart, unAddToCart, removeFromCart}) => {
             <i className="fa fa-chevron-circle-down button-cart-quantity" onClick={() => unAddToCart(item)}></i>
           </div>
         </div>
-        <div style={shop.styles.text} className="cart-main-third">{(item.price * item.amount)}€</div>
+        <div style={shop.styles.text} className="cart-main-third">{(item.price * item.amount).toFixed(2)}€</div>
       </div>)
     })
   }
@@ -55,7 +55,7 @@ const Cart = ({shop, cart, addToCart, unAddToCart, removeFromCart}) => {
               <div className="cart-main-first"></div>
               <div style={shop.styles.text} className="cart-main-second hiding-cart"></div>
               <div className="cart-main-second"></div>
-              <div style={shop.styles.text} className="cart-main-third">{cart && cart.reduce((acc,a)=> acc + (parseInt(a.price)*a.amount),0)}€</div>
+              <div style={shop.styles.text} className="cart-main-third">{cart && cart.reduce((acc,a)=> acc + (parseFloat(a.price)*a.amount),0).toFixed(2)}€</div>
             </div>
             <div className="cart-checkout-wrapper">
               <Link to={`/shops/${shop.urlName}/checkout`} className={cart ? "btn btn-success mt-4 mb-4 cart-checkout":"btn btn-success mt-4 mb-4 cart-checkout disabled"}>Checkout</Link>

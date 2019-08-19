@@ -45,7 +45,7 @@ class OrderDetail extends React.Component {
       <div className="cart-main-second quantity-wrapper">
         <p className="p-cart-quantity mr-4 pt-2">{myOrder.amounts[i]}</p>
       </div>
-      <div style={shop.styles.text} className="cart-main-third">{item.price * myOrder.amounts[i]}€</div>
+      <div style={shop.styles.text} className="cart-main-third">{(parseFloat(item.price) * myOrder.amounts[i]).toFixed(2)}€</div>
     </div>)
     })
   }

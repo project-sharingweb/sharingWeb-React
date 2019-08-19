@@ -137,7 +137,7 @@ class Register extends React.Component {
                 <input name='email'
                   type="email"
                   value={shop.email}
-                  className={`form-control ${this.getValidationClassName("email")}`}
+                  className={`form-control ${this.getValidationClassName("email")} mt-1`}
                   id="exampleInputEmail"
                   aria-describedby="emailHelp"
                   onChange={this.handleChange}
@@ -157,7 +157,7 @@ class Register extends React.Component {
                 <input name='password'
                   type="password"
                   value={shop.password}
-                  className={`form-control ${this.getValidationClassName("password")}`}
+                  className={`form-control ${this.getValidationClassName("password")} mt-1`}
                   id="exampleInputPassword1"
                   onChange={this.handleChange}
                   onBlur={this.handleBlur}
@@ -176,7 +176,7 @@ class Register extends React.Component {
                 <input name='name'
                   type="text"
                   value={shop.name}
-                  className={`form-control ${this.getValidationClassName("name")}`}
+                  className={`form-control ${this.getValidationClassName("name")} mt-1`}
                   id="exampleInputName"
                   aria-describedby="shopNameHelp"
                   onChange={this.handleChange}
@@ -196,7 +196,7 @@ class Register extends React.Component {
                 <input name='contact'
                   type="text"
                   value={shop.contact}
-                  className={`form-control`}
+                  className={`form-control mt-1`}
                   id="exampleInputPhoneNumber"
                   aria-describedby="phoneNumberHelp"
                   onChange={this.handleChange}
@@ -208,14 +208,14 @@ class Register extends React.Component {
                 <input name='latitude'
                   type="text"
                   value={shop.latitude}
-                  className={`form-control mb-2`}
+                  className={`form-control mb-2 mt-1`}
                   aria-describedby="coordinatesHelp"
                   onChange={this.handleChange}
                   onBlur={this.handleBlur}
                   placeholder="Latitude"/>
                 <input name='longitude'
                   type="text" value={shop.longitude}
-                  className={`form-control`}
+                  className={`form-control mt-1`}
                   aria-describedby="coordinatesHelp"
                   onChange={this.handleChange}
                   onBlur={this.handleBlur}

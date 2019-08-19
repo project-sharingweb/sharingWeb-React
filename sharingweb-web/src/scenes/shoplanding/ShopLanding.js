@@ -61,7 +61,7 @@ class ShopLanding extends React.Component {
           <div style={shop.styles.background} className={((edit || addProduct) ? "landing-main-wrapper" : seeMore ? "hide-me" : undefined)}>
             {edit && <div className="editform-wrapper"><EditForm edit={this.modifyEdit}></EditForm></div>}
             {addProduct && <div className="editform-wrapper"><AddProductForm add={this.modifyAdd}></AddProductForm></div>}
-            <div className={(edit || addProduct) ? "landing-wrapper hide-me" : undefined}> 
+            <div className={(edit || addProduct) ? "landing-wrapper" : undefined}> 
               <div style={shop.styles.nav}><LandingHeader></LandingHeader></div>
               <div style={shop.styles.landingImage} className="shop-main-image">
                 <div className="container landing-shop-image-section">

@@ -31,9 +31,8 @@ code {
 }
 
 
-@media (max-width: 775px) {
 
-  .hide-me {
-    display: none;
-  }
-}  
+
+.hide-me {
+  display: none;
+}

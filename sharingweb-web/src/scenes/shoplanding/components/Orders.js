@@ -35,7 +35,7 @@ class Orders extends React.Component {
           list = orders.map( (item, i) => {
             return (<div key={i} className="order-product">
               <div className="order-product-info order-main-first"><Link to={`/shops/${shop.urlName}/orders/${item.id}`}>#{item.number} / {item.name} {item.lastName}</Link></div>
-              <div style={shop.styles.text} className="order-main-second">{item.price}€</div>
+              <div style={shop.styles.text} className="order-main-second">{item.price[0] === "0"? item.price.slice(1,item.price.length): item.price}€</div>
               <div className="order-main-third"><span className={item.status === "in process" ? "in-process": item.status}>{item.status}</span></div>
             </div>)
           })

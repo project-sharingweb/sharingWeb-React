@@ -37,7 +37,7 @@ class AboutUsForm extends React.Component {
     const {shop} = this.state
     
     return(
-      <div className="register-background register-background-mobile" data-aos="zoom-in"
+      <div className="about-us-register-background about-us-register-background-mobile" data-aos="zoom-in"
         data-aos-offset="200"
         data-aos-delay="20"
         data-aos-duration="500"
@@ -52,15 +52,15 @@ class AboutUsForm extends React.Component {
               <div className="form-group">
                 <label className="aboutus-label" htmlFor="exampleInputAboutUS">About us</label>
                 <textarea name='aboutUs'
-                  rows="10"
+                  rows="14"
                   type="text"
                   value={shop.aboutUs}
-                  className='form-control'
+                  className='form-control mt-3 mb-3'
                   id="exampleInputAboutUS"
                   onChange={this.handleChange}
                   placeholder="Enter your about us"/>
               </div>
-              <button type="submit" className="btn btn-primary">Save</button>
+              <button type="submit" className="btn btn-primary mt-3">Save</button>
             </form>
           </div>
       </div>

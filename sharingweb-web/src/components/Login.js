@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/Register.css'
+import '../css/Login.css'
 import AuthServices from '../services/AuthServices'
 import { Redirect } from 'react-router-dom'
 import { WithAuthContext } from '../contexts/AuthStore'
@@ -111,7 +111,7 @@ class Login extends React.Component {
       (goShop === true) ?
       <Redirect to={`/shops/${modifyName(this.state.name)}`}/>:
       (
-        <div className="register-background register-background-mobile" data-aos="zoom-in"
+        <div className="login-background login-background-mobile" data-aos="zoom-in"
         data-aos-offset="200"
         data-aos-delay="20"
         data-aos-duration="500"
@@ -119,16 +119,16 @@ class Login extends React.Component {
         data-aos-mirror="true"
         data-aos-once="false"
         data-aos-anchor-placement="top">
-          <div className="register-component">
+          <div className="login-component">
             <i onClick={() => this.props.login()} className="fa fa-times-circle close-button"></i>
             <h1>Log in</h1>
-            <form onSubmit={this.handleSubmit} className="register-form">
+            <form onSubmit={this.handleSubmit} className="login-form">
             <div className="form-group">
                 <label htmlFor="exampleInputEmail1">Shop name</label>
                 <input name='name'
                   type="text"
                   value={shop.name}
-                  className={`form-control ${this.getValidationClassName("name")}`}
+                  className={`form-control ${this.getValidationClassName("name")} mt-2`}
                   id="exampleInputEmail1"
                   aria-describedby="shopNameHelp"
                   onChange={this.handleChange}
@@ -148,7 +148,7 @@ class Login extends React.Component {
                 <input name='password'
                   type="password"
                   value={shop.password}
-                  className={`form-control ${this.getValidationClassName("password")}`}
+                  className={`form-control ${this.getValidationClassName("password")} mt-2`}
                   id="exampleInputPassword1"
                   onChange={this.handleChange}
                   onBlur={this.handleBlur}
@@ -162,7 +162,7 @@ class Login extends React.Component {
                       Invalid shop name or password.
                     </div>)}
               </div>
-              <button type="submit" className="btn btn-primary register-button">Submit</button>
+              <button type="submit" className="btn btn-primary login-button mt-3 mb-5">Submit</button>
             </form>
           </div>
         </div>
