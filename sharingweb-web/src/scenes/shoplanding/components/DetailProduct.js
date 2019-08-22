@@ -64,7 +64,7 @@ class DetailProducts extends React.Component {
       <React.Fragment>
         <div style={shop.styles.background} className={this.state.edit ? "landing-main-wrapper" : undefined}>
           {this.state.edit && <div className="editform-wrapper"><EditProductForm add={this.modifyEdit} myProduct={myProduct}></EditProductForm></div>}  
-          <div className={this.state.edit ? "landing-wrapper" : "main-background"}>
+          <div className={this.state.edit ? "landing-wrapper hide-me" : "main-background"}>
             <LandingHeader></LandingHeader>
             <div className="container">
             <div className="container detail-product-wrapper pb-5">
