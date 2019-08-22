@@ -49,7 +49,7 @@ class ShopLanding extends React.Component {
     if(products){
       list = products.map((item, i) => {
         return <ProductCard key={i} product={item} onDelete={this.modifyOnDelete}></ProductCard>
-      }).slice(0, 12)
+      }).slice(0, 8)
     }
 
     return (

@@ -12,7 +12,7 @@ class ProductCard extends React.Component {
   }
   
   render() {
-    const {shop, product, addToCart, isAuthenticated} = this.props
+    const {shop, product, isAuthenticated} = this.props
     return (
         <div className="product-wrapper">
           <MDBCard narrow ecommerce className="mb-2 card-wrapper">
@@ -38,7 +38,7 @@ class ProductCard extends React.Component {
               <MDBCardFooter className="px-1">
                 <span className="float-left mr-3 pt-2 card-price">{product.price}{shop.currency==="USD" ? "$":"€"}</span>
                 {(isAuthenticated() && this.props.shopUser.name === shop.name) ? <button className="btn btn-md btn-danger" onClick={() => this.eliminate()}>Delete</button> :
-                <button className="btn btn-md btn-primary" onClick={() => addToCart(product)}>Add to cart</button>}
+                <Link className="btn btn-md btn-primary" to={`/shops/${shop.urlName}/products/${product.id}`}>See More</Link>}
               </MDBCardFooter>
             </MDBCardBody>
           </MDBCard>
