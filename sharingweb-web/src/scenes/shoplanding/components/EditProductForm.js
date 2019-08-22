@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/AddProductForm.css'
+import '../css/EditProductForm.css'
 import ShopService from '../../../services/ShopService'
 import { withShopContext } from '../../../contexts/ShopStore'
 
@@ -8,13 +8,13 @@ class AddProductForm extends React.Component {
   state = {
     product: {
       shopName: this.props.shop.urlName,
-      name: "",
-      category: "",
-      description: "",
-      price: "",
-      priceBefore: "",
+      name: this.props.myProduct.name,
+      category: this.props.myProduct.category,
+      description: this.props.myProduct.description,
+      price: this.props.myProduct.price,
+      priceBefore: this.props.myProduct.priceBefore || (this.props.myProduct.price*2).toFixed(2),
       image: "",
-      size: ""
+      size: this.props.myProduct.size.join(",")
     },
     goMain: false 
   }
@@ -37,7 +37,7 @@ class AddProductForm extends React.Component {
 
     product.size = this.state.product.size.split(",")
 
-    ShopService.addProduct(product)
+    ShopService.editProduct(product, this.props.myProduct.id)
       .then(product => {
         this.props.updateShop(product.shopName)
         this.props.add()
@@ -51,7 +51,7 @@ class AddProductForm extends React.Component {
     return(
       <div className="edit-form-wrapper">
         <div>
-          <h1 className="edit-form-main-title">Add your products <i onClick={() => add()} className="fa fa-times-circle icon-edit-form"></i></h1>
+          <h1 className="edit-form-main-title">Edit your product<i onClick={() => add()} className="fa fa-times-circle icon-edit-form"></i></h1>
         </div>
         <form onSubmit={this.handleSubmit} className="register-form form-wrapper">
           <div className="form-group">
@@ -122,7 +122,7 @@ class AddProductForm extends React.Component {
               onChange={this.handleChange}
               id="inputImage"/>
           </div>
-          <button className="btn btn-default" type="submit">Create product</button>
+          <button className="btn btn-default" type="submit">Edit product</button>
         </form>
       </div>
     )

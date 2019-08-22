@@ -14,6 +14,11 @@ const addProduct = product => {
   const data = new FormData();
   Object.keys(product).forEach(prop => data.append(prop, product[prop]))
   return  http.post(`/shops/${product.shopName}/products`, data)
+}
+const editProduct = (product, id) => {
+  const data = new FormData();
+  Object.keys(product).forEach(prop => data.append(prop, product[prop]))
+  return  http.post(`/shops/${product.shopName}/products/${id}/edit`, data)
 } 
 
 const listOrders = urlName => http.get(`/shops/${urlName}/orders`)
@@ -44,5 +49,6 @@ export default {listShops,
   purchase,
   editShop,
   deleteProduct,
-  editOrder
+  editOrder,
+  editProduct
 }
