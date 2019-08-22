@@ -36,7 +36,7 @@ class ProductCard extends React.Component {
                 {product.descriptionPreview}
               </MDBCardText>
               <MDBCardFooter className="px-1">
-                <span className="float-left mr-3 pt-2 card-price">{product.price}€</span>
+                <span className="float-left mr-3 pt-2 card-price">{product.price}{shop.currency==="USD" ? "$":"€"}</span>
                 {(isAuthenticated() && this.props.shopUser.name === shop.name) ? <button className="btn btn-md btn-danger" onClick={() => this.eliminate()}>Delete</button> :
                 <button className="btn btn-md btn-primary" onClick={() => addToCart(product)}>Add to cart</button>}
               </MDBCardFooter>

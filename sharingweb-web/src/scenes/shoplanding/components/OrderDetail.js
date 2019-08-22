@@ -12,12 +12,13 @@ class OrderDetail extends React.Component {
   }
 
   render() {
-  const {shop, isAuthenticated, fulfillOrder} = this.props
+  const {shop, isAuthenticated, fulfillOrder, updateShop} = this.props
   if (shop) document.title = shop.name
   if (shop) document.getElementById("ico").setAttribute("href", shop.logo)
 
   const fulfillment = (id, name) => {
     fulfillOrder(id, name)
+    updateShop(name)
     this.setState({
       goOrders: true
     })
@@ -41,11 +42,11 @@ class OrderDetail extends React.Component {
           <p style={shop.styles.text}>{myOrder.sizes[i]}</p>
         </div>
       </div>
-      <div style={shop.styles.text} className="cart-main-second">{item.price}€</div>
+      <div style={shop.styles.text} className="cart-main-second">{item.price}{shop.currency==="USD" ? "$":"€"}</div>
       <div className="cart-main-second quantity-wrapper">
         <p className="p-cart-quantity mr-4 pt-2">{myOrder.amounts[i]}</p>
       </div>
-      <div style={shop.styles.text} className="cart-main-third">{(parseFloat(item.price) * myOrder.amounts[i]).toFixed(2)}€</div>
+      <div style={shop.styles.text} className="cart-main-third">{(parseFloat(item.price) * myOrder.amounts[i]).toFixed(2)}{shop.currency==="USD" ? "$":"€"}</div>
     </div>)
     })
   }

@@ -24,6 +24,7 @@ class Checkout extends React.Component{
         amounts: this.props.cart ? this.props.cart.map(item => item.amount): null,
         number: this.props.orders ? (this.props.orders.length + 1).toString(): "1",
         sizes: this.props.cart ? this.props.cart.map(item => item.ChosenSize || item.size[0]): null,
+        currency: this.props.shop ? this.props.shop.currency || "EUR": null
       }
     }
 
@@ -58,7 +59,6 @@ render() {
 
     if (shop) document.title = shop.name + " - Checkout"
     if (shop) document.getElementById("ico").setAttribute("href", shop.logo)
-    if (shop) console.log(order.price)
     return (
         <div>
             {shop &&

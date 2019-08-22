@@ -167,6 +167,18 @@ class EditForm extends React.Component {
                 id="FooterFontColorColor"
                 onChange={this.handleStyleChange}/>
             </div>
+            <div className="form-group">
+              <label htmlFor="Currency">Currency</label>
+              <select name='currency'
+                type="select"
+                value={shop.currency}
+                className={`form-control`}
+                id="currency"
+                onChange={this.handleChange}>
+              <option  value="EUR">EUR</option>
+              <option  value="USD">USD</option>
+              </select>
+            </div>
             <button type="submit" className="btn btn-default">Save</button>
             <button className="btn btn-danger" onClick={(e) =>{ 
               e.preventDefault()

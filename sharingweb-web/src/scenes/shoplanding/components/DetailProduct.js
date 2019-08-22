@@ -75,7 +75,7 @@ class DetailProducts extends React.Component {
                   </div>
                   <div className="product-detail-info-section">
                     <h1 style={shop.styles.text}>{myProduct.name}</h1>
-                    <p><span className='wrong-price'>{myProduct.priceBefore ? myProduct.priceBefore:(myProduct.price*2).toFixed(2)}€</span> <span className='correct-price'>{myProduct.price}€</span></p>
+                    <p><span className='wrong-price'>{myProduct.priceBefore ? myProduct.priceBefore:(myProduct.price*2).toFixed(2)}{shop.currency==="USD" ? "$":"€"}</span> <span className='correct-price'>{myProduct.price}{shop.currency==="USD" ? "$":"€"}</span></p>
                     {(myProduct.size && myProduct.size.length>=1) ? (<div>
                       <label style={shop.styles.text} className="mr-sm-2" htmlFor="inlineFormCustomSelect">Choose your size</label>
                       <select className="custom-select mr-sm-2" id="inlineFormCustomSelect" onChange={this.handleChange}>
