@@ -34,8 +34,7 @@ class AddProductForm extends React.Component {
   handleSubmit = e => {
     e.preventDefault()
     const { product } = this.state
-
-    product.size = this.state.product.size.split(",")
+    if (product.image === "") delete product.image
 
     ShopService.editProduct(product, this.props.myProduct.id)
       .then(product => {

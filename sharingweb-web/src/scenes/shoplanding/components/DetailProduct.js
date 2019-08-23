@@ -90,9 +90,9 @@ class DetailProducts extends React.Component {
                       <option value="One Size">One Size</option>
                       </select></div>)
                     }
-                    {(isAuthenticated() && shopUser.name === shop.name) ? <button className={"btn btn-md btn-secondary button-detail-edit-product"} onClick={() => this.modifyEdit()}>EDIT PRODUCT</button>:<button className={this.state.size ? "btn btn-md btn-primary button-detail-product" : "btn btn-md btn-primary button-detail-product disabled"} onClick={() => this.addingToCart(myProduct)}>Add to cart</button>}
+                    {(isAuthenticated() && shopUser.name === shop.name) ? undefined:<button className={this.state.size ? "btn btn-md btn-primary button-detail-product" : "btn btn-md btn-primary button-detail-product disabled"} onClick={() => this.addingToCart(myProduct)}>Add to cart</button>}
                     <p style={shop.styles.text} className="detail-product-description">{myProduct.description}</p>
-                    <p style={shop.styles.background} className="tell-to-buy"><strong style={shop.styles.text}>Click </strong><span className="tell-to-buy-clic">Add To Cart</span><strong style={shop.styles.text}> To Get Yours Now! Limited Quantity - Will sell out fast!</strong></p>
+                    {(isAuthenticated() && shopUser.name === shop.name) ? <button className={"btn btn-md btn-secondary button-detail-edit-product"} onClick={() => this.modifyEdit()}>EDIT PRODUCT</button>:<p style={shop.styles.background} className="tell-to-buy"><strong style={shop.styles.text}>Click </strong><span className="tell-to-buy-clic">Add To Cart</span><strong style={shop.styles.text}> To Get Yours Now! Limited Quantity - Will sell out fast!</strong></p>}
                   </div>
                 </div>
             </div>
