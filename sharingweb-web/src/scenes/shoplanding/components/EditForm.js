@@ -77,12 +77,12 @@ class EditForm extends React.Component {
 
 
   render() {
-    const {edit, onReset} = this.props
+    const {modify, onReset} = this.props
     const { shop } = this.state
     return (
       <div className="edit-form-wrapper">
         <div>
-          <h1 className="edit-form-main-title">Design your page <i onClick={() => edit()} className="fa fa-times-circle icon-edit-form"></i></h1>
+          <h1 className="edit-form-main-title">Design your page <i onClick={() => modify("edit")} className="fa fa-times-circle icon-edit-form"></i></h1>
         </div>
         <form onSubmit={this.handleSubmit} className="register-form form-wrapper">
           <div className="form-group">

@@ -12,7 +12,7 @@ class ButtonPage extends React.Component {
   
   modifySeeMore = () => {
     const {seeMore} = this.state
-    this.props.seeMore()
+    this.props.modify("seeMore")
 
     if (seeMore === true){
       this.setState({
@@ -28,7 +28,7 @@ class ButtonPage extends React.Component {
   }
 
   render() {
-    const { edit, add } = this.props
+    const { modify } = this.props
     return (
       <div className={this.state.seeMore ? "instructions-footer-wrapper instructions-footer-wrapper-mobile":"instructions-footer-wrapper"}>
         <div className="container instruct-footer">
@@ -48,8 +48,9 @@ class ButtonPage extends React.Component {
           </div>
           <div className="more" onClick={()=> this.modifySeeMore()}>{this.state.seeMore ? "See less>>>": "See more>>>" }</div>
           <div className="button-shop">
-            <button className="btn btn-default button-shop" onClick={()=> edit()}>Edit Page</button>
-            <button className="btn btn-default button-shop" onClick={()=> add()}>Add Products</button>
+            <button className="btn btn-default button-shop" onClick={()=> modify("edit")}>Edit Page</button>
+            <button className="btn btn-default button-shop" onClick={()=> modify("addProduct")}>Add Products</button>
+            <button className="btn btn-default button-shop" onClick={()=> modify("addSection")}>Add Section</button>
           </div>
           
         </div>

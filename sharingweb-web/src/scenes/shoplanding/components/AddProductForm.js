@@ -46,12 +46,12 @@ class AddProductForm extends React.Component {
 
 
   render() {
-    const {add} = this.props
+    const {modify} = this.props
     const {product} = this.state
     return(
       <div className="edit-form-wrapper">
         <div>
-          <h1 className="edit-form-main-title">Add your products <i onClick={() => add()} className="fa fa-times-circle icon-edit-form"></i></h1>
+          <h1 className="edit-form-main-title">Add your products <i onClick={() => modify("addProduct")} className="fa fa-times-circle icon-edit-form"></i></h1>
         </div>
         <form onSubmit={this.handleSubmit} className="register-form form-wrapper">
           <div className="form-group">
