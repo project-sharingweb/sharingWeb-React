@@ -36,12 +36,12 @@ class ShopLanding extends React.Component {
     }
     let shownCategories
     if (shop && shop.productSections.length > 0) {
-      shownCategories = shop.productSections.map(item => {
+      shownCategories = shop.productSections.map((item,index) => {
         let productsFiltered = products.filter(product => product.category === item)
         let listingProducts = productsFiltered.map((product, i) => {
           return <ProductCard key={i} product={product}></ProductCard>
         }).slice(0, 4)
-        return (<div className="shop-product-section" data-aos="fade-right"
+        return (<div className="shop-product-section" key={index} data-aos="fade-right"
         data-aos-offset="200"
         data-aos-delay="20"
         data-aos-duration="500"
@@ -55,6 +55,45 @@ class ShopLanding extends React.Component {
           </div>
         </div>)
     })}
+
+    let shownSections;
+    if (shop && shop.sections.length > 0) {
+      shownSections = shop.sections.map((item,index) => {
+        if (item.image) {
+          return (
+            <div className="shop-product-section" key={index} data-aos="fade-right"
+              data-aos-offset="200"
+              data-aos-delay="20"
+              data-aos-duration="500"
+              data-aos-easing="ease-in-out"
+              data-aos-mirror="true"
+              data-aos-once="false"
+              data-aos-anchor-placement="top">
+                <h2 style={shop.styles.text}>{item.title}</h2>
+                <div className="shop-added-image-section">
+                  <img src={item.image} alt="section pic"></img>
+                  <p>{item.text}</p>
+                </div>
+            </div>
+          )
+        }
+        else {
+          return (
+            <div className="shop-added-text-section" key={index} data-aos="fade-right"
+              data-aos-offset="200"
+              data-aos-delay="20"
+              data-aos-duration="500"
+              data-aos-easing="ease-in-out"
+              data-aos-mirror="true"
+              data-aos-once="false"
+              data-aos-anchor-placement="top">
+                <h2 style={shop.styles.text}>{item.title}</h2>
+                <p>{item.text}</p>
+            </div>
+          )
+        }
+      })
+    }
 
     return (
       <div className="main-background">
@@ -88,6 +127,7 @@ class ShopLanding extends React.Component {
                   </div>
                 </div>
                 {shownCategories}
+                {shownSections}
               </div>
               <LandingFooter></LandingFooter>          
             </div>

@@ -78,7 +78,7 @@ class EditForm extends React.Component {
 
   render() {
     const {modify, onReset} = this.props
-    const { shop } = this.state
+    const { shop, background } = this.state
     return (
       <div className="edit-form-wrapper">
         <div>
@@ -201,7 +201,7 @@ class EditForm extends React.Component {
               id="BackGroundImage"
               onChange={this.handleStyleChange}/>
           </div>
-          <button type="submit" className="btn btn-default">Save</button>
+          <button type="submit" className={background === "" ?  "btn btn-default disabled":"btn btn-default"}>Save</button>
         </form>
       </div>
     )

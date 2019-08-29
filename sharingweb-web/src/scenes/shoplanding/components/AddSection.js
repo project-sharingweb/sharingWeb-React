@@ -11,27 +11,29 @@ class AddSection extends React.Component {
     imageSec: false,
     textSec: false,
     category: "all",
+    secType: "",
     image: "",
     text: "",
     title: ""
   }
 
-  onChosenSection = secType => {
-    if (secType === 1) {
+  onChosenSection = num => {
+    if (num === 1) {
       this.setState({...this.state, selection: false, categorySec: true})
     }
-    else if (secType === 2) {
-      this.setState({...this.state, selection: false, imageSec: true})
+    else if (num === 2) {
+      this.setState({...this.state, selection: false, imageSec: true, secType: "image"})
     }
     else {
-      this.setState({...this.state, selection: false, textSec: true})
+      this.setState({...this.state, selection: false, textSec: true, secType: "text"})
     }
   }
 
-  handleCategoryChange = e => {
-    const {value} = e.target
+  handleChange = e => {
+    const {value, name, files} = e.target
     this.setState({
-      category: value
+      ...this.state,
+      [name]: files && files[0] ? files[0] : value
     })
   }
 
@@ -45,9 +47,37 @@ class AddSection extends React.Component {
     this.props.modify("addSection")
   }
 
+  onSectionImageAdded = () => {
+    const {shop} = this.props
+      let newSec = {
+        secType: "image",
+        title: this.state.title,
+        image: this.state.image,
+        text: this.state.text
+      }
+    ShopService.editShop(shop, "a", newSec)
+      .then(shop => this.props.updateShop(shop.urlName), error => console.error(error))
+
+    this.props.modify("addSection")
+    }
+
+  onSectionTextAdded = () => {
+    const {shop} = this.props
+    let newSec = {
+      secType: "text",
+      title: this.state.title,
+      text: this.state.text
+    }
+    shop.sections.push(newSec)
+    ShopService.editShop(shop, "")
+      .then(shop => this.props.updateShop(shop.urlName), error => console.error(error))
+
+    this.props.modify("addSection")
+  }
+
   render() {
-    const {selection, categorySec, imageSec, textSec, category} = this.state
-    const {shop, products} = this.props
+    const {selection, categorySec, imageSec, textSec, category, image, text, title} = this.state
+    const {products} = this.props
     let options;
     if(products){
       const categories = [...new Set(products.map(item => item.category))]
@@ -78,19 +108,75 @@ class AddSection extends React.Component {
           <div className="container">
             {categorySec && (
               <div className="mt-4">
-                <label className="category-label" htmlFor="inlineFormCustomSelect">Select what category you want to add</label>
-                <select className="custom-select mb-2" id="inlineFormCustomSelect" onChange={this.handleCategoryChange}>
+                <label className="section-label" htmlFor="inlineFormCustomSelect">Select what category you want to add</label>
+                <select name="category" className="custom-select mb-2" id="inlineFormCustomSelect" onChange={this.handleChange}>
                 <option  value="all">Show all products...</option>
                 {options}
                 </select>
-                <div className="category-button"><button className={category === "all" ? "btn btn-success disabled": "btn btn-success"} onClick={() => this.onCategorySecAdded()}>Add Category</button></div>
+                <div className="section-button"><button className={category === "all" ? "btn btn-success disabled": "btn btn-success"} onClick={() => this.onCategorySecAdded()}>Add Category</button></div>
             </div>
             )}
             {imageSec && (
-              <div>Hola</div>
+              <div className="container">
+              <form onSubmit={this.handleSubmit} className="register-form form-wrapper">
+                <div className="form-group">
+                  <label className="section-label" htmlFor="Titletext">Type your title</label>
+                  <input name='title'
+                    rows="10"
+                    type="text"
+                    value={title}
+                    className={`form-control`}
+                    id="Titletext"
+                    onChange={this.handleChange}/>
+                </div>
+                <div className="form-group">
+                  <label className="section-label" htmlFor="Image">Upload your image</label>
+                  <input name='image'
+                    type="file"
+                    className={`form-control`}
+                    id="Image"
+                    onChange={this.handleChange}/>
+                </div>
+                <div className="form-group">
+                  <label className="section-label" htmlFor="Text">Type your text</label>
+                  <textarea name='text'
+                    rows="8"
+                    type="text"
+                    value={text}
+                    className={`form-control`}
+                    id="Text"
+                    onChange={this.handleChange}/>
+                </div>
+                <div className="section-button"><button className={(title === "" || text === "" || image === "") ? "btn btn-success disabled": "btn btn-success"} onClick={() => this.onSectionImageAdded()}>Add Section</button></div>
+              </form>
+            </div>
             )}
             {textSec && (
-              <div>Wola</div>
+              <div className="container">
+                <form onSubmit={this.handleSubmit} className="register-form form-wrapper">
+                  <div className="form-group">
+                    <label className="section-label" htmlFor="Titletext">Type your title</label>
+                    <input name='title'
+                      rows="10"
+                      type="text"
+                      value={title}
+                      className={`form-control`}
+                      id="Titletext"
+                      onChange={this.handleChange}/>
+                  </div>
+                  <div className="form-group">
+                    <label className="section-label" htmlFor="Text">Type your text</label>
+                    <textarea name='text'
+                      rows="10"
+                      type="text"
+                      value={text}
+                      className={`form-control`}
+                      id="Text"
+                      onChange={this.handleChange}/>
+                  </div>
+                  <div className="section-button"><button className={(title === "" || text === "") ? "btn btn-success disabled": "btn btn-success"} onClick={() => this.onSectionTextAdded()}>Add Section</button></div>
+                </form>
+              </div>
             )}
           </div>
         }

@@ -10,7 +10,8 @@ http.interceptors.response.use(
   response => response,
   error => {
     if (error.response.status === 403 || error.response.status === 401) {
-      window.location.assign("/auth/login");
+      window.location.assign("http://localhost:3000");
+      window.alert("please log in")
     } else {
       return Promise.reject(error);
     }
