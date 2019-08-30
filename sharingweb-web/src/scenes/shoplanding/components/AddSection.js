@@ -2,6 +2,9 @@ import React from 'react'
 import '../css/AddSection.css'
 import {withShopContext} from '../../../contexts/ShopStore'
 import ShopService from '../../../services/ShopService'
+import categoriesPic from '../../../images/cat1.png'
+import textPic from '../../../images/text1.png'
+import imagePic from '../../../images/imagecap1.png'
 
 
 class AddSection extends React.Component {
@@ -92,15 +95,15 @@ class AddSection extends React.Component {
             <h1 className="add-section-title">Add new section to your store</h1>
             <div className="choose-section-wrapper">
               <div className="choose-section-element" onClick={() => this.onChosenSection(1)}>
-                <img className="choose-section-image" src="https://cdn2.iconfinder.com/data/icons/game-center-mixed-icons/512/note.png" alt="add category section"></img>
+                <img className="choose-section-image" src={categoriesPic} alt="add category section"></img>
                 <p className="choose-section-text">Add category section</p>
               </div>
               <div className="choose-section-element" onClick={() => this.onChosenSection(2)}>
-                <img className="choose-section-image" src="https://cdn2.iconfinder.com/data/icons/game-center-mixed-icons/512/note.png" alt="add pic and text section"></img>        
+                <img className="choose-section-image" src={imagePic} alt="add pic and text section"></img>        
                 <p className="choose-section-text">Add image and text section</p>
               </div>
               <div className="choose-section-element" onClick={() => this.onChosenSection(3)}>
-                <img className="choose-section-image" src="https://cdn2.iconfinder.com/data/icons/game-center-mixed-icons/512/note.png" alt="add text section"></img>          
+                <img className="choose-section-image" src={textPic} alt="add text section"></img>          
                 <p className="choose-section-text">Add text section</p>
               </div>
             </div>      

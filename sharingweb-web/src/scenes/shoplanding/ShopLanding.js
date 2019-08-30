@@ -9,6 +9,7 @@ import EditForm from './components/EditForm';
 import { WithAuthContext } from '../../contexts/AuthStore'
 import AddProductForm from './components/AddProductForm';
 import AddSection from './components/AddSection';
+import ShopService from '../../services/ShopService'
 
 
 class ShopLanding extends React.Component {
@@ -22,6 +23,18 @@ class ShopLanding extends React.Component {
     this.state[stateProp] ? this.setState({ ...this.state, [stateProp]: false}) : this.setState({...this.state, [stateProp]: true})
   }
 
+  deleteSection = (typ, shop, key) => {
+    if (typ === 1){
+      shop.productSections.splice(key, 1)
+      ShopService.editShop(shop, "")
+        .then(shop => this.props.updateShop(shop.urlName), error => console.error(error))
+    }
+    else{
+      shop.sections.splice(key, 1)
+      ShopService.editShop(shop, "")
+        .then(shop => this.props.updateShop(shop.urlName), error => console.error(error))
+    }
+  }
 
   render() {
     const { shop, products, isAuthenticated, shopUser } = this.props
@@ -41,7 +54,7 @@ class ShopLanding extends React.Component {
         let listingProducts = productsFiltered.map((product, i) => {
           return <ProductCard key={i} product={product}></ProductCard>
         }).slice(0, 4)
-        return (<div className="shop-product-section" key={index} data-aos="fade-right"
+        return (<div className="shop-product-section hover-me" key={index} data-aos="fade-right"
         data-aos-offset="200"
         data-aos-delay="20"
         data-aos-duration="500"
@@ -53,6 +66,7 @@ class ShopLanding extends React.Component {
           <div className="products-wrapper pb-5">
             {listingProducts}
           </div>
+          {(shop && isAuthenticated() && shopUser.name === shop.name) && <button className="section-delete-buttons hidden" onClick={() => this.deleteSection(1, shop, index)}>DELETE SECTION</button>}
         </div>)
     })}
 
@@ -61,7 +75,7 @@ class ShopLanding extends React.Component {
       shownSections = shop.sections.map((item,index) => {
         if (item.image) {
           return (
-            <div className="shop-product-section" key={index} data-aos="fade-right"
+            <div className="shop-product-section hover-me" key={index} data-aos="fade-right"
               data-aos-offset="200"
               data-aos-delay="20"
               data-aos-duration="500"
@@ -74,12 +88,13 @@ class ShopLanding extends React.Component {
                   <img src={item.image} alt="section pic"></img>
                   <p>{item.text}</p>
                 </div>
+                {(shop && isAuthenticated() && shopUser.name === shop.name) && <button className="section-delete-buttons hidden" onClick={() => this.deleteSection(2, shop, index)}>DELETE SECTION</button>}
             </div>
           )
         }
         else {
           return (
-            <div className="shop-added-text-section" key={index} data-aos="fade-right"
+            <div className="shop-added-text-section hover-me" key={index} data-aos="fade-right"
               data-aos-offset="200"
               data-aos-delay="20"
               data-aos-duration="500"
@@ -89,6 +104,7 @@ class ShopLanding extends React.Component {
               data-aos-anchor-placement="top">
                 <h2 style={shop.styles.text}>{item.title}</h2>
                 <p>{item.text}</p>
+                {(shop && isAuthenticated() && shopUser.name === shop.name) && <button className="section-delete-buttons hidden" onClick={() => this.deleteSection(2, shop, index)}>DELETE SECTION</button>}
             </div>
           )
         }
@@ -97,7 +113,7 @@ class ShopLanding extends React.Component {
 
     return (
       <div className="main-background">
-        {(isAuthenticated() && addSection) ? <AddSection modify={this.modify}/>:<React.Fragment>
+        {(shop && isAuthenticated() && shopUser.name === shop.name && addSection) ? <AddSection modify={this.modify}/>:<React.Fragment>
         { shop &&
           <React.Fragment>
           {(isAuthenticated() && shopUser.name === shop.name) && !edit && !addProduct && <ButtonPage modify={this.modify}/>}

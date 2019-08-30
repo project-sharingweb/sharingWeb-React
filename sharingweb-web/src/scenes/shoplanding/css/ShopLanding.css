@@ -38,6 +38,7 @@
 .shop-added-image-section img{
   width: 400px;
   height: 400px;
+  margin-right: 5px;
 }
 
 .shop-added-image-section p{
@@ -90,6 +91,37 @@
   width: 100%;
 }
 
+.section-delete-buttons {
+  display: inline-block;
+  padding: 15px;
+  margin: 0 10px 15px;
+  background-color: rgb(235, 66, 66);
+  color: white;
+  border: none;
+  font-size: 1rem;
+}
+
+.section-edit-buttons {
+  display: inline-block;
+  padding: 15px;
+  margin: 0 10px 15px;
+  background-color: rgb(52, 156, 253);
+  color: white;
+  border: none;
+  font-size: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+.hover-me{
+  border: none;
+}
+
+.hover-me:hover .hidden {
+  display: inline-block;
+}
+
 @media (max-width: 775px) {
 
 .hide-me {
@@ -119,5 +151,11 @@
     font-size: 1.25rem;
     width: 100%;
     text-align: justify;
+  }
+}
+
+@media (max-width: 1090px) {
+  .shop-added-image-section{
+    justify-content: center
   }
 }
