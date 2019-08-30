@@ -101,11 +101,11 @@
   font-size: 1rem;
 }
 
-.section-edit-buttons {
+.section-seemore-buttons {
   display: inline-block;
   padding: 15px;
   margin: 0 10px 15px;
-  background-color: rgb(52, 156, 253);
+  background-color: rgb(0, 162, 255);
   color: white;
   border: none;
   font-size: 1rem;

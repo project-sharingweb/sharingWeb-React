@@ -9,7 +9,7 @@ import '../css/ListProducts.css'
 
 class ListProducts extends React.Component {
   state = {
-    category: "all"
+    category: this.props.location.state ? this.props.location.state.default : "all"
   }
 
   handleChange = e => {

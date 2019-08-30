@@ -10,6 +10,7 @@ import { WithAuthContext } from '../../contexts/AuthStore'
 import AddProductForm from './components/AddProductForm';
 import AddSection from './components/AddSection';
 import ShopService from '../../services/ShopService'
+import {Link} from 'react-router-dom'
 
 
 class ShopLanding extends React.Component {
@@ -66,6 +67,7 @@ class ShopLanding extends React.Component {
           <div className="products-wrapper pb-5">
             {listingProducts}
           </div>
+          <Link to={{pathname: `/shops/${shop.urlName}/products`, state: {default: item}}} ><button className="section-seemore-buttons">SEE MORE</button></Link>
           {(shop && isAuthenticated() && shopUser.name === shop.name) && <button className="section-delete-buttons hidden" onClick={() => this.deleteSection(1, shop, index)}>DELETE SECTION</button>}
         </div>)
     })}
