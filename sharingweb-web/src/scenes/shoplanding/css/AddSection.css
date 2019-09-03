@@ -49,7 +49,7 @@
 .section-label {
   font-size: 1.8rem;
   font-weight: 700;
-  margin: 50px 0 30px;
+  margin: 10px 0 30px;
 }
 
 .section-button{
@@ -57,4 +57,28 @@
   display: flex;
   justify-content: center;
   margin: 20px 0 0;
+}
+
+.add-section-go-back-link {
+  color: rgb(0, 153, 255);
+  text-align: center;
+  margin: 40px 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.add-section-go-back-link:hover {
+  color:red;
+  cursor: pointer;
+}
+
+.on-section-go-back-link {
+  color: rgb(0, 153, 255);
+  margin: 20px 0 0;
+  font-size: 1.4rem;
+}
+
+.on-section-go-back-link:hover {
+  color:red;
+  cursor: pointer;
 }

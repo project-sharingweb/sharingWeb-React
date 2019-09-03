@@ -42,7 +42,7 @@ class OrderDetail extends React.Component {
           <p style={shop.styles.text}>{myOrder.sizes[i]}</p>
         </div>
       </div>
-      <div style={shop.styles.text} className="cart-main-second">{item.price}{shop.currency==="USD" ? "$":"€"}</div>
+      <div style={shop.styles.text} className="order-detail-main-second">{item.price}{shop.currency==="USD" ? "$":"€"}</div>
       <div className="cart-main-second quantity-wrapper">
         <p className="p-cart-quantity mr-4 pt-2">{myOrder.amounts[i]}</p>
       </div>
@@ -77,8 +77,8 @@ class OrderDetail extends React.Component {
               <div className="info-cart-wrapping mb-5">
                 <div className="cart-product-main">
                   <div style={shop.styles.text} className="cart-main-first">Product</div>
-                  <div style={shop.styles.text} className="cart-main-second">price</div>
-                  <div style={shop.styles.text} className="cart-main-second">Quantity</div>
+                  <div style={shop.styles.text} className="order-detail-main-second">price</div>
+                  <div style={shop.styles.text} className="order-detail-main-second-b">Quantity</div>
                   <div style={shop.styles.text} className="cart-main-third">Total</div>
                 </div>
                 {list}

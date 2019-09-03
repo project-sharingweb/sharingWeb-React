@@ -32,6 +32,21 @@ class AddSection extends React.Component {
     }
   }
 
+  closeSection = () => {
+    this.setState({
+      ...this.state,
+      selection: true,
+      categorySec: false,
+      imageSec: false,
+      textSec: false,
+      category: "all",
+      secType: "",
+      image: "",
+      text: "",
+      title: ""
+    })
+  }
+
   handleChange = e => {
     const {value, name, files} = e.target
     this.setState({
@@ -106,11 +121,13 @@ class AddSection extends React.Component {
                 <img className="choose-section-image" src={textPic} alt="add text section"></img>          
                 <p className="choose-section-text">Add text section</p>
               </div>
-            </div>      
+            </div>  
+            <p className="add-section-go-back-link" onClick={() => this.props.modify("addSection")}>Go back>>></p>    
           </div>:
           <div className="container">
             {categorySec && (
               <div className="mt-4">
+                <p className="on-section-go-back-link" onClick={() => this.closeSection()}>Go back>>></p>
                 <label className="section-label" htmlFor="inlineFormCustomSelect">Select what category you want to add</label>
                 <select name="category" className="custom-select mb-2" id="inlineFormCustomSelect" onChange={this.handleChange}>
                 <option  value="all">Show all products...</option>
@@ -121,6 +138,7 @@ class AddSection extends React.Component {
             )}
             {imageSec && (
               <div className="container">
+              <p className="on-section-go-back-link" onClick={() => this.closeSection()}>Go back>>></p>
               <form onSubmit={this.handleSubmit} className="register-form form-wrapper">
                 <div className="form-group">
                   <label className="section-label" htmlFor="Titletext">Type your title</label>
@@ -156,6 +174,7 @@ class AddSection extends React.Component {
             )}
             {textSec && (
               <div className="container">
+                <p className="on-section-go-back-link" onClick={() => this.closeSection()}>Go back>>></p>
                 <form onSubmit={this.handleSubmit} className="register-form form-wrapper">
                   <div className="form-group">
                     <label className="section-label" htmlFor="Titletext">Type your title</label>
