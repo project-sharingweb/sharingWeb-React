@@ -20,7 +20,7 @@ class Checkout extends React.Component{
         country: "",
         products: this.props.cart ? this.props.cart.map(item => item.id): null,
         cart: this.props.cart ? this.props.cart : null,
-        price: this.props.cart ? this.props.cart.reduce((acc, item)=> (acc + (item.price*item.amount).toFixed(2)), 0).toString() : null,
+        price: this.props.cart ? this.props.cart.reduce((acc,a)=> acc + (parseFloat(a.price)*a.amount),0).toFixed(2).toString() : null,
         amounts: this.props.cart ? this.props.cart.map(item => item.amount): null,
         number: this.props.orders ? (this.props.orders.length + 1).toString(): "1",
         sizes: this.props.cart ? this.props.cart.map(item => item.ChosenSize || item.size[0]): null,
@@ -59,6 +59,7 @@ render() {
 
     if (shop) document.title = shop.name + " - Checkout"
     if (shop) document.getElementById("ico").setAttribute("href", shop.logo)
+    
     return (
         <div>
             {shop &&
