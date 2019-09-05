@@ -83,7 +83,6 @@ class Login extends React.Component {
           })
         },
         error => {
-          debugger
           this.setState({
             errors: {
               ...this.state.errors,
